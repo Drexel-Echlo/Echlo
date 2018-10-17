@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour {
     public SpriteRenderer spriteR;
     public Sprite spriteNormal;
     public Sprite spriteFull;
-    public GameObject food;
+    public GameObject foodDrop;
 
     public bool isCarryingFood;
 
@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Space) && isCarryingFood)
         {
             isCarryingFood = false;
-            Instantiate(food, mouth.position, Quaternion.identity);
+            Instantiate(foodDrop, mouth.position, Quaternion.identity);
         }
         else
         {

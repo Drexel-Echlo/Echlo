@@ -1343,7 +1343,7 @@ MonoBehaviour:
   spriteR: {fileID: 341488797}
   spriteNormal: {fileID: 21300000, guid: a9bb3b828d373a145879300ee2592534, type: 3}
   spriteFull: {fileID: 21300000, guid: b04dbd9916f15964f8f8541c172d6e47, type: 3}
-  food: {fileID: 1091561412272928, guid: ffd03e6bd76f6ab43901db73b4c6aea9, type: 2}
+  foodDrop: {fileID: 1091561412272928, guid: 29adc4105e5e18f429b3b3a979e6b309, type: 2}
   isCarryingFood: 0
 --- !u!54 &1849468972
 Rigidbody:
