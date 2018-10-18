@@ -9,6 +9,8 @@ public class ShooterController : MonoBehaviour
     public GameObject waveClone;
     public Transform shooter;
 
+    public AudioSource sendOut;
+
     public float shotPower;
     public float fireRate;
     public float destroyTime;
@@ -20,6 +22,7 @@ public class ShooterController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse0) && (allowFire))
         {
+            sendOut.Play();
             StartCoroutine(WaveFire(fireRate));
         }
         else
