@@ -33,7 +33,7 @@ public class ShooterController : MonoBehaviour
         allowFire = false;
 
         waveClone = Instantiate(wave, shooter.position, shooter.rotation) as GameObject;
-        waveClone.GetComponent<Rigidbody>().AddForce(transform.right * shotPower);
+        waveClone.GetComponent<Rigidbody>().AddForce(transform.forward * shotPower);
         GameObject.Destroy(waveClone, destroyTime);
 
         WaitForSeconds delay = new WaitForSeconds(fireRate);
