@@ -10,9 +10,13 @@ public class PlayerController : MonoBehaviour {
     public float vertical;
     public float maxSpeed;
 
+
+
     // Use this for initialization
     void Start () {
         rb = GetComponent<Rigidbody>();
+
+
 	}
 	
 	// Update is called once per frame
@@ -21,5 +25,8 @@ public class PlayerController : MonoBehaviour {
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
         rb.velocity = new Vector3(horizontal * maxSpeed, rb.velocity.y, vertical * maxSpeed);
+
+
+
     }
 }
