@@ -206,65 +206,15 @@ GameObject:
     type: 3}
 =======
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &83442280
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1849468973}
-    m_Modifications:
-    - target: {fileID: 4367586815225454, guid: 6cdd23c56712bbb48b71f8474e767333, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -1.237
-      objectReference: {fileID: 0}
-    - target: {fileID: 4367586815225454, guid: 6cdd23c56712bbb48b71f8474e767333, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4367586815225454, guid: 6cdd23c56712bbb48b71f8474e767333, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4367586815225454, guid: 6cdd23c56712bbb48b71f8474e767333, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 4367586815225454, guid: 6cdd23c56712bbb48b71f8474e767333, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4367586815225454, guid: 6cdd23c56712bbb48b71f8474e767333, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4367586815225454, guid: 6cdd23c56712bbb48b71f8474e767333, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 4367586815225454, guid: 6cdd23c56712bbb48b71f8474e767333, type: 2}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4367586815225454, guid: 6cdd23c56712bbb48b71f8474e767333, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4367586815225454, guid: 6cdd23c56712bbb48b71f8474e767333, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4367586815225454, guid: 6cdd23c56712bbb48b71f8474e767333, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 6cdd23c56712bbb48b71f8474e767333, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &141602841
 GameObject:
   m_ObjectHideFlags: 0
+<<<<<<< HEAD
   m_PrefabParentObject: {fileID: 0}
 >>>>>>> parent of 7a4bb70... Merge branch 'master' into (master).palyer:Assets/Scenes/TechDemo.unity
+=======
+  m_CorrespondingSourceObject: {fileID: 0}
+>>>>>>> parent of 21b557a... change the Rotation, now it rota with mouse
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 6
   m_Component:
@@ -282,12 +232,16 @@ GameObject:
 --- !u!65 &141602842
 BoxCollider:
   m_ObjectHideFlags: 0
+<<<<<<< HEAD
 <<<<<<< HEAD:Unity_Project/Assets/Scenes/TechDemo.unity
   m_CorrespondingSourceObject: {fileID: 400006, guid: daeccd2a0972c6a4e912a7a35c20ca27,
     type: 3}
 =======
   m_PrefabParentObject: {fileID: 0}
 >>>>>>> parent of 7a4bb70... Merge branch 'master' into (master).palyer:Assets/Scenes/TechDemo.unity
+=======
+  m_CorrespondingSourceObject: {fileID: 0}
+>>>>>>> parent of 21b557a... change the Rotation, now it rota with mouse
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 141602841}
   m_Material: {fileID: 0}
@@ -299,12 +253,16 @@ BoxCollider:
 --- !u!23 &141602843
 MeshRenderer:
   m_ObjectHideFlags: 0
+<<<<<<< HEAD
 <<<<<<< HEAD:Unity_Project/Assets/Scenes/TechDemo.unity
   m_CorrespondingSourceObject: {fileID: 2300004, guid: daeccd2a0972c6a4e912a7a35c20ca27,
     type: 3}
 =======
   m_PrefabParentObject: {fileID: 0}
 >>>>>>> parent of 7a4bb70... Merge branch 'master' into (master).palyer:Assets/Scenes/TechDemo.unity
+=======
+  m_CorrespondingSourceObject: {fileID: 0}
+>>>>>>> parent of 21b557a... change the Rotation, now it rota with mouse
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 141602841}
   m_Enabled: 1
@@ -339,19 +297,27 @@ MeshRenderer:
 --- !u!33 &141602844
 MeshFilter:
   m_ObjectHideFlags: 0
+<<<<<<< HEAD
 <<<<<<< HEAD:Unity_Project/Assets/Scenes/TechDemo.unity
   m_CorrespondingSourceObject: {fileID: 3300004, guid: daeccd2a0972c6a4e912a7a35c20ca27,
     type: 3}
 =======
   m_PrefabParentObject: {fileID: 0}
+=======
+  m_CorrespondingSourceObject: {fileID: 0}
+>>>>>>> parent of 21b557a... change the Rotation, now it rota with mouse
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 141602841}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &141602845
 Transform:
   m_ObjectHideFlags: 0
+<<<<<<< HEAD
   m_PrefabParentObject: {fileID: 0}
 >>>>>>> parent of 7a4bb70... Merge branch 'master' into (master).palyer:Assets/Scenes/TechDemo.unity
+=======
+  m_CorrespondingSourceObject: {fileID: 0}
+>>>>>>> parent of 21b557a... change the Rotation, now it rota with mouse
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 141602841}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -387,7 +353,7 @@ Light:
 --- !u!65 &163045408
 BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 163045407}
   m_Material: {fileID: 0}
@@ -443,6 +409,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 5e012575c0b434849a12fe59f5ed0498, type: 2}
   m_StaticBatchInfo:
@@ -467,7 +434,7 @@ MeshRenderer:
 --- !u!33 &163045410
 MeshFilter:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 163045407}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
@@ -509,7 +476,7 @@ GameObject:
 --- !u!65 &327346197
 BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 327346196}
   m_Material: {fileID: 0}
@@ -521,7 +488,7 @@ BoxCollider:
 --- !u!23 &327346198
 MeshRenderer:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 327346196}
   m_Enabled: 1
@@ -531,6 +498,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 989493d65d0da944c9e24cd323d38d90, type: 2}
   m_StaticBatchInfo:
@@ -555,7 +523,7 @@ MeshRenderer:
 --- !u!33 &327346199
 MeshFilter:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 327346196}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
@@ -590,12 +558,16 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
+<<<<<<< HEAD
 <<<<<<< HEAD:Unity_Project/Assets/Scenes/TechDemo.unity
   m_IsActive: 1
 --- !u!81 &534669903
 AudioListener:
 =======
   m_IsActive: 0
+=======
+  m_IsActive: 1
+>>>>>>> parent of 21b557a... change the Rotation, now it rota with mouse
 --- !u!212 &341488797
 SpriteRenderer:
 >>>>>>> parent of 7a4bb70... Merge branch 'master' into (master).palyer:Assets/Scenes/TechDemo.unity
@@ -614,6 +586,7 @@ Camera:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
@@ -645,18 +618,20 @@ Camera:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!4 &341488798
 Transform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 341488796}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: -1.237, y: -0.1, z: 0}
   m_LocalScale: {x: 18.155722, y: 16.50968, z: 6.7378206}
-  m_Children: []
+  m_Children:
+  - {fileID: 1799538440}
   m_Father: {fileID: 1849468973}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &341488800
 MonoBehaviour:
@@ -707,6 +682,7 @@ Transform:
   m_Script: {fileID: 11500000, guid: 9a1afe635fc254142a166c4f9acf6b35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1849468971}
 --- !u!114 &341488802
 MonoBehaviour:
 >>>>>>> parent of 7a4bb70... Merge branch 'master' into (master).palyer:Assets/Scenes/TechDemo.unity
@@ -825,6 +801,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
+<<<<<<< HEAD
   m_IsActive: 1
 <<<<<<< HEAD:Unity_Project/Assets/Scenes/TechDemo.unity
 --- !u!4 &664740909
@@ -842,6 +819,9 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &664740910
 =======
+=======
+  m_IsActive: 0
+>>>>>>> parent of 21b557a... change the Rotation, now it rota with mouse
 --- !u!108 &493932530
 >>>>>>> parent of 7a4bb70... Merge branch 'master' into (master).palyer:Assets/Scenes/TechDemo.unity
 Light:
@@ -877,7 +857,11 @@ Light:
   m_LightShadowCasterMode: 0
 =======
   m_Lightmapping: 1
+<<<<<<< HEAD
 >>>>>>> parent of 7a4bb70... Merge branch 'master' into (master).palyer:Assets/Scenes/TechDemo.unity
+=======
+  m_LightShadowCasterMode: 0
+>>>>>>> parent of 21b557a... change the Rotation, now it rota with mouse
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
@@ -894,7 +878,7 @@ GameObject:
 --- !u!4 &493932531
 Transform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 493932529}
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
@@ -907,8 +891,12 @@ Transform:
 --- !u!1 &534669902
 GameObject:
   m_ObjectHideFlags: 0
+<<<<<<< HEAD
   m_PrefabParentObject: {fileID: 0}
 >>>>>>> parent of 7a4bb70... Merge branch 'master' into (master).palyer:Assets/Scenes/TechDemo.unity
+=======
+  m_CorrespondingSourceObject: {fileID: 0}
+>>>>>>> parent of 21b557a... change the Rotation, now it rota with mouse
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 6
   m_Component:
@@ -925,24 +913,32 @@ GameObject:
 --- !u!81 &534669903
 AudioListener:
   m_ObjectHideFlags: 0
+<<<<<<< HEAD
 <<<<<<< HEAD:Unity_Project/Assets/Scenes/TechDemo.unity
   m_CorrespondingSourceObject: {fileID: 400000, guid: daeccd2a0972c6a4e912a7a35c20ca27,
     type: 3}
 =======
   m_PrefabParentObject: {fileID: 0}
 >>>>>>> parent of 7a4bb70... Merge branch 'master' into (master).palyer:Assets/Scenes/TechDemo.unity
+=======
+  m_CorrespondingSourceObject: {fileID: 0}
+>>>>>>> parent of 21b557a... change the Rotation, now it rota with mouse
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 534669902}
   m_Enabled: 1
 --- !u!20 &534669904
 Camera:
   m_ObjectHideFlags: 0
+<<<<<<< HEAD
 <<<<<<< HEAD:Unity_Project/Assets/Scenes/TechDemo.unity
   m_CorrespondingSourceObject: {fileID: 2300000, guid: daeccd2a0972c6a4e912a7a35c20ca27,
     type: 3}
 =======
   m_PrefabParentObject: {fileID: 0}
 >>>>>>> parent of 7a4bb70... Merge branch 'master' into (master).palyer:Assets/Scenes/TechDemo.unity
+=======
+  m_CorrespondingSourceObject: {fileID: 0}
+>>>>>>> parent of 21b557a... change the Rotation, now it rota with mouse
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 534669902}
   m_Enabled: 1
@@ -988,6 +984,10 @@ MeshFilter:
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -1009,6 +1009,7 @@ MeshFilter:
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -1016,7 +1017,7 @@ MeshFilter:
 --- !u!4 &534669905
 Transform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 534669902}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
@@ -1024,7 +1025,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1849468973}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &619590777
 >>>>>>> parent of 7a4bb70... Merge branch 'master' into (master).palyer:Assets/Scenes/TechDemo.unity
@@ -1460,13 +1461,14 @@ GameObject:
 MeshFilter:
 >>>>>>> parent of 7a4bb70... Merge branch 'master' into (master).palyer:Assets/Scenes/TechDemo.unity
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 944295684}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &944295688
 Transform:
   m_ObjectHideFlags: 0
+<<<<<<< HEAD
 <<<<<<< HEAD:Unity_Project/Assets/Scenes/TechDemo.unity
   m_CorrespondingSourceObject: {fileID: 400004, guid: daeccd2a0972c6a4e912a7a35c20ca27,
     type: 3}
@@ -1506,6 +1508,9 @@ MonoBehaviour:
 =======
   m_PrefabParentObject: {fileID: 0}
 >>>>>>> parent of 7a4bb70... Merge branch 'master' into (master).palyer:Assets/Scenes/TechDemo.unity
+=======
+  m_CorrespondingSourceObject: {fileID: 0}
+>>>>>>> parent of 21b557a... change the Rotation, now it rota with mouse
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 944295684}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -1773,12 +1778,16 @@ Transform:
 --- !u!1 &1336201752
 GameObject:
   m_ObjectHideFlags: 0
+<<<<<<< HEAD
 <<<<<<< HEAD:Unity_Project/Assets/Scenes/TechDemo.unity
   m_CorrespondingSourceObject: {fileID: 100002, guid: daeccd2a0972c6a4e912a7a35c20ca27,
     type: 3}
 =======
   m_PrefabParentObject: {fileID: 0}
 >>>>>>> parent of 7a4bb70... Merge branch 'master' into (master).palyer:Assets/Scenes/TechDemo.unity
+=======
+  m_CorrespondingSourceObject: {fileID: 0}
+>>>>>>> parent of 21b557a... change the Rotation, now it rota with mouse
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 6
   m_Component:
@@ -1796,12 +1805,16 @@ GameObject:
 --- !u!65 &1336201753
 BoxCollider:
   m_ObjectHideFlags: 0
+<<<<<<< HEAD
 <<<<<<< HEAD:Unity_Project/Assets/Scenes/TechDemo.unity
   m_CorrespondingSourceObject: {fileID: 400002, guid: daeccd2a0972c6a4e912a7a35c20ca27,
     type: 3}
 =======
   m_PrefabParentObject: {fileID: 0}
 >>>>>>> parent of 7a4bb70... Merge branch 'master' into (master).palyer:Assets/Scenes/TechDemo.unity
+=======
+  m_CorrespondingSourceObject: {fileID: 0}
+>>>>>>> parent of 21b557a... change the Rotation, now it rota with mouse
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1336201752}
   m_Material: {fileID: 0}
@@ -1813,12 +1826,16 @@ BoxCollider:
 --- !u!23 &1336201754
 MeshRenderer:
   m_ObjectHideFlags: 0
+<<<<<<< HEAD
 <<<<<<< HEAD:Unity_Project/Assets/Scenes/TechDemo.unity
   m_CorrespondingSourceObject: {fileID: 2300002, guid: daeccd2a0972c6a4e912a7a35c20ca27,
     type: 3}
 =======
   m_PrefabParentObject: {fileID: 0}
 >>>>>>> parent of 7a4bb70... Merge branch 'master' into (master).palyer:Assets/Scenes/TechDemo.unity
+=======
+  m_CorrespondingSourceObject: {fileID: 0}
+>>>>>>> parent of 21b557a... change the Rotation, now it rota with mouse
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1336201752}
   m_Enabled: 1
@@ -1853,6 +1870,7 @@ MeshRenderer:
 --- !u!33 &1336201755
 MeshFilter:
   m_ObjectHideFlags: 0
+<<<<<<< HEAD
 <<<<<<< HEAD:Unity_Project/Assets/Scenes/TechDemo.unity
   m_CorrespondingSourceObject: {fileID: 3300002, guid: daeccd2a0972c6a4e912a7a35c20ca27,
     type: 3}
@@ -1883,6 +1901,9 @@ Light:
 =======
   m_PrefabParentObject: {fileID: 0}
 >>>>>>> parent of 7a4bb70... Merge branch 'master' into (master).palyer:Assets/Scenes/TechDemo.unity
+=======
+  m_CorrespondingSourceObject: {fileID: 0}
+>>>>>>> parent of 21b557a... change the Rotation, now it rota with mouse
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1336201752}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
@@ -2160,9 +2181,9 @@ Transform:
 --- !u!1 &1799538439
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
+  serializedVersion: 6
   m_Component:
   - component: {fileID: 1799538440}
   m_Layer: 10
@@ -2175,14 +2196,14 @@ GameObject:
 --- !u!4 &1799538440
 Transform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1799538439}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1850258916}
+  m_Father: {fileID: 341488798}
   m_RootOrder: 0
 >>>>>>> parent of 7a4bb70... Merge branch 'master' into (master).palyer:Assets/Scenes/TechDemo.unity
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2232,7 +2253,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 116
+  m_Constraints: 52
   m_CollisionDetection: 0
 --- !u!4 &1849468973
 Transform:
@@ -2244,10 +2265,13 @@ Transform:
   m_LocalPosition: {x: 1.237, y: 0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+<<<<<<< HEAD
 <<<<<<< HEAD:Unity_Project/Assets/Scenes/TechDemo.unity
   - {fileID: 949387372}
 =======
   - {fileID: 1850258916}
+=======
+>>>>>>> parent of 21b557a... change the Rotation, now it rota with mouse
   - {fileID: 341488798}
 >>>>>>> parent of 7a4bb70... Merge branch 'master' into (master).palyer:Assets/Scenes/TechDemo.unity
   - {fileID: 534669905}
@@ -2271,44 +2295,6 @@ BoxCollider:
 =======
   m_Size: {x: 1.4917083, y: 0.03, z: 1.8268809}
   m_Center: {x: -1.2605517, y: 0, z: 0.09294379}
---- !u!1 &1850258915 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1355193146628960, guid: 6cdd23c56712bbb48b71f8474e767333,
-    type: 2}
-  m_PrefabInternal: {fileID: 83442280}
---- !u!4 &1850258916 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4367586815225454, guid: 6cdd23c56712bbb48b71f8474e767333,
-    type: 2}
-  m_PrefabInternal: {fileID: 83442280}
---- !u!114 &1850258917
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1850258915}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a1afe635fc254142a166c4f9acf6b35, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1850258918
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1850258915}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2baa82490536a74ba44cad597220ec6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wave: {fileID: 1039409802499550, guid: efccfaa2c8df4924896f5ab0114cbdd3, type: 2}
-  waveClone: {fileID: 0}
-  shooter: {fileID: 1799538440}
-  shotPower: 150
-  fireRate: 2.5
-  destroyTime: 3
 --- !u!1 &1890402243
 >>>>>>> parent of 7a4bb70... Merge branch 'master' into (master).palyer:Assets/Scenes/TechDemo.unity
 GameObject:
@@ -2362,6 +2348,7 @@ MeshCollider:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 3012d55297e723a44b10e5ddb0d2466d, type: 2}
   m_StaticBatchInfo:
