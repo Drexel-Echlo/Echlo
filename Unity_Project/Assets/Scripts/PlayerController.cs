@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour {
 
     private void OnTriggerStay(Collider home)
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isCarryingFood)
+        if (Input.GetKeyDown(KeyCode.Space) && isCarryingFood && home.gameObject.tag == "Home")
         {
             isCarryingFood = false;
             Instantiate(foodDrop, mouth.position, Quaternion.identity);
