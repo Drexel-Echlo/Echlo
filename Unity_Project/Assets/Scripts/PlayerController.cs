@@ -11,13 +11,13 @@ public class PlayerController : MonoBehaviour {
     public float horizontal;
     public float vertical;
     public float maxSpeed;
-
-    public SpriteRenderer spriteR;
-    public Sprite spriteNormal;
-    public Sprite spriteFull;
+    
     public GameObject foodDrop;
+    public GameObject carryingFood;
+    public GameObject carryingFoodClone;
 
     public bool isCarryingFood;
+    public bool isFoodCreated;
 
     // Use this for initialization
     void Start () {
@@ -33,11 +33,21 @@ public class PlayerController : MonoBehaviour {
 
         if (isCarryingFood)
         {
-            spriteR.sprite = spriteFull;
+            if (!isFoodCreated)
+            {
+                carryingFoodClone = Instantiate(carryingFood, new Vector3(transform.position.x - 1.2f, 2, transform.position.z), Quaternion.identity) as GameObject;
+                carryingFoodClone.transform.parent = gameObject.transform;
+                isFoodCreated = true;
+            }
+            else
+            {
+                return;
+            }
         }
         else
         {
-            spriteR.sprite = spriteNormal;
+            Destroy(carryingFoodClone);
+            isFoodCreated = false;
         }
 
     }
