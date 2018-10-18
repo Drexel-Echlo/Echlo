@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour {
     public float horizontal;
     public float vertical;
     public float maxSpeed;
+    public float lightFrequency = 1f;
     
     public GameObject foodDrop;
     public GameObject carryingFood;
@@ -58,7 +59,7 @@ public class PlayerController : MonoBehaviour {
         {
             if (horizontal != 0 || vertical != 0)
             {
-                StartCoroutine(LightTrail(maxSpeed * .75f));
+                StartCoroutine(LightTrail(lightFrequency));
             }
         }
     }
@@ -93,7 +94,7 @@ public class PlayerController : MonoBehaviour {
     {
         allowLight = false;
 
-        movingLightClone = Instantiate(movingLight, transform.position, transform.rotation) as GameObject;
+        movingLightClone = Instantiate(movingLight, transform.position, transform.rotation);
         GameObject.Destroy(movingLightClone, 3);
 
         WaitForSeconds delay = new WaitForSeconds(frequency);

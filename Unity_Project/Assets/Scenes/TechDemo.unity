@@ -2809,6 +2809,7 @@ MonoBehaviour:
   horizontal: 0
   vertical: 0
   maxSpeed: 2.5
+  lightFrequency: 0.25
   foodDrop: {fileID: 1091561412272928, guid: 29adc4105e5e18f429b3b3a979e6b309, type: 2}
   carryingFood: {fileID: 1091561412272928, guid: 1ff75b99519bd8545be85e95d796e031,
     type: 2}
