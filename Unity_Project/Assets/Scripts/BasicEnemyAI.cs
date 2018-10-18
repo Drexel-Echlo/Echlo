@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -20,9 +20,10 @@ public class BasicEnemyAI : MonoBehaviour {
     // Update is called once per frame
     void Update () {
         if (state == STATE.Wait) {
-
-        } else if (state == STATE.Follow) {
+        }
+        else if (state == STATE.Follow) {
             if (Vector3.Distance(target, transform.position) < 0.01f) {
+            if (Vector3.Distance(target, transform.position) < 0.5f) {
                 state = STATE.Wait;
             } else {
                 transform.LookAt(new Vector3(target.x, transform.position.y, target.z));
