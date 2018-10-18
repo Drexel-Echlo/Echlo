@@ -13,45 +13,37 @@ public class PlayerRotator : MonoBehaviour {
         {
             return;
         }
-        // UP
         else if (player.vertical > 0 && player.horizontal == 0)
         {
-            this.gameObject.transform.eulerAngles = new Vector3(0, 0, 0);
+            this.gameObject.transform.eulerAngles = new Vector3(90, transform.rotation.y, 90);
         }
-        // DOWN
         else if (player.vertical < 0 && player.horizontal == 0)
         {
-            this.gameObject.transform.eulerAngles = new Vector3(0, 180, 0);
+            this.gameObject.transform.eulerAngles = new Vector3(90, transform.rotation.y, 270);
         }
-        // RIGHT
         else if (player.horizontal > 0 && player.vertical == 0)
         {
-            this.gameObject.transform.eulerAngles = new Vector3(0, 90, 0);
+            this.gameObject.transform.eulerAngles = new Vector3(90, transform.rotation.y, 0);
         }
-        // LEFT
         else if (player.horizontal < 0 && player.vertical == 0)
         {
-            this.gameObject.transform.eulerAngles = new Vector3(0, 270, 0);
+            this.gameObject.transform.eulerAngles = new Vector3(90, transform.rotation.y, 180);
         }
-        // UP RIGHT
         else if (player.horizontal > 0 && player.vertical > 0)
         {
-            this.gameObject.transform.eulerAngles = new Vector3(0, 45, 0);
+            this.gameObject.transform.eulerAngles = new Vector3(90, transform.rotation.y, 45);
         }
-        // UP LEFT
         else if (player.horizontal < 0 && player.vertical > 0)
         {
-            this.gameObject.transform.eulerAngles = new Vector3(0, 315, 0);
+            this.gameObject.transform.eulerAngles = new Vector3(90, transform.rotation.y, 135);
         }
-        // DOWN LEFT
         else if (player.horizontal < 0 && player.vertical < 0)
         {
-            this.gameObject.transform.eulerAngles = new Vector3(0, 225, 0);
+            this.gameObject.transform.eulerAngles = new Vector3(90, transform.rotation.y, 225);
         }
-        // DOWN RIGHT
         else if (player.horizontal > 0 && player.vertical < 0)
         {
-            this.gameObject.transform.eulerAngles = new Vector3(0, 135, 0);
+            this.gameObject.transform.eulerAngles = new Vector3(90, transform.rotation.y, 315);
         }
         else
         {

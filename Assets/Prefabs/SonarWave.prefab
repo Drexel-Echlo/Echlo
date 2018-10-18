@@ -81,9 +81,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e9f3b11656a7aa438f54cb7705ed8a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 1684139783786102, guid: 7db6060c3a2335240b29ce0b599f6b98, type: 2}
-  foodExplosion: {fileID: 1684139783786102, guid: 30118d2785f436347801f01305c52561,
-    type: 2}
+  explosion: {fileID: 1768490347622486, guid: 1691317aceb65fe47b153106faf52ed7, type: 2}
   explodeDecay: 3
 --- !u!212 &212236095346106120
 SpriteRenderer:
