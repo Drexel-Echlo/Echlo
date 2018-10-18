@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour {
     public Rigidbody rb;
 
     public Transform mouth;
+    public Transform lightSpawn;
 
     public float horizontal;
     public float vertical;
@@ -94,7 +95,7 @@ public class PlayerController : MonoBehaviour {
     {
         allowLight = false;
 
-        movingLightClone = Instantiate(movingLight, transform.position, transform.rotation);
+        movingLightClone = Instantiate(movingLight, lightSpawn.position, transform.rotation);
         GameObject.Destroy(movingLightClone, 3);
 
         WaitForSeconds delay = new WaitForSeconds(frequency);
