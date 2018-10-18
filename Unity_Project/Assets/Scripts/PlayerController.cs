@@ -16,6 +16,10 @@ public class PlayerController : MonoBehaviour {
     public GameObject carryingFood;
     public GameObject carryingFoodClone;
 
+    private bool allowLight = true;
+    public GameObject movingLight;
+    public GameObject movingLightClone;
+
     public bool isCarryingFood;
     public bool isFoodCreated;
 
@@ -50,6 +54,13 @@ public class PlayerController : MonoBehaviour {
             isFoodCreated = false;
         }
 
+        if (allowLight)
+        {
+            if (horizontal != 0 || vertical != 0)
+            {
+                StartCoroutine(LightTrail(maxSpeed * .75f));
+            }
+        }
     }
 
     private void OnCollisionEnter (Collision other)
@@ -76,5 +87,18 @@ public class PlayerController : MonoBehaviour {
         {
             return;
         }
+    }
+
+    IEnumerator LightTrail(float frequency)
+    {
+        allowLight = false;
+
+        movingLightClone = Instantiate(movingLight, transform.position, transform.rotation) as GameObject;
+        GameObject.Destroy(movingLightClone, 3);
+
+        WaitForSeconds delay = new WaitForSeconds(frequency);
+        yield return delay;
+
+        allowLight = true;
     }
 }

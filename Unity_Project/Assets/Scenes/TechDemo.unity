@@ -2813,7 +2813,10 @@ MonoBehaviour:
   carryingFood: {fileID: 1091561412272928, guid: 1ff75b99519bd8545be85e95d796e031,
     type: 2}
   carryingFoodClone: {fileID: 0}
-  isCarryingFood: 1
+  movingLight: {fileID: 1684139783786102, guid: 80672033fc46bce49abf200df02e5e1a,
+    type: 2}
+  movingLightClone: {fileID: 0}
+  isCarryingFood: 0
   isFoodCreated: 0
 --- !u!54 &1849468972
 Rigidbody:
