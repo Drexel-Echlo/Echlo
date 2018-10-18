@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -22,7 +22,6 @@ public class BasicEnemyAI : MonoBehaviour {
         if (state == STATE.Wait) {
         }
         else if (state == STATE.Follow) {
-            if (Vector3.Distance(target, transform.position) < 0.01f) {
             if (Vector3.Distance(target, transform.position) < 0.5f) {
                 state = STATE.Wait;
             } else {
