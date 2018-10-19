@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
-    public Rigidbody rb;
+    
+	public GameObject player;
+	private PlayerRotator playerScript;
 
     public Transform mouth;
     public Transform lightSpawn;
 
-    public float horizontal;
-    public float vertical;
-    public float maxSpeed;
+	private float horizontal;
+	private float vertical;
+	public float speed;
     public float lightFrequency = 1f;
     
     public GameObject foodDrop;
@@ -27,15 +29,22 @@ public class PlayerController : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        rb = GetComponent<Rigidbody>();
+		playerScript = player.GetComponent<PlayerRotator>();
     }
-	
+
 	// Update is called once per frame
 	void Update () {
-
+		/*
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
         rb.velocity = new Vector3(horizontal * maxSpeed, rb.velocity.y, vertical * maxSpeed);
+		*/
+		float step = speed * Time.deltaTime;
+		if (Input.GetKey ("w")) {
+			transform.position = Vector3.MoveTowards (transform.position, playerScript.point, step);
+		} else if (Input.GetKey ("s")) {
+			transform.position = Vector3.MoveTowards (transform.position, playerScript.point, -step/4);
+		}
 
         if (isCarryingFood)
         {

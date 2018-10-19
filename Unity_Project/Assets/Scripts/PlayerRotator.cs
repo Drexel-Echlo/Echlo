@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerRotator : MonoBehaviour {
 
 	private Camera main;
+	public Vector3 point;
 
 	void Start () {
 		main = FindObjectOfType<Camera> ();
@@ -16,14 +17,14 @@ public class PlayerRotator : MonoBehaviour {
 		float rayLength;
 
 		if (gound.Raycast (cameraRay, out rayLength)) {
-			Vector3 point = cameraRay.GetPoint (rayLength);
+			point = cameraRay.GetPoint (rayLength);
 
 			//Debug.DrawLine (cameraRay.origin, point, Color.blue);
 
 			//Vector3 vec = new Vector3 (point.x - transform.position.x, 0, point.z - transform.position.z);
 			float angle = Mathf.Atan2 (point.x - transform.position.x, point.z - transform.position.z) * Mathf.Rad2Deg;
 
-			Debug.Log (angle);
+			//Debug.Log (point);
 
 			this.gameObject.transform.eulerAngles = new Vector3 (0, angle,transform.rotation.y);
 		}
