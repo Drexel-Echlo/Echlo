@@ -2836,7 +2836,7 @@ MonoBehaviour:
   player: {fileID: 949387371}
   mouth: {fileID: 534407772}
   lightSpawn: {fileID: 1497881354}
-  speed: 5
+  speed: 3.75
   lightFrequency: 1.1
   foodDrop: {fileID: 1091561412272928, guid: 29adc4105e5e18f429b3b3a979e6b309, type: 2}
   carryingFood: {fileID: 1091561412272928, guid: 1ff75b99519bd8545be85e95d796e031,
