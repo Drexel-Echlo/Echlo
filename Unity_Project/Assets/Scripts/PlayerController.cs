@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour {
 		float step = speed * Time.deltaTime;
 		if (Input.GetKey ("w")) {
 			transform.position = Vector3.MoveTowards (transform.position, playerScript.point, step);
-		} else if (Input.GetKey ("s")) {
+		} else if (Input.GetKey("s")) {
 			transform.position = Vector3.MoveTowards (transform.position, playerScript.point, -step/4);
 		}
 
@@ -65,12 +65,9 @@ public class PlayerController : MonoBehaviour {
             isFoodCreated = false;
         }
 
-        if (allowLight)
+        if (allowLight && (Input.GetKey("w") || Input.GetKey("s")))
         {
-            if (horizontal != 0 || vertical != 0)
-            {
-                StartCoroutine(LightTrail(lightFrequency));
-            }
+            StartCoroutine(LightTrail(lightFrequency));
         }
     }
 
