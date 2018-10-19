@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour {
         rb.velocity = new Vector3(horizontal * maxSpeed, rb.velocity.y, vertical * maxSpeed);
 		*/
 		float step = speed * Time.deltaTime;
-		if (Input.GetKey ("w")) {
+		if (Input.GetKey("w")) {
 			transform.position = Vector3.MoveTowards (transform.position, playerScript.point, step);
 		} else if (Input.GetKey("s")) {
 			transform.position = Vector3.MoveTowards (transform.position, playerScript.point, -step/4);

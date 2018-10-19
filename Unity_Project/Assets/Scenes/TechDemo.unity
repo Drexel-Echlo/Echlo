@@ -2833,7 +2833,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4033840e014fc47a2fd7b070db7312, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 949387371}
   mouth: {fileID: 534407772}
   lightSpawn: {fileID: 1497881354}
   speed: 5
