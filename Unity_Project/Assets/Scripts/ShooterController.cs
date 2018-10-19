@@ -20,14 +20,10 @@ public class ShooterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0) && (allowFire))
+        if (Input.GetKeyDown(KeyCode.Mouse0) && allowFire)
         {
             sendOut.Play();
             StartCoroutine(WaveFire(fireRate));
-        }
-        else
-        {
-            return;
         }
     }
 

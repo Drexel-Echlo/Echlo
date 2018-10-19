@@ -7,12 +7,10 @@ public class BasicEnemyAI : MonoBehaviour {
     public float moveSpeed = 1;
 
     protected GameObject player;
-    protected Transform transform;
     protected STATE state = STATE.Wait;
     protected Vector3 target;
 	// Use this for initialization
 	void Start () {
-        transform = gameObject.transform;
         player = GameObject.FindWithTag("Player");
         state = STATE.Wait;
     }

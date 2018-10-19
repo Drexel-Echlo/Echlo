@@ -13,22 +13,16 @@ public class DestroyOnHit : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.layer == 11)
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Food"))
         {
             GameObject foodExplosionClone = Instantiate(foodExplosion, collisionPoint.position, transform.rotation);
             GameObject.Destroy(foodExplosionClone, explodeDecay);
-            Destroy(this.gameObject);
         }
         else if (collision.gameObject.tag == "LightEmUp")
         {
             GameObject explosionClone = Instantiate(explosion, collisionPoint.position, transform.rotation);
             GameObject.Destroy(explosionClone, explodeDecay);
-            Destroy(this.gameObject);
         }
-        
-        else
-        {
-            Destroy(this.gameObject);
-        }
+        Destroy(this.gameObject);
     }
 }
