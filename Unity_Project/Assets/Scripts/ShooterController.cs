@@ -2,11 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShooterController : MonoBehaviour
-{
+public class ShooterController : MonoBehaviour { 
+
+    public PlayerController player;
 
     public GameObject wave;
     public GameObject waveClone;
+
+    public GameObject foodSpit;
+    public GameObject foodSpitClone;
+
     public Transform shooter;
 
     public AudioSource sendOut;
@@ -15,21 +20,31 @@ public class ShooterController : MonoBehaviour
     public float fireRate;
     public float destroyTime;
 
-    private bool allowFire = true;
-
+    private bool allowWaveFire = true;
+    private bool allowSpitFire = true;
+    
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0) && allowFire)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && allowWaveFire)
         {
             sendOut.Play();
             StartCoroutine(WaveFire(fireRate));
+        }
+
+        if (Input.GetKeyDown(KeyCode.Mouse1) && allowSpitFire && player.isCarryingFood && !player.isHome)
+        {
+            StartCoroutine(SpitFire(fireRate));
+        }
+        else
+        {
+            return;
         }
     }
 
     IEnumerator WaveFire(float fireRate)
     {
-        allowFire = false;
+        allowWaveFire = false;
 
         waveClone = Instantiate(wave, shooter.position, shooter.rotation) as GameObject;
         waveClone.GetComponent<Rigidbody>().AddForce(transform.forward * shotPower);
@@ -38,6 +53,20 @@ public class ShooterController : MonoBehaviour
         WaitForSeconds delay = new WaitForSeconds(fireRate);
         yield return delay;
 
-        allowFire = true;
+        allowWaveFire = true;
+    }
+
+    IEnumerator SpitFire(float fireRate)
+    {
+        player.isCarryingFood = false;
+        allowSpitFire = false;
+
+        foodSpitClone = Instantiate(foodSpit, shooter.position, Quaternion.identity) as GameObject;
+        foodSpitClone.GetComponent<Rigidbody>().AddForce(transform.forward * (shotPower * 1.5f));
+
+        WaitForSeconds delay = new WaitForSeconds(fireRate);
+        yield return delay;
+
+        allowSpitFire = true;
     }
 }

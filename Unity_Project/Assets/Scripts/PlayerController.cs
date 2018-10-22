@@ -11,15 +11,14 @@ public class PlayerController : MonoBehaviour {
     public Transform mouth;
     public Transform lightSpawn;
 
-	private float horizontal;
-	private float vertical;
+	/*private float horizontal;
+	private float vertical;*/
 	public float speed;
     public float lightFrequency = 1f;
     
     public GameObject foodDrop;
     public GameObject carryingFood;
     public GameObject carryingFoodClone;
-    public GameObject vomitFood;
 
     private bool allowLight = true;
     public GameObject movingLight;
@@ -27,27 +26,35 @@ public class PlayerController : MonoBehaviour {
 
     public bool isCarryingFood;
     public bool isFoodCreated;
+    public bool isHome;
 
     // Use this for initialization
     void Start () {
 		playerScript = player.GetComponent<PlayerRotator>();
-
-        vomitFood = GameObject.Find("VomitFood");
     }
 
 	// Update is called once per frame
 	void FixedUpdate () {
 		
-        horizontal = Input.GetAxis("Horizontal");
+        /*horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
-        //rb.velocity = new Vector3(horizontal * maxSpeed, rb.velocity.y, vertical * maxSpeed);
+        rb.velocity = new Vector3(horizontal * maxSpeed, rb.velocity.y, vertical * maxSpeed);*/
 		
 		float step = speed * Time.deltaTime;
-		if (Input.GetKey ("w")) {
+
+        if (Input.GetKey("w"))
+        {
 			transform.position = Vector3.MoveTowards (transform.position, playerScript.point, step);
-		} else if (Input.GetKey("s")) {
+		}
+        else if (Input.GetKey("s"))
+        {
 			transform.position = Vector3.MoveTowards (transform.position, playerScript.point, -step/4);
 		}
+
+        if (allowLight && (Input.GetKey("w") || Input.GetKey("s")))
+        {
+            StartCoroutine(LightTrail(lightFrequency));
+        }
 
         if (isCarryingFood)
         {
@@ -67,14 +74,9 @@ public class PlayerController : MonoBehaviour {
             Destroy(carryingFoodClone);
             isFoodCreated = false;
         }
-
-        if (allowLight && (Input.GetKey("w") || Input.GetKey("s")))
-        {
-            StartCoroutine(LightTrail(lightFrequency));
-        }
     }
 
-    private void OnCollisionEnter (Collision other)
+    /**private void OnCollisionEnter (Collision other)
     {
         if (!isCarryingFood && other.gameObject.layer == 11)
         {
@@ -85,17 +87,18 @@ public class PlayerController : MonoBehaviour {
         {
             return;
         }
-    }
+    }*/
 
-    private void OnTriggerStay(Collider home)
+    private void OnTriggerStay(Collider c)
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isCarryingFood && home.gameObject.tag == "Home")
+        if (Input.GetKeyDown(KeyCode.Mouse1) && isCarryingFood && c.gameObject.tag == "Home")
         {
             isCarryingFood = false;
-            Instantiate(vomitFood, mouth.position, Quaternion.identity);
+            Instantiate(foodDrop, mouth.position, Quaternion.identity);
+            
             // The Home Tag is good, because vomiting to baby fish while home will is 1/3 of completing a level.
             //I was also thinking you could vommit when ever, but not add to level score etc.
-            /*if (Input.GetKeyDown(KeyCode.Space) && isCarryingFood && home.gameObject.tag == "Home")
+            /*if (Input.GetKeyDown(KeyCode.Mouse1) && isCarryingFood && c.gameObject.tag == "Home")
                 {
                 isCarryingFood = false;
                 Instantiate(vomitFood, mouth.position, Quaternion.identity);
@@ -107,9 +110,37 @@ public class PlayerController : MonoBehaviour {
                 Instantiate(vomitFood, mouth.position, Quaternion.identity);
                 }*/
         }
+        else if (!isCarryingFood && c.gameObject.tag == "FoodPickupRadius")
+        {
+            if (Input.GetKeyDown(KeyCode.Mouse1))
+            {
+                isCarryingFood = true;
+                Destroy(c.transform.parent.gameObject);
+            }
+            else
+            {
+                return;
+            }
+        }
         else
         {
             return;
+        }
+    }
+
+    private void OnTriggerEnter(Collider c)
+    {
+        if (c.gameObject.tag == "Home")
+        {
+            isHome = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider c)
+    {
+        if (c.gameObject.tag == "Home")
+        {
+            isHome = false;
         }
     }
 

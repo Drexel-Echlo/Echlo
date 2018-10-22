@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BasicEnemyAI : MonoBehaviour {
+
     protected enum STATE { Wait, Follow };
     public float moveSpeed = 1;
 
