@@ -24,6 +24,8 @@ GameObject:
   - component: {fileID: 54138684501170354}
   - component: {fileID: 198137951106758902}
   - component: {fileID: 114450052625521302}
+  - component: {fileID: 114627438457351846}
+  - component: {fileID: 114279111970598962}
   m_Layer: 12
   m_Name: VomitFood
   m_TagString: Untagged
@@ -59,6 +61,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
+--- !u!114 &114279111970598962
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1039277364745240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf3f1f4e874d5a2468c977554d478cb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114450052625521302
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -71,6 +84,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   food: {fileID: 1091561412272928, guid: ffd03e6bd76f6ab43901db73b4c6aea9, type: 2}
+--- !u!114 &114627438457351846
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1039277364745240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cb6441043092404b8170930ea4c0fda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 54138684501170354}
 --- !u!135 &135179106853153916
 SphereCollider:
   m_ObjectHideFlags: 1

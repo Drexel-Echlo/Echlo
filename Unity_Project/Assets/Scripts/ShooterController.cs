@@ -12,6 +12,8 @@ public class ShooterController : MonoBehaviour {
     public GameObject foodSpit;
     public GameObject foodSpitClone;
 
+    public GameObject food;
+
     public Transform shooter;
 
     public AudioSource sendOut;
@@ -24,7 +26,7 @@ public class ShooterController : MonoBehaviour {
     private bool allowSpitFire = true;
     
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (Input.GetKeyDown(KeyCode.Mouse0) && allowWaveFire)
         {
@@ -62,11 +64,17 @@ public class ShooterController : MonoBehaviour {
         allowSpitFire = false;
 
         foodSpitClone = Instantiate(foodSpit, shooter.position, Quaternion.identity) as GameObject;
-        foodSpitClone.GetComponent<Rigidbody>().AddForce(transform.forward * (shotPower * 1.5f));
+        foodSpitClone.GetComponent<Rigidbody>().AddForce(transform.forward * (shotPower));
+        GameObject.Destroy(foodSpitClone, destroyTime);
 
         WaitForSeconds delay = new WaitForSeconds(fireRate);
         yield return delay;
 
         allowSpitFire = true;
+
+        WaitForSeconds delay02 = new WaitForSeconds(fireRate -.05f);
+        yield return delay02;
+
+        Instantiate(food, foodSpitClone.transform.position, Quaternion.identity);
     }
 }
