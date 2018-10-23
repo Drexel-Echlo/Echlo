@@ -11,8 +11,6 @@ public class PlayerController : MonoBehaviour {
     public Transform mouth;
     public Transform lightSpawn;
 
-	/*private float horizontal;
-	private float vertical;*/
 	public float speed;
     public float lightFrequency = 1f;
     
@@ -35,10 +33,6 @@ public class PlayerController : MonoBehaviour {
 
 	// Update is called once per frame
 	void FixedUpdate () {
-		
-        /*horizontal = Input.GetAxis("Horizontal");
-        vertical = Input.GetAxis("Vertical");
-        rb.velocity = new Vector3(horizontal * maxSpeed, rb.velocity.y, vertical * maxSpeed);*/
 		
 		float step = speed * Time.deltaTime;
 
@@ -63,11 +57,7 @@ public class PlayerController : MonoBehaviour {
                 carryingFoodClone = Instantiate(carryingFood, new Vector3(transform.position.x - 1.2f, 2, transform.position.z), Quaternion.identity) as GameObject;
                 carryingFoodClone.transform.parent = gameObject.transform;
                 isFoodCreated = true;
-            }
-            else
-            {
-                return;
-            }
+             }
         }
         else
         {
@@ -76,18 +66,14 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
-    /**private void OnCollisionEnter (Collision other)
+    private void OnCollisionEnter (Collision other)
     {
-        if (!isCarryingFood && other.gameObject.layer == 11)
+        if (!isCarryingFood && other.gameObject.layer == LayerMask.NameToLayer("Food"))
         {
             isCarryingFood = true;
             Destroy(other.gameObject);
         }
-        else
-        {
-            return;
-        }
-    }*/
+    }
 
     private void OnTriggerStay(Collider c)
     {
@@ -117,14 +103,6 @@ public class PlayerController : MonoBehaviour {
                 isCarryingFood = true;
                 Destroy(c.transform.parent.gameObject);
             }
-            else
-            {
-                return;
-            }
-        }
-        else
-        {
-            return;
         }
     }
 
