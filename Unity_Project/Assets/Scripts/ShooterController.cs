@@ -34,7 +34,7 @@ public class ShooterController : MonoBehaviour {
             StartCoroutine(WaveFire(fireRate));
         }
 
-        if (Input.GetKeyDown(KeyCode.Mouse1) && allowSpitFire && player.isCarryingFood && !player.isHome)
+        if (Input.GetKeyDown(KeyCode.Mouse1) && allowSpitFire && player.carryCount != 0 && !player.isHome)
         {
             StartCoroutine(SpitFire(fireRate));
         }
@@ -60,7 +60,7 @@ public class ShooterController : MonoBehaviour {
 
     IEnumerator SpitFire(float fireRate)
     {
-        player.isCarryingFood = false;
+        player.carryCount--;
         allowSpitFire = false;
 
         foodSpitClone = Instantiate(foodSpit, shooter.position, Quaternion.identity) as GameObject;

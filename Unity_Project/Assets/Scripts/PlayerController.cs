@@ -8,27 +8,31 @@ public class PlayerController : MonoBehaviour {
 	public GameObject player;
 	private PlayerRotator playerScript;
 
+    public TraitSystem trait;
+
     public Transform mouth;
     public Transform lightSpawn;
 
 	public float speed;
     public float lightFrequency = 1f;
-    
+
+    public int carryCount;
+
     public GameObject foodDrop;
     public GameObject carryingFood;
-    public GameObject carryingFoodClone;
+    public GameObject[] carryingFoodClone = new GameObject[3];
 
     private bool allowLight = true;
     public GameObject movingLight;
     public GameObject movingLightClone;
-
-    public bool isCarryingFood;
+    
     public bool isFoodCreated;
     public bool isHome;
 
     // Use this for initialization
     void Start () {
 		playerScript = player.GetComponent<PlayerRotator>();
+        trait = GameObject.Find("TraitManager").GetComponent<TraitSystem>();
     }
 
 	// Update is called once per frame
@@ -50,36 +54,96 @@ public class PlayerController : MonoBehaviour {
             StartCoroutine(LightTrail(lightFrequency));
         }
 
-        if (isCarryingFood)
+        /* if (carryCount != 0)
+         {
+             if (!isFoodCreated)
+             {
+                 carryingFoodClone = Instantiate(carryingFood, new Vector3(transform.position.x - 1.2f, 2, transform.position.z), Quaternion.identity) as GameObject;
+                 carryingFoodClone.transform.parent = gameObject.transform;
+                 isFoodCreated = true;
+              }
+         }
+         else
+         {
+             Destroy(carryingFoodClone);
+             isFoodCreated = false;
+         }*/
+
+        if (carryCount == 3 && carryingFoodClone[2] == null)
         {
-            if (!isFoodCreated)
+            for (int i = 0; i < 3; i++)
             {
-                carryingFoodClone = Instantiate(carryingFood, new Vector3(transform.position.x - 1.2f, 2, transform.position.z), Quaternion.identity) as GameObject;
-                carryingFoodClone.transform.parent = gameObject.transform;
-                isFoodCreated = true;
-             }
+                if (carryingFoodClone[i] != null)
+                {
+                    Destroy(carryingFoodClone[i]);
+                }
+                carryingFoodClone[i] = null;
+            }
+            carryingFoodClone[0] = Instantiate(carryingFood, new Vector3(transform.position.x - 1.2f, 2, transform.position.z), Quaternion.identity) as GameObject;
+            carryingFoodClone[0].transform.parent = gameObject.transform;
+
+            carryingFoodClone[1] = Instantiate(carryingFood, new Vector3(transform.position.x - .7f, 2, transform.position.z - .2f), Quaternion.identity) as GameObject;
+            carryingFoodClone[1].transform.parent = gameObject.transform;
+
+            carryingFoodClone[2] = Instantiate(carryingFood, new Vector3(transform.position.x - .7f, 2, transform.position.z + .2f), Quaternion.identity) as GameObject;
+            carryingFoodClone[2].transform.parent = gameObject.transform;
         }
-        else
+        if (carryCount == 2 && (carryingFoodClone[1] == null || (carryingFoodClone[1] != null && carryingFoodClone[2] != null)))
         {
-            Destroy(carryingFoodClone);
-            isFoodCreated = false;
+            for (int i = 0; i < 3; i++)
+            {
+                if (carryingFoodClone[i] != null)
+                {
+                    Destroy(carryingFoodClone[i]);
+                }
+                carryingFoodClone[i] = null;
+            }
+            carryingFoodClone[0] = Instantiate(carryingFood, new Vector3(transform.position.x - 1.2f, 2, transform.position.z), Quaternion.identity) as GameObject;
+            carryingFoodClone[0].transform.parent = gameObject.transform;
+
+            carryingFoodClone[1] = Instantiate(carryingFood, new Vector3(transform.position.x - .7f, 2, transform.position.z - .2f), Quaternion.identity) as GameObject;
+            carryingFoodClone[1].transform.parent = gameObject.transform;
+        }
+        if (carryCount == 1 && (carryingFoodClone[0] == null || (carryingFoodClone[0] != null && carryingFoodClone[1] != null)))
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                if (carryingFoodClone[i] != null)
+                {
+                    Destroy(carryingFoodClone[i]);
+                }
+                carryingFoodClone[i] = null;
+            }
+            carryingFoodClone[0] = Instantiate(carryingFood, new Vector3(transform.position.x - 1.2f, 2, transform.position.z), Quaternion.identity) as GameObject;
+            carryingFoodClone[0].transform.parent = gameObject.transform;
+        }
+        if (carryCount == 0)
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                if (carryingFoodClone[i] != null)
+                {
+                    Destroy(carryingFoodClone[i]);
+                }
+                carryingFoodClone[i] = null;
+            }
         }
     }
 
-    /*private void OnCollisionEnter (Collision other)
+    private void OnCollisionEnter (Collision other)
     {
-        if (!isCarryingFood && other.gameObject.layer == LayerMask.NameToLayer("Food"))
+        if (carryCount < trait.maxCarry && other.gameObject.layer == LayerMask.NameToLayer("Food"))
         {
-            isCarryingFood = true;
+            carryCount++;
             Destroy(other.gameObject);
         }
-    }*/
+    }
 
     private void OnTriggerStay(Collider c)
     {
-        if (Input.GetKeyDown(KeyCode.Mouse1) && isCarryingFood && c.gameObject.tag == "Home")
+        if (Input.GetKeyDown(KeyCode.Mouse1) && carryCount != 0 && c.gameObject.tag == "Home")
         {
-            isCarryingFood = false;
+            carryCount--;
             Instantiate(foodDrop, mouth.position, Quaternion.identity);
             
             // The Home Tag is good, because vomiting to baby fish while home will is 1/3 of completing a level.
@@ -96,11 +160,11 @@ public class PlayerController : MonoBehaviour {
                 Instantiate(vomitFood, mouth.position, Quaternion.identity);
                 }*/
         }
-        else if (!isCarryingFood && c.gameObject.tag == "FoodPickupRadius")
+        else if (carryCount < trait.maxCarry && c.gameObject.tag == "FoodPickupRadius")
         {
             if (Input.GetKeyDown(KeyCode.Mouse1))
             {
-                isCarryingFood = true;
+                carryCount++;
                 Destroy(c.transform.parent.gameObject);
             }
         }
