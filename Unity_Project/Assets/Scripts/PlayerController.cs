@@ -66,14 +66,14 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
-    private void OnCollisionEnter (Collision other)
+    /*private void OnCollisionEnter (Collision other)
     {
         if (!isCarryingFood && other.gameObject.layer == LayerMask.NameToLayer("Food"))
         {
             isCarryingFood = true;
             Destroy(other.gameObject);
         }
-    }
+    }*/
 
     private void OnTriggerStay(Collider c)
     {
