@@ -114,6 +114,8 @@ MonoBehaviour:
   explosion: {fileID: 1684139783786102, guid: 7db6060c3a2335240b29ce0b599f6b98, type: 2}
   foodExplosion: {fileID: 1684139783786102, guid: 30118d2785f436347801f01305c52561,
     type: 2}
+  enemyExplosion: {fileID: 1684139783786102, guid: 1759becf6cb0bfc4e845468c4b521c47,
+    type: 2}
   collisionPoint: {fileID: 4403372167999292}
   explodeDecay: 3
 --- !u!114 &114969468269726476

@@ -4139,8 +4139,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 949387371}
-  gamemanag: {fileID: 750745361}
-  trait: {fileID: 534345899}
+  gameManager: {fileID: 750745361}
+  traits: {fileID: 534345899}
   mouth: {fileID: 534407772}
   lightSpawn: {fileID: 1497881354}
   speed: 3.75
