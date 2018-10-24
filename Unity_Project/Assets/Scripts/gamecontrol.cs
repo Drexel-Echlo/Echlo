@@ -1,14 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class gamecontrol : MonoBehaviour {
 
-	//public GameObject food;
-	//public PlayerController player;
-	//public GameObject enemy;
+    public GameObject player;
+    //public PlayerController player;
+    //public GameObject enemy;
 
-	public bool gameOver;
+    public Text gameovertext;
+    public Text gamewintext;
+    public bool gameOver;
 	private bool restart;
 
 
@@ -24,10 +27,11 @@ public class gamecontrol : MonoBehaviour {
 
 
 		if (gameOver) {
-			Debug.Log (gameOver);
+            gameovertext.gameObject.SetActive(true);
 			restart = true;
-			Time.timeScale = 0;
-		}
+            Time.timeScale = 0;
+            Destroy(player);
+        }
 
 
 		if (restart){

@@ -144,7 +144,7 @@ public class PlayerController : MonoBehaviour {
         //check enemy touch the player
         if (other.gameObject.name == "Enemy")
         {
-            Debug.Log("Dead!!!!!!");
+            //Debug.Log("Dead!!!!!!");
             gameScript.gameOver = true;
         }
     }
