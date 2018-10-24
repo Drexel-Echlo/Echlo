@@ -142,7 +142,7 @@ public class PlayerController : MonoBehaviour {
         }
 
         //check enemy touch the player
-        if (other.gameObject.name == "Enemy")
+        if (other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
             //Debug.Log("Dead!!!!!!");
             gameScript.gameOver = true;

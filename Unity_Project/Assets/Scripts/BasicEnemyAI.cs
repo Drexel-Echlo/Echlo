@@ -38,4 +38,9 @@ public class BasicEnemyAI : MonoBehaviour {
             target = player.transform.position;
         }
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        target = transform.position;
+    }
 }
