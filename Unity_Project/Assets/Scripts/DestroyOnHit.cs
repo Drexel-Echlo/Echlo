@@ -6,6 +6,7 @@ public class DestroyOnHit : MonoBehaviour
 {
     public GameObject explosion;
     public GameObject foodExplosion;
+    public GameObject enemyExplosion;
 
     public Transform collisionPoint;
 
@@ -17,6 +18,11 @@ public class DestroyOnHit : MonoBehaviour
         {
             GameObject foodExplosionClone = Instantiate(foodExplosion, collisionPoint.position, transform.rotation);
             GameObject.Destroy(foodExplosionClone, explodeDecay);
+        }
+        else if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        {
+            GameObject enemyExplosionClone = Instantiate(enemyExplosion, collisionPoint.position, transform.rotation);
+            GameObject.Destroy(enemyExplosionClone, explodeDecay);
         }
         else if (collision.gameObject.tag == "LightEmUp")
         {
