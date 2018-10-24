@@ -100,11 +100,11 @@ public class PlayerController : MonoBehaviour {
 
     private void OnCollisionEnter (Collision other)
     {
-        /*if (carryCount < traits.maxCarry && other.gameObject.layer == LayerMask.NameToLayer("Food"))
+        if (carryCount < traits.maxCarry && other.gameObject.layer == LayerMask.NameToLayer("Food"))
         {
             carryCount++;
             Destroy(other.gameObject);
-        }*/
+        }
 
         //check if an enemy touches the player
         if (other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
@@ -133,11 +133,6 @@ public class PlayerController : MonoBehaviour {
                 isCarryingFood = false;
                 Instantiate(vomitFood, mouth.position, Quaternion.identity);
                 }*/
-        }
-        else if (Input.GetKeyDown(KeyCode.Mouse1) && carryCount < traits.maxCarry && c.gameObject.tag == "FoodPickupRadius")
-        {
-            carryCount++;
-            Destroy(c.transform.parent.gameObject);
         }
     }
 
