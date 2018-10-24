@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
-    
-	public GameObject player;
-	private PlayerRotator playerScript;
+
+    public GameObject player;
+    public GameObject gamemanag;
+    private PlayerRotator playerScript;
+    private gamecontrol gameScript;
 
     public TraitSystem trait;
 
@@ -32,6 +34,7 @@ public class PlayerController : MonoBehaviour {
     // Use this for initialization
     void Start () {
 		playerScript = player.GetComponent<PlayerRotator>();
+        gameScript = gamemanag.GetComponent<gamecontrol>();
         trait = GameObject.Find("TraitManager").GetComponent<TraitSystem>();
     }
 
@@ -136,6 +139,13 @@ public class PlayerController : MonoBehaviour {
         {
             carryCount++;
             Destroy(other.gameObject);
+        }
+
+        //check enemy touch the player
+        if (other.gameObject.name == "Enemy")
+        {
+            Debug.Log("Dead!!!!!!");
+            gameScript.gameOver = true;
         }
     }
 
