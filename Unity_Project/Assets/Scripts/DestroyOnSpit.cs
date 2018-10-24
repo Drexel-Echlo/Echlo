@@ -8,14 +8,10 @@ public class DestroyOnSpit : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.layer != 10)
+        if (collision.gameObject.layer != LayerMask.NameToLayer("Player"))
         {
             Instantiate(food, transform.position, Quaternion.identity);
-            Destroy(this.gameObject);
         }
-        else
-        {
-            Destroy(this.gameObject);
-        }
+        Destroy(this.gameObject);
     }
 }

@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class gamecontrol : MonoBehaviour {
 
@@ -24,8 +26,6 @@ public class gamecontrol : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-
 		if (gameOver) {
             gameovertext.gameObject.SetActive(true);
 			restart = true;
@@ -33,11 +33,8 @@ public class gamecontrol : MonoBehaviour {
             Destroy(player);
         }
 
-
-		if (restart){
-			if (Input.GetKeyDown (KeyCode.R)){
-				Application.LoadLevel (Application.loadedLevel);
-			}
+		if (restart && Input.anyKeyDown){
+			SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 		}
 	}
 }

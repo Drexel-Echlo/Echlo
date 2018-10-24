@@ -10,6 +10,7 @@ public class BasicEnemyAI : MonoBehaviour {
     protected GameObject player;
     protected STATE state = STATE.Wait;
     protected Vector3 target;
+
 	// Use this for initialization
 	void Start () {
         player = GameObject.FindWithTag("Player");
@@ -39,8 +40,12 @@ public class BasicEnemyAI : MonoBehaviour {
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision other)
     {
-        target = transform.position;
+        if (other.gameObject.layer != LayerMask.NameToLayer("Enemy"))
+        {
+            target = transform.position;
+            state = STATE.Wait;
+        }
     }
 }

@@ -38,17 +38,13 @@ public class ShooterController : MonoBehaviour {
         {
             StartCoroutine(SpitFire(fireRate));
         }
-        else
-        {
-            return;
-        }
     }
 
     IEnumerator WaveFire(float fireRate)
     {
         allowWaveFire = false;
 
-        waveClone = Instantiate(wave, shooter.position, shooter.rotation) as GameObject;
+        waveClone = Instantiate(wave, shooter.position, shooter.rotation);
         waveClone.GetComponent<Rigidbody>().AddForce(transform.forward * shotPower);
         GameObject.Destroy(waveClone, destroyTime);
 

@@ -19,9 +19,5 @@ public class SlowDownOverTime : MonoBehaviour {
         {
             rb.velocity -= new Vector3(rb.velocity.x * Time.deltaTime / 1.5f, rb.velocity.y, rb.velocity.z * Time.deltaTime / 1.5f);
         }
-        else
-        {
-            return;
-        }
 	}
 }

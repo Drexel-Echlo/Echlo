@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class LightDecay : MonoBehaviour {
 
-    public Light lit;
+    public Light light;
 
     public float decayRate;
 
     // Use this for initialization
     void Start () {
-        lit = GetComponent<Light>();
+        light = GetComponent<Light>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        lit.intensity -= decayRate;
+        light.intensity -= decayRate;
 	}
 }
