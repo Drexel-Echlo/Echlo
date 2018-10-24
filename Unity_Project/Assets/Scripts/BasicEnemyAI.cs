@@ -5,11 +5,16 @@ using UnityEngine;
 public class BasicEnemyAI : MonoBehaviour {
 
     protected enum STATE { Wait, Follow };
-    public float moveSpeed = 1;
+
+    public float moveSpeed;
+    public float cooldown;
 
     protected GameObject player;
     protected STATE state = STATE.Wait;
     protected Vector3 target;
+
+    [SerializeField]
+    private bool canDash = true;
 
 	// Use this for initialization
 	void Start () {
@@ -19,22 +24,26 @@ public class BasicEnemyAI : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        if (state == STATE.Wait) {
+        if (state == STATE.Wait)
+        {
         }
-        else if (state == STATE.Follow) {
-            if (Vector3.Distance(target, transform.position) < 0.5f) {
-                state = STATE.Wait;
-            } else {
-                transform.LookAt(new Vector3(target.x, transform.position.y, target.z));
 
-                transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
+        else if (state == STATE.Follow)
+        {
+            if (Vector3.Distance(target, transform.position) < 0.5f)
+            {
+                state = STATE.Wait;
+            }
+            else
+            {
+                StartCoroutine(ChasePlayer(cooldown));
             }
         }
 	}
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer.Equals(LayerMask.NameToLayer("Light"))) {
+        if (other.gameObject.layer.Equals(LayerMask.NameToLayer("Light")) && canDash) {
             state = STATE.Follow;
             target = player.transform.position;
         }
@@ -47,5 +56,18 @@ public class BasicEnemyAI : MonoBehaviour {
             target = transform.position;
             state = STATE.Wait;
         }
+    }
+
+    IEnumerator ChasePlayer(float cooldown)
+    {
+        canDash = false;
+
+        transform.LookAt(new Vector3(target.x, transform.position.y, target.z));
+        transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
+
+        WaitForSeconds delay = new WaitForSeconds(cooldown);
+        yield return delay;
+
+        canDash = true;
     }
 }

@@ -129,6 +129,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf3f1f4e874d5a2468c977554d478cb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scaleFactor: 2
+  isShrinking: 0
 --- !u!212 &212236095346106120
 SpriteRenderer:
   m_ObjectHideFlags: 1

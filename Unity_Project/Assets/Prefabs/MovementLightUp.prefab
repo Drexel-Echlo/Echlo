@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aae7440ba1ed74845b7c5081545ff64a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lit: {fileID: 108682860372981886}
+  light: {fileID: 108682860372981886}
   decayRate: 0.01
 --- !u!135 &135600034220166836
 SphereCollider:
@@ -118,5 +118,5 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.2
   m_Center: {x: 0, y: 0, z: 0}

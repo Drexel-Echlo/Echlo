@@ -162,7 +162,7 @@ public class PlayerController : MonoBehaviour {
         allowLight = false;
 
         movingLightClone = Instantiate(movingLight, lightSpawn.position, transform.rotation);
-        GameObject.Destroy(movingLightClone, 3);
+        GameObject.Destroy(movingLightClone, 2.5f);
 
         WaitForSeconds delay = new WaitForSeconds(frequency);
         yield return delay;
