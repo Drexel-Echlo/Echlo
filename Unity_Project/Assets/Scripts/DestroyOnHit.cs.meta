@@ -3,7 +3,11 @@ guid: 1e9f3b11656a7aa438f54cb7705ed8a9
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - explosion: {instanceID: 0}
+  - foodExplosion: {instanceID: 0}
+  - enemyExplosion: {instanceID: 0}
+  - collisionPoint: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
