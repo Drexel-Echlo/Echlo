@@ -331,6 +331,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6992206f19cf38a44b4838f12d06b374, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 8
-  cooldown: 1.5
+  moveSpeed: 10
+  cooldown: 1.25
   canDash: 1
