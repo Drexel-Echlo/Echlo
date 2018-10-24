@@ -157,6 +157,8 @@ public class PlayerController : MonoBehaviour {
         allowLight = false;
 
         movingLightClone = Instantiate(movingLight, lightSpawn.position, transform.rotation);
+        movingLightClone.AddComponent(typeof(PositionHolder));
+        movingLightClone.GetComponent<PositionHolder>().position = transform.position;
         GameObject.Destroy(movingLightClone, 2.5f);
 
         WaitForSeconds delay = new WaitForSeconds(frequency);

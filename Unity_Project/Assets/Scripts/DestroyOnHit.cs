@@ -14,20 +14,24 @@ public class DestroyOnHit : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        GameObject explosionClone = null;
         if (collision.gameObject.layer == LayerMask.NameToLayer("Food"))
         {
-            GameObject foodExplosionClone = Instantiate(foodExplosion, collisionPoint.position, transform.rotation);
-            GameObject.Destroy(foodExplosionClone, explodeDecay);
+            explosionClone = Instantiate(foodExplosion, collisionPoint.position, transform.rotation);
         }
         else if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
-            GameObject enemyExplosionClone = Instantiate(enemyExplosion, collisionPoint.position, transform.rotation);
-            GameObject.Destroy(enemyExplosionClone, explodeDecay);
+            explosionClone = Instantiate(enemyExplosion, collisionPoint.position, transform.rotation);
         }
         else if (collision.gameObject.tag == "LightEmUp")
         {
-            GameObject explosionClone = Instantiate(explosion, collisionPoint.position, transform.rotation);
+            explosionClone = Instantiate(explosion, collisionPoint.position, transform.rotation);
+        }
+        if (explosionClone != null)
+        {
             GameObject.Destroy(explosionClone, explodeDecay);
+            explosionClone.AddComponent(typeof(PositionHolder));
+            explosionClone.GetComponent<PositionHolder>().position = GetComponent<PositionHolder>().position;
         }
         Destroy(this.gameObject);
     }

@@ -27,7 +27,6 @@ public class BasicEnemyAI : MonoBehaviour {
         if (state == STATE.Wait)
         {
         }
-
         else if (state == STATE.Follow)
         {
             if (Vector3.Distance(target, transform.position) < 0.5f)
@@ -43,9 +42,9 @@ public class BasicEnemyAI : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer.Equals(LayerMask.NameToLayer("Light")) && canDash) {
+        if (state == STATE.Wait && other.gameObject.layer.Equals(LayerMask.NameToLayer("Light")) && canDash) {
             state = STATE.Follow;
-            target = player.transform.position;
+            target = other.gameObject.GetComponent<PositionHolder>().position;
         }
     }
 
