@@ -50,7 +50,7 @@ public class BasicEnemyAI : MonoBehaviour {
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.layer != LayerMask.NameToLayer("Enemy"))
+        if (other.gameObject.layer != LayerMask.NameToLayer("Enemy") && other.gameObject.layer != LayerMask.NameToLayer("SonarWave"))
         {
             target = transform.position;
             state = STATE.Wait;
