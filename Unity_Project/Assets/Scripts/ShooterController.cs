@@ -34,7 +34,7 @@ public class ShooterController : MonoBehaviour {
             StartCoroutine(WaveFire(fireRate));
         }
 
-        if (Input.GetKeyDown(KeyCode.Mouse1) && allowSpitFire && player.carryCount != 0 /*&& !player.isHome*/)
+        if (Input.GetKeyDown(KeyCode.Mouse1) && allowSpitFire && player.carryCount != 0 && !player.isHome)
         {
             StartCoroutine(SpitFire(fireRate));
         }
@@ -44,10 +44,12 @@ public class ShooterController : MonoBehaviour {
     {
         allowWaveFire = false;
 
-        waveClone = Instantiate(wave, shooter.position, shooter.rotation);
+        waveClone = Instantiate(wave, shooter.position, shooter.rotation) as GameObject;
         waveClone.GetComponent<Rigidbody>().AddForce(transform.forward * shotPower);
+
         waveClone.AddComponent(typeof(PositionHolder));
         waveClone.GetComponent<PositionHolder>().position = player.transform.position;
+
         GameObject.Destroy(waveClone, destroyTime);
 
         WaitForSeconds delay = new WaitForSeconds(fireRate);
@@ -65,14 +67,14 @@ public class ShooterController : MonoBehaviour {
         foodSpitClone.GetComponent<Rigidbody>().AddForce(transform.forward * (shotPower));
         GameObject.Destroy(foodSpitClone, destroyTime);
 
-        WaitForSeconds delay = new WaitForSeconds(fireRate);
+        WaitForSeconds spawnDelay = new WaitForSeconds(destroyTime - .05f);
+        yield return spawnDelay;
+
+        Instantiate(food, foodSpitClone.transform.position, Quaternion.identity);
+
+        WaitForSeconds delay = new WaitForSeconds(fireRate / 100);
         yield return delay;
 
         allowSpitFire = true;
-
-        WaitForSeconds delay02 = new WaitForSeconds(fireRate -.05f);
-        yield return delay02;
-
-        Instantiate(food, foodSpitClone.transform.position, Quaternion.identity);
     }
 }

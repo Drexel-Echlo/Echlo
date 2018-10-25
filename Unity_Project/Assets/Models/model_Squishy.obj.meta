@@ -1,28 +1,16 @@
 fileFormatVersion: 2
-guid: daeccd2a0972c6a4e912a7a35c20ca27
+guid: 0a1b2b8c037c8984aa774c8a2588e00e
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: bigEye_pCube1
-    100002: bigEye_pSphere1
-    100004: //RootNode
-    100006: pSphere2_bigEye
-    400000: bigEye_pCube1
-    400002: bigEye_pSphere1
-    400004: //RootNode
-    400006: pSphere2_bigEye
-    2100000: bigEye_pCube1Mat
-    2100002: bigEye_pSphere1Mat
-    2100004: pSphere2_bigEyeMat
-    2300000: bigEye_pCube1
-    2300002: bigEye_pSphere1
-    2300004: pSphere2_bigEye
-    3300000: bigEye_pCube1
-    3300002: bigEye_pSphere1
-    3300004: pSphere2_bigEye
-    4300000: bigEye_pCube1
-    4300002: bigEye_pSphere1
-    4300004: pSphere2_bigEye
+    100000: //RootNode
+    100002: pSphere1
+    400000: //RootNode
+    400002: pSphere1
+    2100000: pSphere1Mat
+    2300000: pSphere1
+    3300000: pSphere1
+    4300000: pSphere1
   externalObjects: {}
   materials:
     importMaterials: 1
