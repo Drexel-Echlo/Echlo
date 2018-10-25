@@ -74,5 +74,19 @@ public class ShooterController : MonoBehaviour {
         yield return delay;
         
         allowSpitFire = true;
+
+        WaitForSeconds delay02 = new WaitForSeconds(fireRate -.05f);
+        yield return delay02;
+
+        if (foodSpitClone != null)
+        {
+            Instantiate(food, foodSpitClone.transform.position, Quaternion.identity);
+            float time = destroyTime - fireRate - (fireRate - .05f);
+            if (time < 0)
+            {
+                time = 0;
+            }
+            GameObject.Destroy(foodSpitClone, time);
+        }
     }
 }

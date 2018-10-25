@@ -102,8 +102,8 @@ public class PlayerController : MonoBehaviour {
     {
         if (carryCount < traits.maxCarry && other.gameObject.layer == LayerMask.NameToLayer("Food"))
         {
-            carryCount++;
             Destroy(other.gameObject);
+            carryCount++;
         }
 
         //check if an enemy touches the player
