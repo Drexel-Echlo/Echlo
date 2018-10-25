@@ -39,7 +39,6 @@ public class checkfood : MonoBehaviour {
             }
         }
 
-        Debug.Log(this.transform.position);
         if (foodcount == foodneed)
         {
             gameScript.gameWin = true;
