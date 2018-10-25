@@ -1500,6 +1500,7 @@ MonoBehaviour:
   gameovertext: {fileID: 1784171135}
   gamewintext: {fileID: 2126764872}
   gameOver: 0
+  gameWin: 0
 --- !u!4 &750745363
 Transform:
   m_ObjectHideFlags: 0
@@ -2219,6 +2220,52 @@ Transform:
   m_Father: {fileID: 1462781208}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 138.30301, z: 0}
+--- !u!1001 &985161034
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4901986588636464, guid: ffd03e6bd76f6ab43901db73b4c6aea9, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 95.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 4901986588636464, guid: ffd03e6bd76f6ab43901db73b4c6aea9, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4901986588636464, guid: ffd03e6bd76f6ab43901db73b4c6aea9, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 31.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 4901986588636464, guid: ffd03e6bd76f6ab43901db73b4c6aea9, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4901986588636464, guid: ffd03e6bd76f6ab43901db73b4c6aea9, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4901986588636464, guid: ffd03e6bd76f6ab43901db73b4c6aea9, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4901986588636464, guid: ffd03e6bd76f6ab43901db73b4c6aea9, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4901986588636464, guid: ffd03e6bd76f6ab43901db73b4c6aea9, type: 2}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 1091561412272928, guid: ffd03e6bd76f6ab43901db73b4c6aea9, type: 2}
+      propertyPath: m_Name
+      value: Food (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ffd03e6bd76f6ab43901db73b4c6aea9, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1001 &1046178507
 Prefab:
   m_ObjectHideFlags: 0
@@ -2553,6 +2600,7 @@ GameObject:
   - component: {fileID: 1452372396}
   - component: {fileID: 1452372397}
   - component: {fileID: 1452372395}
+  - component: {fileID: 1452372398}
   m_Layer: 0
   m_Name: Home
   m_TagString: Home
@@ -2620,8 +2668,22 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 16.35
+  m_Radius: 7.48
   m_Center: {x: 0, y: -7.29, z: 0}
+--- !u!114 &1452372398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1452372394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f2716c62c49bf44ba5608c711b502ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  foodneed: 3
+  foodcount: 0
+  gameManager: {fileID: 750745361}
 --- !u!1 &1462781207
 GameObject:
   m_ObjectHideFlags: 0

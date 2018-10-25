@@ -10,7 +10,6 @@ public class ShooterController : MonoBehaviour {
     public GameObject waveClone;
 
     public GameObject foodSpit;
-    public GameObject foodSpitClone;
 
     public GameObject food;
 
@@ -63,9 +62,8 @@ public class ShooterController : MonoBehaviour {
         player.carryCount--;
         allowSpitFire = false;
 
-        foodSpitClone = Instantiate(foodSpit, shooter.position, Quaternion.identity) as GameObject;
+        GameObject foodSpitClone = Instantiate(foodSpit, shooter.position, Quaternion.identity);
         foodSpitClone.GetComponent<Rigidbody>().AddForce(transform.forward * (shotPower));
-        GameObject.Destroy(foodSpitClone, destroyTime);
 
         WaitForSeconds spawnDelay = new WaitForSeconds(destroyTime - .05f);
         yield return spawnDelay;
@@ -74,7 +72,7 @@ public class ShooterController : MonoBehaviour {
 
         WaitForSeconds delay = new WaitForSeconds(fireRate / 100);
         yield return delay;
-
+        
         allowSpitFire = true;
     }
 }
