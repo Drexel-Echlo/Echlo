@@ -14,7 +14,8 @@ public class gamecontrol : MonoBehaviour {
     public Text gameovertext;
     public Text gamewintext;
     public bool gameOver;
-	private bool restart;
+    public bool gameWin;
+    private bool restart;
 
 
 	// Use this for initialization
@@ -26,11 +27,15 @@ public class gamecontrol : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (gameOver) {
+        if (gameOver) {
             gameovertext.gameObject.SetActive(true);
-			restart = true;
+            restart = true;
             Time.timeScale = 0;
             Destroy(player);
+        } else if (gameWin) {
+            gamewintext.gameObject.SetActive(true);
+            restart = true;
+            Time.timeScale = 0;
         }
 
 		if (restart && Input.anyKeyDown){
