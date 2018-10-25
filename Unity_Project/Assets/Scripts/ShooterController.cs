@@ -34,7 +34,7 @@ public class ShooterController : MonoBehaviour {
             StartCoroutine(WaveFire(fireRate));
         }
 
-        if (Input.GetKeyDown(KeyCode.Mouse1) && allowSpitFire && player.carryCount != 0 && !player.isHome)
+        if (Input.GetKeyDown(KeyCode.Mouse1) && allowSpitFire && player.carryCount != 0 /*&& !player.isHome*/)
         {
             StartCoroutine(SpitFire(fireRate));
         }

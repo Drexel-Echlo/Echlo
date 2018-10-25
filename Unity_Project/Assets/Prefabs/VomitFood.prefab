@@ -72,8 +72,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf3f1f4e874d5a2468c977554d478cb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scaleFactor: 1
-  isShrinking: 0
+  scaleFactor: 0
+  isShrinking: 1
 --- !u!114 &114450052625521302
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -117,7 +117,7 @@ ParticleSystem:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1039277364745240}
   serializedVersion: 5
-  lengthInSec: 5
+  lengthInSec: 1
   simulationSpeed: 0.5
   stopAction: 0
   looping: 0
@@ -242,7 +242,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.57
+      scalar: 1
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -358,7 +358,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.1
+      scalar: 0.05
       minScalar: 1
       maxCurve:
         serializedVersion: 2
