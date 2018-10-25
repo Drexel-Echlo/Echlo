@@ -49,8 +49,6 @@ public class ShooterController : MonoBehaviour {
         waveClone.AddComponent(typeof(PositionHolder));
         waveClone.GetComponent<PositionHolder>().position = player.transform.position;
 
-        GameObject.Destroy(waveClone, destroyTime);
-
         WaitForSeconds delay = new WaitForSeconds(fireRate);
         yield return delay;
 
@@ -65,6 +63,11 @@ public class ShooterController : MonoBehaviour {
         GameObject foodSpitClone = Instantiate(foodSpit, shooter.position, Quaternion.identity);
         foodSpitClone.GetComponent<Rigidbody>().AddForce(transform.forward * (shotPower));
 
+        WaitForSeconds delay = new WaitForSeconds(fireRate);
+        yield return delay;
+
+        allowSpitFire = true;
+
         WaitForSeconds spawnDelay = new WaitForSeconds(destroyTime);
         yield return spawnDelay;
 
@@ -73,10 +76,5 @@ public class ShooterController : MonoBehaviour {
             Instantiate(food, foodSpitClone.transform.position, Quaternion.identity);
             GameObject.Destroy(foodSpitClone, .1f);
         }
-
-        WaitForSeconds delay = new WaitForSeconds(fireRate / 100);
-        yield return delay;
-        
-        allowSpitFire = true;
     }
 }

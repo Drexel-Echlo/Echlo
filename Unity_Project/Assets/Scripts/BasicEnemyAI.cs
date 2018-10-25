@@ -29,7 +29,7 @@ public class BasicEnemyAI : MonoBehaviour {
         }
         else if (state == STATE.Follow)
         {
-            if (Vector3.Distance(target, transform.position) < 0.5f)
+            if (Vector3.Distance(target, transform.position) < 1f)
             {
                 state = STATE.Wait;
             }
@@ -60,7 +60,7 @@ public class BasicEnemyAI : MonoBehaviour {
     IEnumerator ChasePlayer(float cooldown)
     {
         canDash = false;
-
+       
         transform.LookAt(new Vector3(target.x, transform.position.y, target.z));
         transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
 
