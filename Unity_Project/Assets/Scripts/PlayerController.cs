@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour {
 
     public Transform mouth;
     public Transform lightSpawn;
+    public Transform[] foodPoints;
 
 	public float speed;
     public float lightFrequency = 1f;
@@ -79,17 +80,17 @@ public class PlayerController : MonoBehaviour {
 
         if (count > 0)
         {
-            carryingFoodClone[0] = Instantiate(carryingFood, new Vector3(transform.position.x - 1.2f, 2, transform.position.z), Quaternion.identity);
+            carryingFoodClone[0] = Instantiate(carryingFood, foodPoints[0].position, Quaternion.identity);
         }
    
         if (count > 1)
         {
-            carryingFoodClone[1] = Instantiate(carryingFood, new Vector3(transform.position.x - .7f, 2, transform.position.z - .2f), Quaternion.identity);
+            carryingFoodClone[1] = Instantiate(carryingFood, foodPoints[1].position, Quaternion.identity);
         }
 
         if (count > 2)
         {
-            carryingFoodClone[2] = Instantiate(carryingFood, new Vector3(transform.position.x - .7f, 2, transform.position.z + .2f), Quaternion.identity);
+            carryingFoodClone[2] = Instantiate(carryingFood, foodPoints[2].position, Quaternion.identity);
         }
 
         for (int i = 0; i < count; i++)
