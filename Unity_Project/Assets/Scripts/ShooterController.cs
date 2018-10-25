@@ -63,7 +63,6 @@ public class ShooterController : MonoBehaviour {
 
         foodSpitClone = Instantiate(foodSpit, shooter.position, Quaternion.identity) as GameObject;
         foodSpitClone.GetComponent<Rigidbody>().AddForce(transform.forward * (shotPower));
-        GameObject.Destroy(foodSpitClone, destroyTime);
 
         WaitForSeconds delay = new WaitForSeconds(fireRate);
         yield return delay;
@@ -74,5 +73,11 @@ public class ShooterController : MonoBehaviour {
         yield return delay02;
 
         Instantiate(food, foodSpitClone.transform.position, Quaternion.identity);
+        float time = destroyTime - fireRate - (fireRate - .05f);
+        if (time < 0)
+        {
+            time = 0;
+        }
+        GameObject.Destroy(foodSpitClone, time);
     }
 }
