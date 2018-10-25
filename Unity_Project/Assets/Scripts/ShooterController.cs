@@ -68,8 +68,6 @@ public class ShooterController : MonoBehaviour {
         WaitForSeconds spawnDelay = new WaitForSeconds(destroyTime - .05f);
         yield return spawnDelay;
 
-        Instantiate(food, foodSpitClone.transform.position, Quaternion.identity);
-
         WaitForSeconds delay = new WaitForSeconds(fireRate / 100);
         yield return delay;
         
@@ -81,7 +79,7 @@ public class ShooterController : MonoBehaviour {
         if (foodSpitClone != null)
         {
             Instantiate(food, foodSpitClone.transform.position, Quaternion.identity);
-            float time = destroyTime - fireRate - (fireRate - .05f);
+            float time = destroyTime - (fireRate / 100) - (fireRate - .05f);
             if (time < 0)
             {
                 time = 0;
