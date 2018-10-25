@@ -1870,7 +1870,7 @@ MonoBehaviour:
   shooter: {fileID: 1799538440}
   sendOut: {fileID: 949387375}
   shotPower: 150
-  fireRate: 1.5
+  fireRate: 0
   destroyTime: 3
 --- !u!114 &949387374
 MonoBehaviour:
