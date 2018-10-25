@@ -94,7 +94,7 @@ public class PlayerController : MonoBehaviour {
 
         for (int i = 0; i < count; i++)
         {
-            carryingFoodClone[i].transform.parent = gameObject.transform;
+            carryingFoodClone[i].transform.parent = player.transform;
         }
     }
 
