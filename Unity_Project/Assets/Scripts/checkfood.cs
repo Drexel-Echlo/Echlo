@@ -2,19 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class checkfood : MonoBehaviour {
+public class CheckFood : MonoBehaviour {
 
     public int foodneed;
     public int foodcount;
     public GameObject gameManager;
-    private gamecontrol gameScript;
+    private GameControl gameScript;
 
     private GameObject[] list;
     private GameObject[] foodlist;
 
     // Use this for initialization
     void Start () {
-        gameScript = gameManager.GetComponent<gamecontrol>();
+        gameScript = gameManager.GetComponent<GameControl>();
         foodcount = 0;
     }
 	

@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour {
     public GameObject player;
     public GameObject gameManager;
     private PlayerRotator rotationScript;
-    private gamecontrol gameScript;
+    private GameControl gameScript;
 
     public TraitSystem traits;
 
@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour {
     // Use this for initialization
     void Start () {
 		rotationScript = player.GetComponent<PlayerRotator>();
-        gameScript = gameManager.GetComponent<gamecontrol>();
+        gameScript = gameManager.GetComponent<GameControl>();
         traits = GameObject.Find("TraitManager").GetComponent<TraitSystem>();
     }
 

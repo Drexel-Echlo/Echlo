@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 
-public class gamecontrol : MonoBehaviour {
+public class GameControl : MonoBehaviour {
 
     public GameObject player;
     //public PlayerController player;
