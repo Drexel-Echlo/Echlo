@@ -100,7 +100,7 @@ public class PlayerController : MonoBehaviour {
 
     private void OnCollisionEnter (Collision other)
     {
-        if (carryCount < traits.maxCarry && other.gameObject.layer == LayerMask.NameToLayer("Food"))
+        if (carryCount < traits.maxCarry && other.gameObject.layer == LayerMask.NameToLayer("Food") && !isHome)
         {
             Destroy(other.gameObject);
             carryCount++;
