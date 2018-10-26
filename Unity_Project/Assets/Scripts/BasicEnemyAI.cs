@@ -4,17 +4,14 @@ using UnityEngine;
 
 public class BasicEnemyAI : MonoBehaviour {
 
-    protected enum STATE { Wait, Follow };
+    protected enum STATE { Wait, Follow, Trail };
 
     public float moveSpeed;
-    public float cooldown;
 
     protected GameObject player;
     protected STATE state = STATE.Wait;
     protected Vector3 target;
-
-    [SerializeField]
-    private bool canDash = true;
+    protected float trailSpeed;
 
 	// Use this for initialization
 	void Start () {
@@ -29,20 +26,32 @@ public class BasicEnemyAI : MonoBehaviour {
         }
         else if (state == STATE.Follow)
         {
-            if (Vector3.Distance(target, transform.position) < 1f)
+            if (Vector3.Distance(target, transform.position) < 2)
             {
-                state = STATE.Wait;
+                state = STATE.Trail;
+                trailSpeed = moveSpeed;
             }
             else
             {
-                StartCoroutine(ChasePlayer(cooldown));
+                transform.LookAt(new Vector3(target.x, transform.position.y, target.z));
+                transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
+            }
+        } else if (state == STATE.Trail)
+        {
+            if (trailSpeed > 1)
+            {
+                transform.Translate(Vector3.forward * trailSpeed * Time.deltaTime);
+                trailSpeed *= 0.99f;
+            } else
+            {
+                state = STATE.Wait;
             }
         }
-	}
+    }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (state == STATE.Wait && other.gameObject.layer.Equals(LayerMask.NameToLayer("Light")) && canDash) {
+        if (state == STATE.Wait && other.gameObject.layer.Equals(LayerMask.NameToLayer("Light")) && state == STATE.Wait) {
             state = STATE.Follow;
             target = other.gameObject.GetComponent<PositionHolder>().position;
         }
@@ -55,18 +64,5 @@ public class BasicEnemyAI : MonoBehaviour {
             target = transform.position;
             state = STATE.Wait;
         }
-    }
-
-    IEnumerator ChasePlayer(float cooldown)
-    {
-        canDash = false;
-       
-        transform.LookAt(new Vector3(target.x, transform.position.y, target.z));
-        transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
-
-        WaitForSeconds delay = new WaitForSeconds(cooldown);
-        yield return delay;
-
-        canDash = true;
     }
 }
