@@ -21,38 +21,25 @@ public class ShooterController : MonoBehaviour {
     public float fireRate;
     public float destroyTime;
 
-    private bool allowWaveFire = true;
     private bool allowSpitFire = true;
     
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0) && allowWaveFire)
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             sendOut.Play();
-            StartCoroutine(WaveFire(fireRate));
+            waveClone = Instantiate(wave, shooter.position, shooter.rotation) as GameObject;
+            waveClone.GetComponent<Rigidbody>().AddForce(transform.forward * shotPower);
+
+            waveClone.AddComponent(typeof(PositionHolder));
+            waveClone.GetComponent<PositionHolder>().position = player.transform.position;
         }
 
         if (Input.GetKeyDown(KeyCode.Mouse1) && allowSpitFire && player.carryCount != 0 && !player.isHome)
         {
             StartCoroutine(SpitFire(fireRate));
         }
-    }
-
-    IEnumerator WaveFire(float fireRate)
-    {
-        allowWaveFire = false;
-
-        waveClone = Instantiate(wave, shooter.position, shooter.rotation) as GameObject;
-        waveClone.GetComponent<Rigidbody>().AddForce(transform.forward * shotPower);
-
-        waveClone.AddComponent(typeof(PositionHolder));
-        waveClone.GetComponent<PositionHolder>().position = player.transform.position;
-
-        WaitForSeconds delay = new WaitForSeconds(fireRate);
-        yield return delay;
-
-        allowWaveFire = true;
     }
 
     IEnumerator SpitFire(float fireRate)

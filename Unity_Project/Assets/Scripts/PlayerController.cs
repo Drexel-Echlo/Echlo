@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour {
 			transform.position = Vector3.MoveTowards (transform.position, rotationScript.point, -step/4);
 		}
 
-        if (allowLight && (Input.GetKey("w") || Input.GetKey("s")))
+        if (allowLight && Input.GetKey("w"))
         {
             StartCoroutine(LightTrail(lightFrequency));
         }
