@@ -26,7 +26,7 @@ public class BasicEnemyAI : MonoBehaviour {
         }
         else if (state == STATE.Follow)
         {
-            if (Vector3.Distance(target, transform.position) < 2)
+            if (Vector3.Distance(target, transform.position) < 2.0f)
             {
                 state = STATE.Trail;
                 trailSpeed = moveSpeed;
@@ -38,13 +38,13 @@ public class BasicEnemyAI : MonoBehaviour {
             }
         } else if (state == STATE.Trail)
         {
-            if (trailSpeed > 1)
-            {
-                transform.Translate(Vector3.forward * trailSpeed * Time.deltaTime);
-                trailSpeed *= 0.99f;
-            } else
+            if (trailSpeed < 1)
             {
                 state = STATE.Wait;
+            } else
+            {
+                transform.Translate(Vector3.forward * trailSpeed * Time.deltaTime);
+                trailSpeed -= (moveSpeed / 2.0f) * Time.deltaTime;
             }
         }
     }
