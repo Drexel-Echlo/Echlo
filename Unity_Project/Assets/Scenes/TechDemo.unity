@@ -124,7 +124,8 @@ GameObject:
   - component: {fileID: 56409163}
   - component: {fileID: 56409162}
   - component: {fileID: 56409161}
-  m_Layer: 0
+  - component: {fileID: 56409165}
+  m_Layer: 15
   m_Name: Wall01
   m_TagString: LightEmUp
   m_Icon: {fileID: 0}
@@ -198,6 +199,18 @@ Transform:
   m_Father: {fileID: 1462781208}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 20.574001, z: 0}
+--- !u!65 &56409165
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 56409160}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.01, y: 11.541343, z: 1.05}
+  m_Center: {x: 0, y: 5.270672, z: 0}
 --- !u!1 &112842177
 GameObject:
   m_ObjectHideFlags: 0
@@ -564,7 +577,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!108 &493932530
 Light:
   m_ObjectHideFlags: 0
@@ -775,7 +788,8 @@ GameObject:
   - component: {fileID: 619590780}
   - component: {fileID: 619590779}
   - component: {fileID: 619590778}
-  m_Layer: 0
+  - component: {fileID: 619590782}
+  m_Layer: 15
   m_Name: Wall02 (1)
   m_TagString: LightEmUp
   m_Icon: {fileID: 0}
@@ -849,6 +863,18 @@ Transform:
   m_Father: {fileID: 1462781208}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!65 &619590782
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 619590777}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.01, y: 11.541343, z: 1.05}
+  m_Center: {x: 0, y: 5.270672, z: 0}
 --- !u!1 &664740908
 GameObject:
   m_ObjectHideFlags: 0
@@ -1202,7 +1228,8 @@ GameObject:
   - component: {fileID: 738008233}
   - component: {fileID: 738008232}
   - component: {fileID: 738008231}
-  m_Layer: 0
+  - component: {fileID: 738008235}
+  m_Layer: 15
   m_Name: Wall02 (3)
   m_TagString: LightEmUp
   m_Icon: {fileID: 0}
@@ -1276,6 +1303,18 @@ Transform:
   m_Father: {fileID: 1462781208}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!65 &738008235
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 738008230}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.01, y: 11.541343, z: 1.05}
+  m_Center: {x: 0, y: 5.270672, z: 0}
 --- !u!1 &742014872
 GameObject:
   m_ObjectHideFlags: 0
@@ -1541,7 +1580,8 @@ GameObject:
   - component: {fileID: 821755969}
   - component: {fileID: 821755968}
   - component: {fileID: 821755967}
-  m_Layer: 0
+  - component: {fileID: 821755971}
+  m_Layer: 15
   m_Name: Wall02
   m_TagString: LightEmUp
   m_Icon: {fileID: 0}
@@ -1615,6 +1655,18 @@ Transform:
   m_Father: {fileID: 1462781208}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &821755971
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 821755966}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.01, y: 11.541343, z: 1.05}
+  m_Center: {x: 0, y: 5.270672, z: 0}
 --- !u!1 &883828150
 GameObject:
   m_ObjectHideFlags: 0
@@ -1654,7 +1706,8 @@ GameObject:
   - component: {fileID: 886099834}
   - component: {fileID: 886099833}
   - component: {fileID: 886099832}
-  m_Layer: 0
+  - component: {fileID: 886099836}
+  m_Layer: 15
   m_Name: Wall04
   m_TagString: LightEmUp
   m_Icon: {fileID: 0}
@@ -1728,6 +1781,18 @@ Transform:
   m_Father: {fileID: 1462781208}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!65 &886099836
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 886099831}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.01, y: 11.541343, z: 1.05}
+  m_Center: {x: 0, y: 5.270672, z: 0}
 --- !u!1 &929493531
 GameObject:
   m_ObjectHideFlags: 0
@@ -1739,7 +1804,8 @@ GameObject:
   - component: {fileID: 929493534}
   - component: {fileID: 929493533}
   - component: {fileID: 929493532}
-  m_Layer: 0
+  - component: {fileID: 929493536}
+  m_Layer: 15
   m_Name: Wall03 (1)
   m_TagString: LightEmUp
   m_Icon: {fileID: 0}
@@ -1813,6 +1879,18 @@ Transform:
   m_Father: {fileID: 1462781208}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 138.30301, z: 0}
+--- !u!65 &929493536
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 929493531}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.01, y: 11.541343, z: 1.05}
+  m_Center: {x: 0, y: 5.270672, z: 0}
 --- !u!1 &949387371
 GameObject:
   m_ObjectHideFlags: 0
@@ -1990,7 +2068,8 @@ GameObject:
   - component: {fileID: 957288895}
   - component: {fileID: 957288894}
   - component: {fileID: 957288893}
-  m_Layer: 0
+  - component: {fileID: 957288897}
+  m_Layer: 15
   m_Name: Wall03
   m_TagString: LightEmUp
   m_Icon: {fileID: 0}
@@ -2064,6 +2143,18 @@ Transform:
   m_Father: {fileID: 1462781208}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 138.30301, z: 0}
+--- !u!65 &957288897
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 957288892}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.01, y: 11.541343, z: 1.05}
+  m_Center: {x: 0, y: 5.270672, z: 0}
 --- !u!1001 &1046178507
 Prefab:
   m_ObjectHideFlags: 0
@@ -2451,7 +2542,8 @@ GameObject:
   - component: {fileID: 1474842661}
   - component: {fileID: 1474842660}
   - component: {fileID: 1474842659}
-  m_Layer: 0
+  - component: {fileID: 1474842663}
+  m_Layer: 15
   m_Name: Wall02 (2)
   m_TagString: LightEmUp
   m_Icon: {fileID: 0}
@@ -2525,6 +2617,18 @@ Transform:
   m_Father: {fileID: 1462781208}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1474842663
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1474842658}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.01, y: 11.541343, z: 1.05}
+  m_Center: {x: 0, y: 5.270672, z: 0}
 --- !u!1001 &1492616058
 Prefab:
   m_ObjectHideFlags: 0
@@ -2975,7 +3079,8 @@ GameObject:
   - component: {fileID: 1817791139}
   - component: {fileID: 1817791138}
   - component: {fileID: 1817791137}
-  m_Layer: 0
+  - component: {fileID: 1817791141}
+  m_Layer: 15
   m_Name: Wall01 (1)
   m_TagString: LightEmUp
   m_Icon: {fileID: 0}
@@ -3049,6 +3154,18 @@ Transform:
   m_Father: {fileID: 1462781208}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1817791141
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1817791136}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.01, y: 11.541343, z: 1.05}
+  m_Center: {x: 0, y: 5.270672, z: 0}
 --- !u!1001 &1824005594
 Prefab:
   m_ObjectHideFlags: 0

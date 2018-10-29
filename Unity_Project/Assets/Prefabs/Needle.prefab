@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4498803549770896}
   - component: {fileID: 64460542650030168}
   - component: {fileID: 114958162670677126}
+  - component: {fileID: 114634572456633434}
   - component: {fileID: 54437948270963452}
   m_Layer: 14
   m_Name: Needle
@@ -144,6 +145,20 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 98a30d97bfe262447bf02e40438e854b, type: 3}
+--- !u!114 &114634572456633434
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1119455035114498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 981eb2ee1ec42984d9976a76b943bebe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveDelayMin: 1.25
+  moveDelayMax: 3.5
+  wanderSpeed: 3
 --- !u!114 &114958162670677126
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -156,5 +171,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
-  cooldown: 1.25
-  canDash: 1
+  randomMin: -7
+  randomMax: 7
+  movement: {fileID: 114634572456633434}
