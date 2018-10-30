@@ -15,13 +15,19 @@ public class ScaleOverTime : MonoBehaviour {
         var scaleY = transform.localScale.y;
         var scaleZ = transform.localScale.z;
 
-        if (isShrinking && scaleX >= 0 && scaleY >= 0 && scaleZ >= 0)
+        if (scaleX >= 0 && scaleY >= 0 && scaleZ >= 0)
         {
-            this.transform.localScale -= new Vector3(Time.deltaTime / scaleFactor, Time.deltaTime / scaleFactor, 0);
-        }
-        else if (!isShrinking && scaleX >= 0 && scaleY >= 0 && scaleZ >= 0)
-        {
-            this.transform.localScale += new Vector3(Time.deltaTime / scaleFactor, Time.deltaTime / scaleFactor, 0);
+            Vector3 deltaScale = new Vector3(Time.deltaTime / scaleFactor, Time.deltaTime / scaleFactor, 0);
+            if (isShrinking)
+            {
+                this.transform.localScale -= deltaScale;
+
+            }
+            else
+            {
+                this.transform.localScale += deltaScale;
+
+            }
         }
 	}
 }
