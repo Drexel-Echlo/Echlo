@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 135437170862035308}
   - component: {fileID: 65976247080624646}
   - component: {fileID: 108732586260281270}
+  - component: {fileID: 114775366159373598}
   m_Layer: 11
   m_Name: Food
   m_TagString: LightEmUp
@@ -165,6 +166,19 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114775366159373598
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1091561412272928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ef43db32472bcc46893b8d671fdde98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  drawSpeed: 1
 --- !u!135 &135260736303157228
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -5,20 +5,24 @@ using UnityEngine.UI;
 
 public class TraitSystem : MonoBehaviour {
     
-    public Button button;
+    public Button[] button;
 
-    public ButtonManager buttonManager;
+    public ButtonManager[] buttonManager;
+
+    public GameObject magnet;
 
     public int maxCarry;
 
     public bool hasDigestiveTrack;
+    public bool hasFoodMagnet;
    	
 	// Update is called once per frame
 	void Update ()
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            button.gameObject.SetActive(!button.gameObject.activeSelf);
+            button[0].gameObject.SetActive(!button[0].gameObject.activeSelf);
+            button[1].gameObject.SetActive(!button[1].gameObject.activeSelf);
             Time.timeScale = (Time.timeScale + 1)%2;
         }
 
@@ -30,11 +34,26 @@ public class TraitSystem : MonoBehaviour {
         {
             maxCarry = 1;
         }
+
+        if (hasFoodMagnet)
+        {
+            magnet.gameObject.SetActive(true);
+        }
+        else
+        {
+            magnet.gameObject.SetActive(false);
+        }
     }
 
     public void ToggleDigestiveTrack()
     {
         hasDigestiveTrack = !hasDigestiveTrack;
-        buttonManager.SetTraitActive(hasDigestiveTrack);
+        buttonManager[0].SetTraitActive(hasDigestiveTrack);
+    }
+
+    public void ToggleFoodMagnet()
+    {
+        hasFoodMagnet = !hasFoodMagnet;
+        buttonManager[1].SetTraitActive(hasFoodMagnet);
     }
 }
