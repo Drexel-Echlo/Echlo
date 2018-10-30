@@ -8,10 +8,7 @@ public class TraitSystem : MonoBehaviour {
     public Button[] button;
 
     public ButtonManager[] buttonManager;
-
-    public  GameObject magnet;
-
-    public int maxCarry;
+    public static int maxCarry;
 
     public static bool hasDigestiveTrack;
     public static bool hasFoodMagnet;
@@ -33,17 +30,6 @@ public class TraitSystem : MonoBehaviour {
         else
         {
             maxCarry = 1;
-        }
-        if (magnet != null)
-        {
-            if (hasFoodMagnet)
-            {
-                magnet.gameObject.SetActive(true);
-            }
-            else
-            {
-                magnet.gameObject.SetActive(false);
-            }
         }
     }
 
