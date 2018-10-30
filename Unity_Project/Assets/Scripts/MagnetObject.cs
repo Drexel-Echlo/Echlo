@@ -14,6 +14,7 @@ public class MagnetObject : MonoBehaviour {
     void Update ()
     {
         Vector3 playerPos = player.transform.position;
+
 		if (isInMagnet)
         {
             transform.LookAt(new Vector3(playerPos.x, transform.position.y, playerPos.z));
