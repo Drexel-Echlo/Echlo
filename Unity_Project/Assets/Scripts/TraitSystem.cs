@@ -9,12 +9,12 @@ public class TraitSystem : MonoBehaviour {
 
     public ButtonManager[] buttonManager;
 
-    public GameObject magnet;
+    public  GameObject magnet;
 
     public int maxCarry;
 
-    public bool hasDigestiveTrack;
-    public bool hasFoodMagnet;
+    public static bool hasDigestiveTrack;
+    public static bool hasFoodMagnet;
    	
 	// Update is called once per frame
 	void Update ()
@@ -34,14 +34,16 @@ public class TraitSystem : MonoBehaviour {
         {
             maxCarry = 1;
         }
-
-        if (hasFoodMagnet)
+        if (magnet != null)
         {
-            magnet.gameObject.SetActive(true);
-        }
-        else
-        {
-            magnet.gameObject.SetActive(false);
+            if (hasFoodMagnet)
+            {
+                magnet.gameObject.SetActive(true);
+            }
+            else
+            {
+                magnet.gameObject.SetActive(false);
+            }
         }
     }
 
