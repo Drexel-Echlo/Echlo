@@ -10,8 +10,6 @@ public class PlayerController : MonoBehaviour {
     private PlayerRotator rotationScript;
     private GameControl gameScript;
 
-    public TraitSystem traits;
-
     public Transform mouth;
     public Transform lightSpawn;
     public Transform[] foodPoints;
@@ -36,7 +34,6 @@ public class PlayerController : MonoBehaviour {
     void Start () {
 		rotationScript = player.GetComponent<PlayerRotator>();
         gameScript = gameManager.GetComponent<GameControl>();
-        traits = GameObject.Find("TraitManager").GetComponent<TraitSystem>();
     }
 
 	void FixedUpdate () {
@@ -101,7 +98,7 @@ public class PlayerController : MonoBehaviour {
 
     private void OnCollisionEnter (Collision other)
     {
-        if (carryCount < traits.maxCarry && other.gameObject.layer == LayerMask.NameToLayer("Food") && !isHome)
+        if (carryCount < TraitSystem.maxCarry && other.gameObject.layer == LayerMask.NameToLayer("Food") && !isHome)
         {
             Destroy(other.gameObject);
             carryCount++;
