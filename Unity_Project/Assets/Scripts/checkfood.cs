@@ -5,53 +5,31 @@ using UnityEngine;
 public class CheckFood : MonoBehaviour {
 
     public int foodneed;
-    public int foodcount;
-    public GameObject gameManager;
-    private GameControl gameScript;
+    public GameControl gameScript;
 
     private GameObject[] list;
     private GameObject[] foodlist;
 
     // Use this for initialization
     void Start () {
-        gameScript = gameManager.GetComponent<GameControl>();
-        foodcount = 0;
     }
 	
 	// Update is called once per frame
 	void Update () {
 
-        /*foreach (GameObject gameObj in GameObject.FindObjectsOfType<GameObject>())
-        {
-
-        }*/
+        int foodcount = 0;
         list = GameObject.FindGameObjectsWithTag("LightEmUp");
 
         foreach (GameObject item in list) {
-            if (item.name == "Food(Clone)")
+            if (item.gameObject.layer == LayerMask.NameToLayer("Food") && Vector3.Distance(item.transform.position, this.transform.position) <= 7)
             {
-                if ((item.transform.position - this.transform.position).magnitude <= 7)
-                {
-                    foodcount++;
-                    item.gameObject.name = "Food(1)";
-                }
-       
+                foodcount++;
             }
         }
 
-        if (foodcount == foodneed)
+        if (foodcount >= foodneed)
         {
             gameScript.gameWin = true;
         }
 	}
-
-     void OnCollisionEnter(Collision other)
-    {
-        Debug.Log(other.gameObject.layer);
-        if (other.gameObject.layer == LayerMask.NameToLayer("Food"))
-        {
-            foodcount++;
-            //Debug.Log(foodcount);
-        }
-    }
 }

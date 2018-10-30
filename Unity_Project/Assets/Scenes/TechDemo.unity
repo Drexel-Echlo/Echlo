@@ -1586,9 +1586,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72895a495c3aa7c4ea7c9658986cd76a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  gameovertext: {fileID: 0}
-  gamewintext: {fileID: 0}
+  player: {fileID: 1849468970}
+  gameovertext: {fileID: 1784171135}
+  gamewintext: {fileID: 2126764872}
   gameOver: 0
   gameWin: 0
 --- !u!4 &750745363
@@ -2655,9 +2655,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f2716c62c49bf44ba5608c711b502ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodneed: 0
-  foodcount: 0
-  gameManager: {fileID: 0}
+  foodneed: 3
+  gameScript: {fileID: 750745362}
 --- !u!1 &1462781207
 GameObject:
   m_ObjectHideFlags: 0
