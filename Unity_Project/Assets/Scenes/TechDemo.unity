@@ -258,7 +258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -267,7 +267,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 40
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -691,10 +691,6 @@ MonoBehaviour:
   - {fileID: 680491685}
   - {fileID: 596285743}
   - {fileID: 0}
-  magnet: {fileID: 2017959598}
-  maxCarry: 0
-  hasDigestiveTrack: 0
-  hasFoodMagnet: 0
 --- !u!1 &534407771
 GameObject:
   m_ObjectHideFlags: 0
@@ -832,9 +828,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   button: {fileID: 596285747}
   traitSystem: {fileID: 534345899}
-  trait: Filter Feeder
-  enabledText: enabled
-  disabledText: disabled
+  trait: ' '
+  enabledText: Enabled
+  disabledText: Disabled
 --- !u!114 &596285744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -854,8 +850,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 719fb083337950c419fc375b069bafa0, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -885,8 +881,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 578.9999, y: 314.5}
-  m_SizeDelta: {x: 669.4, y: 109.1}
+  m_AnchoredPosition: {x: 690, y: 450}
+  m_SizeDelta: {x: 128, y: 128}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &596285747
 MonoBehaviour:
@@ -907,10 +903,10 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_NormalColor: {r: 0.6603774, g: 0.64480245, b: 0.64480245, a: 0.39215687}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.7843138, g: 0.7843138, b: 0.7843138, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -1139,8 +1135,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 579, y: 448}
-  m_SizeDelta: {x: 669.4, y: 109.1}
+  m_AnchoredPosition: {x: 560, y: 450}
+  m_SizeDelta: {x: 128, y: 128}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &680491682
 MonoBehaviour:
@@ -1161,10 +1157,10 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_NormalColor: {r: 0.6666667, g: 0.6666667, b: 0.6666667, a: 0.39215687}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.7843138, g: 0.7843138, b: 0.7843138, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -1213,8 +1209,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 2245fb6e757e75f448cdb1316e02e8bf, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1241,9 +1237,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   button: {fileID: 680491682}
   traitSystem: {fileID: 534345899}
-  trait: Digestive Track
-  enabledText: enabled
-  disabledText: disabled
+  trait: 
+  enabledText: Enabled
+  disabledText: Disabled
 --- !u!1001 &693561344
 Prefab:
   m_ObjectHideFlags: 0
@@ -1590,9 +1586,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72895a495c3aa7c4ea7c9658986cd76a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 949387371}
-  gameovertext: {fileID: 1784171135}
-  gamewintext: {fileID: 2126764872}
+  player: {fileID: 0}
+  gameovertext: {fileID: 0}
+  gamewintext: {fileID: 0}
   gameOver: 0
   gameWin: 0
 --- !u!4 &750745363
@@ -2659,9 +2655,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f2716c62c49bf44ba5608c711b502ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodneed: 3
+  foodneed: 0
   foodcount: 0
-  gameManager: {fileID: 750745361}
+  gameManager: {fileID: 0}
 --- !u!1 &1462781207
 GameObject:
   m_ObjectHideFlags: 0
@@ -3510,7 +3506,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 949387371}
   gameManager: {fileID: 750745361}
-  traits: {fileID: 534345899}
   mouth: {fileID: 534407772}
   lightSpawn: {fileID: 1497881354}
   foodPoints:
@@ -3651,7 +3646,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3660,7 +3655,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 40
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
