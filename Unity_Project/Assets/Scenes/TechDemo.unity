@@ -1240,6 +1240,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.1859775
       objectReference: {fileID: 0}
+    - target: {fileID: 1119455035114498, guid: 2e83e53a5c44da44d99f7149f23b4160, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e83e53a5c44da44d99f7149f23b4160, type: 2}
   m_IsPrefabAsset: 0
@@ -1293,6 +1297,10 @@ Prefab:
     - target: {fileID: 4498803549770896, guid: 2e83e53a5c44da44d99f7149f23b4160, type: 2}
       propertyPath: m_LocalScale.z
       value: 0.1859775
+      objectReference: {fileID: 0}
+    - target: {fileID: 1119455035114498, guid: 2e83e53a5c44da44d99f7149f23b4160, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e83e53a5c44da44d99f7149f23b4160, type: 2}
@@ -1535,7 +1543,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72895a495c3aa7c4ea7c9658986cd76a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1849468970}
+  player: {fileID: 949387371}
   gameovertext: {fileID: 1784171135}
   gamewintext: {fileID: 2126764872}
   gameOver: 0
@@ -2343,7 +2351,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4498803549770896, guid: 2e83e53a5c44da44d99f7149f23b4160, type: 2}
       propertyPath: m_RootOrder
-      value: 13
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 4498803549770896, guid: 2e83e53a5c44da44d99f7149f23b4160, type: 2}
       propertyPath: m_LocalScale.x
@@ -2356,6 +2364,10 @@ Prefab:
     - target: {fileID: 4498803549770896, guid: 2e83e53a5c44da44d99f7149f23b4160, type: 2}
       propertyPath: m_LocalScale.z
       value: 0.18597776
+      objectReference: {fileID: 0}
+    - target: {fileID: 1119455035114498, guid: 2e83e53a5c44da44d99f7149f23b4160, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e83e53a5c44da44d99f7149f23b4160, type: 2}
@@ -2608,7 +2620,7 @@ GameObject:
   - component: {fileID: 1452372397}
   - component: {fileID: 1452372395}
   - component: {fileID: 1452372398}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Home
   m_TagString: Home
   m_Icon: {fileID: 0}
@@ -2688,7 +2700,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f2716c62c49bf44ba5608c711b502ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodneed: 3
+  foodNeed: 0
+  foodCount: 0
   gameScript: {fileID: 750745362}
 --- !u!1 &1462781207
 GameObject:
@@ -2726,7 +2739,7 @@ Transform:
   - {fileID: 929493535}
   - {fileID: 742014876}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1474842658
 GameObject:
@@ -3692,7 +3705,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4498803549770896, guid: 2e83e53a5c44da44d99f7149f23b4160, type: 2}
       propertyPath: m_RootOrder
-      value: 12
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1119455035114498, guid: 2e83e53a5c44da44d99f7149f23b4160, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e83e53a5c44da44d99f7149f23b4160, type: 2}

@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class CheckFood : MonoBehaviour {
 
-    public int foodneed;
+    public int foodNeed;
+    public int foodCount;
     public GameControl gameScript;
 
     private GameObject[] list;
@@ -12,22 +13,24 @@ public class CheckFood : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        foodNeed = 3;
+        foodCount = 0;
     }
 	
 	// Update is called once per frame
 	void Update () {
 
-        int foodcount = 0;
-        list = GameObject.FindGameObjectsWithTag("LightEmUp");
+
+        list = GameObject.FindGameObjectsWithTag("Home");
 
         foreach (GameObject item in list) {
             if (item.gameObject.layer == LayerMask.NameToLayer("Food") && Vector3.Distance(item.transform.position, this.transform.position) <= 7)
             {
-                foodcount++;
+                foodCount++;
             }
         }
 
-        if (foodcount >= foodneed)
+        if (foodCount >= foodNeed)
         {
             gameScript.gameWin = true;
         }
