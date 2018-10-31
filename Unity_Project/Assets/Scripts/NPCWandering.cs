@@ -69,7 +69,7 @@ public class NPCWandering : MonoBehaviour {
 
     public Vector3 getNewTarget()
     {
-        float x, y, z, range;
+        float x, z, range;
         x = transform.position.x;
         z = transform.position.z;
         range = 2.0f;
