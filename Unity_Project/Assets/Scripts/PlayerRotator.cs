@@ -6,8 +6,9 @@ public class PlayerRotator : MonoBehaviour {
 
 	private Camera main;
 	public Vector3 point;
+    
 
-	void Start () {
+    void Start () {
 		main = FindObjectOfType<Camera>();
 	}
 		
