@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -50,7 +50,7 @@ public class NPCWandering : MonoBehaviour {
     {
         transform.LookAt(new Vector3(target.x, transform.position.y, target.z));
 
-        if (Vector3.Distance(target, transform.position) < .5f)
+        if (Vector3.Distance(target, transform.position) < 1.2f)
         {
             isAtTarget = true;
 

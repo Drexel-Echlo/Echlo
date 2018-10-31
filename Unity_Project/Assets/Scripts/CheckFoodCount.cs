@@ -13,7 +13,7 @@ public class CheckFoodCount : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        gameScript = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameControl>();
+        gameScript = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameControl>();
     }
 
     // Update is called once per frame
