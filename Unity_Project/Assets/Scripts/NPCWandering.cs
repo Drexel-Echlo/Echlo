@@ -15,7 +15,7 @@ public class NPCWandering : MonoBehaviour {
 
     private void Start()
     {
-        target = new Vector3(Random.Range(transform.position.x - 2f, transform.position.x + 2f), 0, Random.Range(transform.position.z - 2f, transform.position.z + 2f));
+        target = getNewTarget();
     }
 
     // Update is called once per frame
@@ -34,7 +34,7 @@ public class NPCWandering : MonoBehaviour {
     {
         if (other.gameObject.layer.Equals(LayerMask.NameToLayer("Walls")))
         {
-            target = new Vector3(Random.Range(transform.position.x - 2f, transform.position.x + 2f), 0, Random.Range(transform.position.z - 2f, transform.position.z + 2f));
+            target = getNewTarget();
         }
     }
 
@@ -42,7 +42,7 @@ public class NPCWandering : MonoBehaviour {
     {
         if (other.gameObject.layer.Equals(LayerMask.NameToLayer("Walls")))
         {
-            target = new Vector3(Random.Range(transform.position.x - 2f, transform.position.x + 2f), 0, Random.Range(transform.position.z - 2f, transform.position.z + 2f));
+            target = getNewTarget();
         }
     }
 
@@ -65,5 +65,14 @@ public class NPCWandering : MonoBehaviour {
         {
             transform.Translate(Vector3.forward * wanderSpeed * Time.deltaTime);
         }
+    }
+
+    public Vector3 getNewTarget()
+    {
+        float x, z, range;
+        x = transform.position.x;
+        z = transform.position.z;
+        range = 2.0f;
+        return new Vector3(Random.Range(x - range, x + range), 0, Random.Range(z - range, z + range));
     }
 }

@@ -12,14 +12,16 @@ public class TraitSystem : MonoBehaviour {
 
     public static bool hasDigestiveTrack;
     public static bool hasFoodMagnet;
-   	
-	// Update is called once per frame
-	void Update ()
+    public static bool hasCompass;
+
+    // Update is called once per frame
+    void Update ()
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
             button[0].gameObject.SetActive(!button[0].gameObject.activeSelf);
             button[1].gameObject.SetActive(!button[1].gameObject.activeSelf);
+            button[2].gameObject.SetActive(!button[2].gameObject.activeSelf);
             Time.timeScale = (Time.timeScale + 1)%2;
         }
 
@@ -43,5 +45,10 @@ public class TraitSystem : MonoBehaviour {
     {
         hasFoodMagnet = !hasFoodMagnet;
         buttonManager[1].SetTraitActive(hasFoodMagnet);
+    }
+    public void ToggleCompass()
+    {
+        hasCompass = !hasCompass;
+        buttonManager[2].SetTraitActive(hasCompass);
     }
 }
