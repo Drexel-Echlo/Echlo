@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class CheckFoodCount : MonoBehaviour {
 
-    public int foodNeed;
-    public GameControl gameScript;
+    public int foodNeed = 3;
+    protected GameControl gameScript;
 
     private GameObject[] list;
     private GameObject[] foodlist;
@@ -13,7 +13,7 @@ public class CheckFoodCount : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        foodNeed = 3;
+        gameScript = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameControl>();
     }
 
     // Update is called once per frame
