@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour {
     public GameObject player;
     private PlayerRotator rotationScript;
     private GameController gameScript;
+    private ShooterController shooter;
 
     public Transform mouth;
     public Transform lightSpawn;
@@ -33,6 +34,7 @@ public class PlayerController : MonoBehaviour {
     void Start () {
 		rotationScript = player.GetComponent<PlayerRotator>();
         gameScript = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
+        shooter = player.GetComponent<ShooterController>();
     }
 
 	void FixedUpdate () {
@@ -51,6 +53,17 @@ public class PlayerController : MonoBehaviour {
         if (allowLight && Input.GetKey("w"))
         {
             StartCoroutine(LightTrail(lightFrequency));
+        }
+
+        if (Input.GetKey(KeyCode.Mouse0))
+        {
+            shooter.shootWave(transform.position);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Mouse1) && carryCount != 0 && !isHome)
+        {
+            shooter.spitFood();
+            carryCount--;
         }
 
         // Handle Food Display on character

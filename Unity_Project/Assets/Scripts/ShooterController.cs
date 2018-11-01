@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class ShooterController : MonoBehaviour { 
 
-    public PlayerController player;
-
     public GameObject wave;
     public GameObject waveClone;
 
@@ -22,21 +20,20 @@ public class ShooterController : MonoBehaviour {
     public float destroyTime;
 
     private bool allowSpitFire = true;
-    
-    // Update is called once per frame
-    void FixedUpdate()
+
+    public void shootWave(Vector3 position)
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            sendOut.Play();
-            waveClone = Instantiate(wave, shooter.position, shooter.rotation) as GameObject;
-            waveClone.GetComponent<Rigidbody>().AddForce(transform.forward * shotPower);
+        sendOut.Play();
+        waveClone = Instantiate(wave, shooter.position, shooter.rotation) as GameObject;
+        waveClone.GetComponent<Rigidbody>().AddForce(transform.forward * shotPower);
 
-            waveClone.AddComponent(typeof(PositionHolder));
-            waveClone.GetComponent<PositionHolder>().position = player.transform.position;
-        }
+        waveClone.AddComponent(typeof(PositionHolder));
+        waveClone.GetComponent<PositionHolder>().position = position;
+    }
 
-        if (Input.GetKeyDown(KeyCode.Mouse1) && allowSpitFire && player.carryCount != 0 && !player.isHome)
+    public void spitFood()
+    {
+        if (allowSpitFire)
         {
             StartCoroutine(SpitFire(fireRate));
         }
@@ -44,7 +41,6 @@ public class ShooterController : MonoBehaviour {
 
     IEnumerator SpitFire(float fireRate)
     {
-        player.carryCount--;
         allowSpitFire = false;
 
         GameObject foodSpitClone = Instantiate(foodSpit, shooter.position, Quaternion.identity);
