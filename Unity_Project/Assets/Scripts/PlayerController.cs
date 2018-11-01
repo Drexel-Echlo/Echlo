@@ -150,6 +150,7 @@ public class PlayerController : MonoBehaviour {
         if (c.gameObject.tag == "Home")
         {
             isHome = true;
+            Debug.Log("going home");
         }
     }
 
@@ -158,6 +159,7 @@ public class PlayerController : MonoBehaviour {
         if (c.gameObject.tag == "Home")
         {
             isHome = false;
+            Debug.Log("leaving home");
         }
     }
 
