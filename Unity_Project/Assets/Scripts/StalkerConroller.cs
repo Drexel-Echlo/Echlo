@@ -7,8 +7,6 @@ public class StalkerConroller : MonoBehaviour {
     protected enum STATE { Wait, Follow };
 
     public float moveSpeed;
-    public float randomMin;
-    public float randomMax;
 
     public NPCWandering movement;
 
@@ -28,7 +26,7 @@ public class StalkerConroller : MonoBehaviour {
     {
         if (state == STATE.Wait)
         {
-            movement.Wander(randomMin, randomMax);
+            movement.Wander();
         }
         else if (state == STATE.Follow)
         {
