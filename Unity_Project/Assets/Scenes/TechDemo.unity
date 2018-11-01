@@ -1814,6 +1814,7 @@ GameObject:
   m_Component:
   - component: {fileID: 750745363}
   - component: {fileID: 750745362}
+  - component: {fileID: 750745364}
   m_Layer: 0
   m_Name: Gamemanager
   m_TagString: GameController
@@ -1832,11 +1833,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72895a495c3aa7c4ea7c9658986cd76a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 949387371}
-  gameovertext: {fileID: 1784171135}
-  gamewintext: {fileID: 2126764872}
-  gameOver: 0
-  gameWin: 0
 --- !u!4 &750745363
 Transform:
   m_ObjectHideFlags: 0
@@ -1850,6 +1846,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &750745364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 750745361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d455370bd4aeb648932fa1b6cb3cd19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1849468970}
+  gameovertext: {fileID: 1784171135}
+  gamewintext: {fileID: 2126764872}
+  gameOver: 0
+  gameWin: 0
 --- !u!1 &782537123
 GameObject:
   m_ObjectHideFlags: 0
@@ -2408,7 +2420,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2baa82490536a74ba44cad597220ec6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1849468971}
   wave: {fileID: 1039409802499550, guid: efccfaa2c8df4924896f5ab0114cbdd3, type: 2}
   waveClone: {fileID: 0}
   foodSpit: {fileID: 1039277364745240, guid: 3b25a291c4bcded4b920dd72b7d7b8eb, type: 2}
@@ -4115,7 +4126,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 949387371}
-  gameManager: {fileID: 750745361}
   mouth: {fileID: 534407772}
   lightSpawn: {fileID: 1497881354}
   foodPoints:
