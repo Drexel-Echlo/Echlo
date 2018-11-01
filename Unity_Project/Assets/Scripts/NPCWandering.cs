@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class NPCWandering : MonoBehaviour {
 
+    public float randomMin;
+    public float randomMax;
+
     public float moveDelayMin;
     public float moveDelayMax;
 
@@ -19,7 +22,7 @@ public class NPCWandering : MonoBehaviour {
     }
 
     // Update is called once per frame
-    public void Wander(float randomMin, float randomMax)
+    public void Wander()
     {
         float wanderX = Random.Range(randomMin, randomMax);
         float wanderZ = Random.Range(randomMin, randomMax);
