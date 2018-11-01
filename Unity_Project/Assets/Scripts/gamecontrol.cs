@@ -39,7 +39,15 @@ public class GameControl : MonoBehaviour {
         }
 
 		if (restart && Input.anyKeyDown){
-			SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            if (gameWin)
+            {
+                SceneManager.LoadScene("StartScreen", LoadSceneMode.Single);
+            }
+            else
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
+
 		}
 	}
 }
