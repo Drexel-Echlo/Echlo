@@ -41,26 +41,25 @@ public class PlayerController : MonoBehaviour {
 		
 		float step = speed * Time.deltaTime;
 
-        if (Input.GetKey("w"))
+        if (Input.GetKey("w")) // Move Forward
         {
 			transform.position = Vector3.MoveTowards(transform.position, rotationScript.point, step);
-		}
-        else if (Input.GetKey("s"))
+            if (allowLight) // Light Trail
+            {
+                StartCoroutine(LightTrail(lightFrequency));
+            }
+        }
+        else if (Input.GetKey("s")) // Move Back
         {
 			transform.position = Vector3.MoveTowards (transform.position, rotationScript.point, -step/4);
 		}
 
-        if (allowLight && Input.GetKey("w"))
-        {
-            StartCoroutine(LightTrail(lightFrequency));
-        }
-
-        if (Input.GetKey(KeyCode.Mouse0))
+        if (Input.GetKey(KeyCode.Mouse0)) // Sonar
         {
             shooter.shootWave(transform.position);
         }
 
-        if (Input.GetKeyDown(KeyCode.Mouse1) && carryCount != 0 && !isHome)
+        if (Input.GetKeyDown(KeyCode.Mouse1) && carryCount != 0 && !isHome) // Spit Food
         {
             shooter.spitFood();
             carryCount--;
@@ -116,7 +115,7 @@ public class PlayerController : MonoBehaviour {
             carryCount++;
         }
 
-        //check if an enemy touches the player
+        // Check if an enemy touches the player
         if (other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
             gameScript.gameOver = true;
