@@ -6,9 +6,8 @@ public class PlayerController : MonoBehaviour {
 
 
     public GameObject player;
-    public GameObject gameManager;
     private PlayerRotator rotationScript;
-    private GameControl gameScript;
+    private GameController gameScript;
 
     public Transform mouth;
     public Transform lightSpawn;
@@ -33,7 +32,7 @@ public class PlayerController : MonoBehaviour {
     // Use this for initialization
     void Start () {
 		rotationScript = player.GetComponent<PlayerRotator>();
-        gameScript = gameManager.GetComponent<GameControl>();
+        gameScript = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
     }
 
 	void FixedUpdate () {
