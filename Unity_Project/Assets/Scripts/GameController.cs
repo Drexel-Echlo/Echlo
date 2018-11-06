@@ -15,7 +15,7 @@ public class GameController : MonoBehaviour {
     public bool gameOver;
     public bool gameWin;
     private bool restart;
-
+    public int levelNum;
 
     // Use this for initialization
     void Start()
@@ -46,7 +46,8 @@ public class GameController : MonoBehaviour {
         {
             if (gameWin)
             {
-                SceneManager.LoadScene("StartScreen", LoadSceneMode.Single);
+                levelNum++;
+                SceneManager.LoadScene(levelNum, LoadSceneMode.Single);
             }
             else
             {

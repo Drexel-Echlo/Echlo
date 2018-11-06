@@ -14,8 +14,7 @@ public class LevelManager : MonoBehaviour {
     }
     private void LoadLevel()
     {
-        SceneManager.LoadScene("TechDemo", LoadSceneMode.Single);
-        Debug.Log("ButtonClicked");
+        SceneManager.LoadScene("Level_01", LoadSceneMode.Single);
     }
 
 
