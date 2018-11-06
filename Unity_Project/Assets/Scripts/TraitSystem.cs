@@ -19,10 +19,26 @@ public class TraitSystem : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            button[0].gameObject.SetActive(!button[0].gameObject.activeSelf);
-            button[1].gameObject.SetActive(!button[1].gameObject.activeSelf);
-            button[2].gameObject.SetActive(!button[2].gameObject.activeSelf);
-            Time.timeScale = (Time.timeScale + 1)%2;
+            if (!GameController.Instance.pauseMenu.gameObject.activeSelf || button[0].gameObject.activeSelf == true)
+            {
+                GameController.Instance.Pause();
+                button[0].gameObject.SetActive(!button[0].gameObject.activeSelf);
+                button[1].gameObject.SetActive(!button[1].gameObject.activeSelf);
+                button[2].gameObject.SetActive(!button[2].gameObject.activeSelf);
+            }
+            else if (GameController.Instance.pauseMenu.gameObject.activeSelf)
+            {
+                button[0].gameObject.SetActive(!button[0].gameObject.activeSelf);
+                button[1].gameObject.SetActive(!button[1].gameObject.activeSelf);
+                button[2].gameObject.SetActive(!button[2].gameObject.activeSelf);
+            }
+        }
+
+        if (!GameController.Instance.isPauseActive)
+        {
+            button[0].gameObject.SetActive(false);
+            button[1].gameObject.SetActive(false);
+            button[2].gameObject.SetActive(false);
         }
 
         if (hasDigestiveTrack)

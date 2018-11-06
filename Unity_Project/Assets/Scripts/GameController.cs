@@ -9,13 +9,41 @@ public class GameController : MonoBehaviour {
     public GameObject player;
     //public PlayerController player;
     //public GameObject enemy;
+    public GameObject pauseMenu;
 
     public Text gameovertext;
     public Text gamewintext;
     public bool gameOver;
     public bool gameWin;
     private bool restart;
-    public int levelNum;
+
+    public bool isPauseActive;
+
+    protected static GameController _instance = null;
+
+    public static GameController Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = FindObjectOfType<GameController>();
+                if (_instance == null)
+                {
+                    Debug.LogError("Instance of GameManager missing.");
+                }
+            }
+            return _instance;
+        }
+    }
+
+    private void Awake()
+    {
+        if (GameController.Instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+    }
 
     // Use this for initialization
     void Start()
@@ -23,8 +51,6 @@ public class GameController : MonoBehaviour {
         gameOver = false;
         restart = false;
         Time.timeScale = 1f;
-        Scene level = SceneManager.GetActiveScene();
-        levelNum = level.buildIndex;
     }
 
     // Update is called once per frame
@@ -46,26 +72,26 @@ public class GameController : MonoBehaviour {
 
         if (restart && Input.anyKeyDown)
         {
-            if (gameWin && levelNum == SceneManager.sceneCountInBuildSettings)
+            if (gameWin)
             {
-                levelNum = 0;
-                SceneManager.LoadScene(levelNum, LoadSceneMode.Single);
-            }
-            else if (gameWin)
-            {
-                levelNum++;
-                SceneManager.LoadScene(levelNum, LoadSceneMode.Single);
+                SceneManager.LoadScene("StartScreen", LoadSceneMode.Single);
             }
             else
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
+        }
 
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            Pause();
         }
     }
 
-    void ExitGame()
+    public void Pause()
     {
-        Application.Quit();
+        isPauseActive = !isPauseActive;
+        pauseMenu.gameObject.SetActive(!pauseMenu.gameObject.activeSelf);
+        Time.timeScale = (Time.timeScale + 1) % 2;
     }
 }
