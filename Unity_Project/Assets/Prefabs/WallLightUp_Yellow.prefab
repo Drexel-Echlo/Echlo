@@ -9,46 +9,46 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1684139783786102}
+  m_RootGameObject: {fileID: 1871660123054502}
   m_IsPrefabAsset: 1
---- !u!1 &1684139783786102
+--- !u!1 &1871660123054502
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4942072169200752}
-  - component: {fileID: 108682860372981886}
-  - component: {fileID: 114016947059162216}
-  - component: {fileID: 135253510356312838}
-  - component: {fileID: 54639606039296700}
+  - component: {fileID: 4012831946315504}
+  - component: {fileID: 108261737791702592}
+  - component: {fileID: 114116459863411544}
+  - component: {fileID: 135411084931044432}
+  - component: {fileID: 54464078432307258}
   m_Layer: 13
-  m_Name: EnemyLightUp
+  m_Name: WallLightUp_Yellow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4942072169200752
+--- !u!4 &4012831946315504
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1684139783786102}
+  m_GameObject: {fileID: 1871660123054502}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 98.364395, y: -1.81425, z: 32.035664}
+  m_LocalPosition: {x: 93.4, y: -1.81425, z: 31.3}
   m_LocalScale: {x: 17.423, y: 17.423, z: 17.423}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &54639606039296700
+--- !u!54 &54464078432307258
 Rigidbody:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1684139783786102}
+  m_GameObject: {fileID: 1871660123054502}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -58,16 +58,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!108 &108682860372981886
+--- !u!108 &108261737791702592
 Light:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1684139783786102}
+  m_GameObject: {fileID: 1871660123054502}
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 2
-  m_Color: {r: 1, g: 0.32861245, b: 0, a: 1}
+  m_Color: {r: 0.86504173, g: 0.9528302, b: 0.35506406, a: 1}
   m_Intensity: 0.5
   m_Range: 15
   m_SpotAngle: 30
@@ -95,25 +95,25 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &114016947059162216
+--- !u!114 &114116459863411544
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1684139783786102}
+  m_GameObject: {fileID: 1871660123054502}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aae7440ba1ed74845b7c5081545ff64a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lit: {fileID: 0}
+  lit: {fileID: 108261737791702592}
   decayRate: 0.025
---- !u!135 &135253510356312838
+--- !u!135 &135411084931044432
 SphereCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1684139783786102}
+  m_GameObject: {fileID: 1871660123054502}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
