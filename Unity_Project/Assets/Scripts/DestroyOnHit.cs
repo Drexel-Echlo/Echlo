@@ -14,6 +14,7 @@ public class DestroyOnHit : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        print("collided with: " + LayerMask.LayerToName(collision.gameObject.layer) + ", " + collision.gameObject.tag);
         GameObject explosionClone = null;
         if (collision.gameObject.layer == LayerMask.NameToLayer("Food"))
         {
@@ -23,7 +24,7 @@ public class DestroyOnHit : MonoBehaviour
         {
             explosionClone = Instantiate(enemyExplosion, collisionPoint.position, transform.rotation);
         }
-        else if (collision.gameObject.tag == "LightEmUp" || (isStalker && collision.gameObject.layer == LayerMask.NameToLayer("Player")))
+        else if ((collision.gameObject.tag == "LightEmUp" && (!isStalker || collision.gameObject.layer != LayerMask.NameToLayer("Stalker"))) || (isStalker && collision.gameObject.layer == LayerMask.NameToLayer("Player")))
         {
             explosionClone = Instantiate(explosion, collisionPoint.position, transform.rotation);
         }

@@ -161,7 +161,10 @@ public class PlayerController : MonoBehaviour {
                 StalkerConroller stalkerController = stalker.GetComponent<StalkerConroller>();
                 if (stalkerController != null)
                 {
-                    stalkerController.setTarget(transform.position);
+                    if (Random.Range(0, 100) < 33)
+                    {
+                        stalkerController.setTarget(transform.position);
+                    }
                 }
 
             }
