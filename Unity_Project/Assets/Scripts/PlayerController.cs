@@ -54,7 +54,7 @@ public class PlayerController : MonoBehaviour {
 			transform.position = Vector3.MoveTowards (transform.position, rotationScript.point, -step/4);
 		}
 
-        if (Input.GetKey(KeyCode.Mouse0)) // Sonar
+        if (Input.GetKeyDown(KeyCode.Mouse0)) // Sonar
         {
             shooter.shootWave(transform.position);
         }
@@ -107,7 +107,7 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
-    private void OnCollisionEnter (Collision other)
+    private void OnCollisionEnter(Collision other)
     {
         if (carryCount < TraitSystem.maxCarry && other.gameObject.layer == LayerMask.NameToLayer("Food") && !isHome)
         {
@@ -116,10 +116,12 @@ public class PlayerController : MonoBehaviour {
         }
 
         // Check if an enemy touches the player
-        if (other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        if (other.gameObject.layer == LayerMask.NameToLayer("Enemy") || other.gameObject.layer == LayerMask.NameToLayer("Stalker"))
         {
             gameScript.gameOver = true;
         }
+
+        
     }
 
     private void OnTriggerStay(Collider c)
@@ -145,12 +147,27 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
-    private void OnTriggerEnter(Collider c)
+    private void OnTriggerEnter(Collider other)
     {
-        if (c.gameObject.tag == "Home")
+        if (other.gameObject.tag == "Home")
         {
             isHome = true;
-            Debug.Log("going home");
+        }
+        if (other.gameObject.layer.Equals(LayerMask.NameToLayer("Light")))
+        {
+            GameObject[] stalkers = GameObject.FindGameObjectsWithTag("LightEmUp");
+            foreach (GameObject stalker in stalkers)
+            {
+                StalkerConroller stalkerController = stalker.GetComponent<StalkerConroller>();
+                if (stalkerController != null)
+                {
+                    if (Random.Range(0, 100) < 33)
+                    {
+                        stalkerController.setTarget(transform.position);
+                    }
+                }
+
+            }
         }
     }
 
@@ -159,7 +176,6 @@ public class PlayerController : MonoBehaviour {
         if (c.gameObject.tag == "Home")
         {
             isHome = false;
-            Debug.Log("leaving home");
         }
     }
 

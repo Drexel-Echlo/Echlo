@@ -9,16 +9,19 @@ public class StalkerConroller : MonoBehaviour {
     public float moveSpeed;
 
     public NPCWandering movement;
+    protected ShooterController shooter;
 
     protected GameObject player;
     protected STATE state = STATE.Wait;
     protected Vector3 target;
+    public float maxSight = 10;
 
     // Use this for initialization
     void Start()
     {
         player = GameObject.FindWithTag("Player");
         state = STATE.Wait;
+        shooter = GetComponent<ShooterController>();
     }
 
     // Update is called once per frame
@@ -30,7 +33,7 @@ public class StalkerConroller : MonoBehaviour {
         }
         else if (state == STATE.Follow)
         {
-            if (Vector3.Distance(target, transform.position) < 1.0f)
+            if (Vector3.Distance(target, transform.position) < 0.7f)
             {
                 state = STATE.Wait;
             }
@@ -44,19 +47,32 @@ public class StalkerConroller : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if (state == STATE.Wait && other.gameObject.layer.Equals(LayerMask.NameToLayer("Light")))
+        if (other.gameObject.layer.Equals(LayerMask.NameToLayer("Light")))
         {
             state = STATE.Follow;
             target = player.transform.position;
+            shooter.shootWave(transform.position);
         }
     }
 
+
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.layer != LayerMask.NameToLayer("Enemy") && other.gameObject.layer != LayerMask.NameToLayer("SonarWave"))
+        if (other.gameObject.layer != LayerMask.NameToLayer("Enemy") && other.gameObject.layer != LayerMask.NameToLayer("Stalker") && other.gameObject.layer != LayerMask.NameToLayer("SonarWave") && other.gameObject.layer != LayerMask.NameToLayer("EnemyWave"))
         {
             target = transform.position;
             state = STATE.Wait;
         }
+    }
+
+    public void setTarget(Vector3 position)
+    {
+        if (state == STATE.Follow && Vector3.Distance(position, transform.position) < maxSight)
+        {
+            target = position;
+            transform.LookAt(new Vector3(target.x, transform.position.y, target.z));
+            shooter.shootWave(transform.position);
+        }
+
     }
 }
