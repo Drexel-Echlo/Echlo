@@ -35,7 +35,7 @@ public class NPCWandering : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer.Equals(LayerMask.NameToLayer("Walls")))
+        if (other.gameObject.layer.Equals(LayerMask.NameToLayer("Walls")) || other.gameObject.tag.Equals(LayerMask.NameToLayer("Home")))
         {
             target = getNewTarget();
         }
@@ -43,7 +43,7 @@ public class NPCWandering : MonoBehaviour {
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.layer.Equals(LayerMask.NameToLayer("Walls")))
+        if (other.gameObject.layer.Equals(LayerMask.NameToLayer("Walls")) || other.gameObject.tag.Equals(LayerMask.NameToLayer("Home")))
         {
             target = getNewTarget();
         }

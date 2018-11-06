@@ -24,7 +24,8 @@ public class ShooterController : MonoBehaviour {
     public void shootWave(Vector3 position)
     {
         sendOut.Play();
-        waveClone = Instantiate(wave, shooter.position, shooter.rotation) as GameObject;
+        Quaternion rotation = Quaternion.Euler(-90, -90, 0);
+        waveClone = Instantiate(wave, shooter.position, shooter.rotation * rotation) as GameObject;
         waveClone.GetComponent<Rigidbody>().AddForce(transform.forward * shotPower);
 
         waveClone.AddComponent(typeof(PositionHolder));
