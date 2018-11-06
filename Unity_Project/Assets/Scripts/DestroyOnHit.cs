@@ -7,7 +7,7 @@ public class DestroyOnHit : MonoBehaviour
     public GameObject explosion;
     public GameObject foodExplosion;
     public GameObject enemyExplosion;
-
+    public bool isStalker = false;
     public Transform collisionPoint;
 
     public float explodeDecay;
@@ -19,11 +19,11 @@ public class DestroyOnHit : MonoBehaviour
         {
             explosionClone = Instantiate(foodExplosion, collisionPoint.position, transform.rotation);
         }
-        else if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        else if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy") || (!isStalker && collision.gameObject.layer == LayerMask.NameToLayer("Stalker")))
         {
             explosionClone = Instantiate(enemyExplosion, collisionPoint.position, transform.rotation);
         }
-        else if (collision.gameObject.tag == "LightEmUp")
+        else if (collision.gameObject.tag == "LightEmUp" || (isStalker && collision.gameObject.layer == LayerMask.NameToLayer("Player")))
         {
             explosionClone = Instantiate(explosion, collisionPoint.position, transform.rotation);
         }

@@ -1937,6 +1937,7 @@ MonoBehaviour:
   gamewintext: {fileID: 2126764872}
   gameOver: 0
   gameWin: 0
+  levelNum: 0
 --- !u!1 &782537123
 GameObject:
   m_ObjectHideFlags: 0
@@ -2442,9 +2443,42 @@ Prefab:
       propertyPath: moveSpeed
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1331328265689542, guid: f368561ea131b59469509930d30efc3e, type: 2}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1634626513644258, guid: f368561ea131b59469509930d30efc3e, type: 2}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f368561ea131b59469509930d30efc3e, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &933785520 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1331328265689542, guid: f368561ea131b59469509930d30efc3e,
+    type: 2}
+  m_PrefabInternal: {fileID: 933785519}
+--- !u!114 &933785522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 933785520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2baa82490536a74ba44cad597220ec6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wave: {fileID: 1039409802499550, guid: 88309774bdbed274d9497f59dc299551, type: 2}
+  waveClone: {fileID: 0}
+  foodSpit: {fileID: 0}
+  food: {fileID: 0}
+  shooter: {fileID: 387673723}
+  sendOut: {fileID: 782537124}
+  shotPower: 300
+  fireRate: 0
+  destroyTime: 0
 --- !u!1 &949387371
 GameObject:
   m_ObjectHideFlags: 0
@@ -3861,7 +3895,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1799538439}
-  m_LocalRotation: {x: 0.5, y: -0.5, z: 0.5, w: 0.5}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 2.7171743, z: 4.98}
   m_LocalScale: {x: 73.21694, y: 66.57895, z: 27.171753}
   m_Children: []
