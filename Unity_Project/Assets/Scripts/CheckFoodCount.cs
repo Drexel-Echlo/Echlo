@@ -5,10 +5,10 @@ using UnityEngine;
 public class CheckFoodCount : MonoBehaviour {
 
     public int foodNeed = 3;
+    public static int babyFood = 0;
     protected GameController gameScript;
 
     private GameObject[] list;
-    private GameObject[] foodlist;
 
     // Use this for initialization
     void Start()
@@ -30,7 +30,7 @@ public class CheckFoodCount : MonoBehaviour {
                 foodCount++;
             }
         }
-
+        foodCount += babyFood;
         if (foodCount >= foodNeed)
         {
             gameScript.gameWin = true;

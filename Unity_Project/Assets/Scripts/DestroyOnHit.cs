@@ -14,7 +14,6 @@ public class DestroyOnHit : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        print("collided with: " + LayerMask.LayerToName(collision.gameObject.layer) + ", " + collision.gameObject.tag);
         GameObject explosionClone = null;
         if (collision.gameObject.layer == LayerMask.NameToLayer("Food"))
         {

@@ -14,6 +14,7 @@ public class StalkerConroller : MonoBehaviour {
     protected GameObject player;
     protected STATE state = STATE.Wait;
     protected Vector3 target;
+    public float maxSight = 10;
 
     // Use this for initialization
     void Start()
@@ -66,9 +67,8 @@ public class StalkerConroller : MonoBehaviour {
 
     public void setTarget(Vector3 position)
     {
-        if (state == STATE.Follow)
+        if (state == STATE.Follow && Vector3.Distance(position, transform.position) < maxSight)
         {
-            print("Shoot");
             target = position;
             transform.LookAt(new Vector3(target.x, transform.position.y, target.z));
             shooter.shootWave(transform.position);
