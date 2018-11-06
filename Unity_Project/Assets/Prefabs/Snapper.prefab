@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4814109607042450}
   - component: {fileID: 64008926367216426}
+  - component: {fileID: 135535700370253016}
   - component: {fileID: 54015899226871246}
   - component: {fileID: 114200652859966114}
   m_Layer: 14
@@ -156,4 +157,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 60
-  attackRange: 4
+--- !u!135 &135535700370253016
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1286863471012324}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 20
+  m_Center: {x: 0, y: 0, z: 0}

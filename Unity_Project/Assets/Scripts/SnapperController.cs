@@ -6,7 +6,6 @@ public class SnapperController : MonoBehaviour {
     protected enum STATE { Wait, Attack };
 
     public float moveSpeed;
-    public float attackRange;
 
     protected GameObject player;
     protected STATE state = STATE.Wait;
@@ -41,7 +40,7 @@ public class SnapperController : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if (state == STATE.Wait && other.gameObject.layer.Equals(LayerMask.NameToLayer("Light")) && Vector3.Distance(transform.position, player.transform.position) < attackRange)
+        if (state == STATE.Wait && other.gameObject.tag == "Player")
         {
             state = STATE.Attack;
             target = player.transform.position;
