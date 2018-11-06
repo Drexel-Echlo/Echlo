@@ -23,6 +23,8 @@ public class GameController : MonoBehaviour {
         gameOver = false;
         restart = false;
         Time.timeScale = 1f;
+        Scene level = SceneManager.GetActiveScene();
+        levelNum = level.buildIndex;
     }
 
     // Update is called once per frame
@@ -44,7 +46,12 @@ public class GameController : MonoBehaviour {
 
         if (restart && Input.anyKeyDown)
         {
-            if (gameWin)
+            if (gameWin && levelNum == SceneManager.sceneCountInBuildSettings)
+            {
+                levelNum = 0;
+                SceneManager.LoadScene(levelNum, LoadSceneMode.Single);
+            }
+            else if (gameWin)
             {
                 levelNum++;
                 SceneManager.LoadScene(levelNum, LoadSceneMode.Single);
@@ -55,5 +62,10 @@ public class GameController : MonoBehaviour {
             }
 
         }
+    }
+
+    void ExitGame()
+    {
+        Application.Quit();
     }
 }
