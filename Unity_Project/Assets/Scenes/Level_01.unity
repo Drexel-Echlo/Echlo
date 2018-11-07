@@ -2024,11 +2024,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 949387371}
+  pauseMenu: {fileID: 0}
   gameovertext: {fileID: 1784171135}
   gamewintext: {fileID: 2126764872}
   gameOver: 0
   gameWin: 0
-  levelNum: 1
+  isPauseActive: 0
 --- !u!1 &782537123
 GameObject:
   m_ObjectHideFlags: 0
@@ -2526,13 +2527,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wave: {fileID: 1039409802499550, guid: efccfaa2c8df4924896f5ab0114cbdd3, type: 2}
-  waveClone: {fileID: 0}
+  waveClone: {fileID: 1039409802499550, guid: efccfaa2c8df4924896f5ab0114cbdd3, type: 2}
   foodSpit: {fileID: 1039277364745240, guid: 3b25a291c4bcded4b920dd72b7d7b8eb, type: 2}
   food: {fileID: 1091561412272928, guid: ffd03e6bd76f6ab43901db73b4c6aea9, type: 2}
   shooter: {fileID: 1799538440}
   sendOut: {fileID: 949387375}
-  shotPower: 150
-  fireRate: 0
+  shotPower: 200
+  fireRate: 0.1
   destroyTime: 3
 --- !u!114 &949387374
 MonoBehaviour:
@@ -4143,7 +4144,8 @@ MonoBehaviour:
   - {fileID: 0}
   movingLight: {fileID: 1684139783786102, guid: 80672033fc46bce49abf200df02e5e1a,
     type: 2}
-  movingLightClone: {fileID: 0}
+  movingLightClone: {fileID: 1684139783786102, guid: 80672033fc46bce49abf200df02e5e1a,
+    type: 2}
   isFoodCreated: 0
   isHome: 0
 --- !u!54 &1849468972

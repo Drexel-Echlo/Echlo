@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class DestroyOnHit : MonoBehaviour
 {
-    public GameObject explosion;
+    //public GameObject explosion;
     public GameObject foodExplosion;
     public GameObject enemyExplosion;
-    public bool isStalker = false;
+
+    public GameObject wallExplosionBlue;
+    public GameObject wallExplosionYel;
+    public GameObject wallExplosionPink;
+
     public Transform collisionPoint;
 
     public float explodeDecay;
@@ -19,13 +23,27 @@ public class DestroyOnHit : MonoBehaviour
         {
             explosionClone = Instantiate(foodExplosion, collisionPoint.position, transform.rotation);
         }
-        else if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy") || (!isStalker && collision.gameObject.layer == LayerMask.NameToLayer("Stalker")))
+        else if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
             explosionClone = Instantiate(enemyExplosion, collisionPoint.position, transform.rotation);
         }
-        else if ((collision.gameObject.tag == "LightEmUp" && (!isStalker || collision.gameObject.layer != LayerMask.NameToLayer("Stalker"))) || (isStalker && collision.gameObject.layer == LayerMask.NameToLayer("Player")))
+        else if (collision.gameObject.tag == "LightEmUp")
         {
-            explosionClone = Instantiate(explosion, collisionPoint.position, transform.rotation);
+            float rdm = Random.Range(0.0f, 5.0f);
+            if (rdm <= 1.0f)
+            {
+                explosionClone = Instantiate(wallExplosionBlue, collisionPoint.position, transform.rotation);
+            }
+            else if (1.0f <= rdm && rdm <= 3.0f)
+            {
+                explosionClone = Instantiate(wallExplosionYel, collisionPoint.position, transform.rotation);
+            }
+            else /*if (rdm > 3.0f)*/
+            {
+                explosionClone = Instantiate(wallExplosionPink, collisionPoint.position, transform.rotation);
+            }
+
+
         }
         if (explosionClone != null)
         {
