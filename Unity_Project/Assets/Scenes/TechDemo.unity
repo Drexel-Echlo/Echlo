@@ -2183,11 +2183,8 @@ MonoBehaviour:
   gamewintext: {fileID: 2126764872}
   gameOver: 0
   gameWin: 0
-<<<<<<< HEAD
   isPauseActive: 0
-=======
   levelNum: 0
->>>>>>> 8c7275adcf7a54b85bbd23c8a28639d4f0f25a4a
 --- !u!1 &782537123
 GameObject:
   m_ObjectHideFlags: 0
