@@ -54,7 +54,7 @@ public class PlayerController : MonoBehaviour {
 			transform.position = Vector3.MoveTowards (transform.position, rotationScript.point, -step/4);
 		}
 
-        if (Input.GetKeyDown(KeyCode.Mouse0)) // Sonar
+        if (Input.GetKey(KeyCode.Mouse0)) // Sonar
         {
             shooter.shootWave(transform.position);
         }

@@ -16,6 +16,7 @@ public class GameController : MonoBehaviour {
     public bool gameOver;
     public bool gameWin;
     private bool restart;
+    public int level;
 
     public bool isPauseActive;
 
@@ -51,6 +52,7 @@ public class GameController : MonoBehaviour {
         gameOver = false;
         restart = false;
         Time.timeScale = 1f;
+        level = SceneManager.GetActiveScene().buildIndex;
     }
 
     // Update is called once per frame
@@ -72,9 +74,15 @@ public class GameController : MonoBehaviour {
 
         if (restart && Input.anyKeyDown)
         {
-            if (gameWin)
+            if (gameWin && level == SceneManager.sceneCountInBuildSettings)
             {
+                level = 0;
                 SceneManager.LoadScene("StartScreen", LoadSceneMode.Single);
+            }
+            else if (gameWin)
+            {
+                level++;
+                SceneManager.LoadScene(level, LoadSceneMode.Single);
             }
             else
             {
