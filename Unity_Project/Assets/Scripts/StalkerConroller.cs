@@ -52,6 +52,9 @@ public class StalkerConroller : MonoBehaviour {
             state = STATE.Follow;
             target = player.transform.position;
             shooter.shootWave(transform.position);
+        }else if (state == STATE.Follow && other.gameObject.tag == "Home")
+        {
+            state = STATE.Wait;
         }
     }
 

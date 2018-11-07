@@ -44,7 +44,11 @@ public class SnapperController : MonoBehaviour {
         {
             state = STATE.Attack;
             target = player.transform.position;
+        }else if (state == STATE.Attack  && other.gameObject.tag == "Home")
+        {
+            state = STATE.Wait;
         }
+
     }
 
 

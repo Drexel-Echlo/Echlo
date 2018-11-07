@@ -57,6 +57,8 @@ public class BasicEnemyAI : MonoBehaviour {
         if (state == STATE.Wait && other.gameObject.layer.Equals(LayerMask.NameToLayer("Light"))) {
             state = STATE.Follow;
             target = other.gameObject.GetComponent<PositionHolder>().position;
+        }else if ((state == STATE.Follow || state == STATE.Trail) && other.gameObject.tag == "Home") {
+            state = STATE.Wait;
         }
     }
 
