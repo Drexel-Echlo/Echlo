@@ -38,7 +38,7 @@ public class DestroyOnHit : MonoBehaviour
             {
                 explosionClone = Instantiate(wallExplosionYel, collisionPoint.position, transform.rotation);
             }
-            else /*if (rdm > 3.0f)*/
+            else if (rdm > 3.0f)
             {
                 explosionClone = Instantiate(wallExplosionPink, collisionPoint.position, transform.rotation);
             }

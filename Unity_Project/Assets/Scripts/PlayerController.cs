@@ -29,13 +29,26 @@ public class PlayerController : MonoBehaviour {
     
     public bool isFoodCreated;
     public bool isHome;
+    protected ArrayList stalkers;
 
     // Use this for initialization
-    void Start () {
-		rotationScript = player.GetComponent<PlayerRotator>();
+    void Start()
+    {
+        rotationScript = player.GetComponent<PlayerRotator>();
         gameScript = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         shooter = player.GetComponent<ShooterController>();
+        stalkers = new ArrayList();
+        GameObject[] lightemUps = GameObject.FindGameObjectsWithTag("LightEmUp");
+        foreach (GameObject stalker in lightemUps)
+        {
+            StalkerConroller stalkerController = stalker.GetComponent<StalkerConroller>();
+            if (stalkerController != null)
+            {
+                stalkers.Add(stalkerController);
+            }
+        }
     }
+
 
 	void FixedUpdate () {
 		
@@ -120,8 +133,6 @@ public class PlayerController : MonoBehaviour {
         {
             gameScript.gameOver = true;
         }
-
-        
     }
 
     private void OnTriggerStay(Collider c)
@@ -153,22 +164,6 @@ public class PlayerController : MonoBehaviour {
         {
             isHome = true;
         }
-        if (other.gameObject.layer.Equals(LayerMask.NameToLayer("Light")))
-        {
-            GameObject[] stalkers = GameObject.FindGameObjectsWithTag("LightEmUp");
-            foreach (GameObject stalker in stalkers)
-            {
-                StalkerConroller stalkerController = stalker.GetComponent<StalkerConroller>();
-                if (stalkerController != null)
-                {
-                    if (Random.Range(0, 100) < 33)
-                    {
-                        stalkerController.setTarget(transform.position);
-                    }
-                }
-
-            }
-        }
     }
 
     private void OnTriggerExit(Collider c)
@@ -176,6 +171,13 @@ public class PlayerController : MonoBehaviour {
         if (c.gameObject.tag == "Home")
         {
             isHome = false;
+        }
+        if (c.gameObject.layer.Equals(LayerMask.NameToLayer("Light")))
+        {
+            foreach (StalkerConroller stalkerController in stalkers)
+            {
+                stalkerController.setTarget(transform.position);
+            }
         }
     }
 

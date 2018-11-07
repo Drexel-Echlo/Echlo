@@ -47,7 +47,7 @@ public class StalkerConroller : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer.Equals(LayerMask.NameToLayer("Light")))
+        if (state == STATE.Wait && other.gameObject.layer.Equals(LayerMask.NameToLayer("Light")))
         {
             state = STATE.Follow;
             target = player.transform.position;
@@ -66,11 +66,20 @@ public class StalkerConroller : MonoBehaviour {
             target = transform.position;
             state = STATE.Wait;
         }
+        if (other.gameObject.layer == LayerMask.NameToLayer("Enemy") && other.gameObject.name.Equals("Snapper"))
+        {
+            state = STATE.Wait;
+            Destroy(this.gameObject);
+        } else if (other.gameObject.name.Equals("Needle"))
+        {
+            state = STATE.Wait;
+            Destroy(other.gameObject);
+        }
     }
 
     public void setTarget(Vector3 position)
     {
-        if (state == STATE.Follow && Vector3.Distance(position, transform.position) < maxSight)
+        if (state == STATE.Follow && Vector3.Distance(position, transform.position) < maxSight && Random.Range(0, 100) < 33)
         {
             target = position;
             transform.LookAt(new Vector3(target.x, transform.position.y, target.z));

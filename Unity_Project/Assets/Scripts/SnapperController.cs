@@ -40,10 +40,10 @@ public class SnapperController : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if (state == STATE.Wait && other.gameObject.tag == "Player")
+        if (state == STATE.Wait && (other.gameObject.tag == "Player" || other.gameObject.layer == LayerMask.NameToLayer("Stalker") || other.gameObject.layer == LayerMask.NameToLayer("Enemy")))
         {
             state = STATE.Attack;
-            target = player.transform.position;
+            target = other.transform.position;
         }else if (state == STATE.Attack  && other.gameObject.tag == "Home")
         {
             state = STATE.Wait;
