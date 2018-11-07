@@ -18,16 +18,18 @@ public class DestroyOnHit : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        int layer = collision.gameObject.layer;
+        string tag = collision.gameObject.tag;
         GameObject explosionClone = null;
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Food"))
+        if (layer == LayerMask.NameToLayer("Food"))
         {
             explosionClone = Instantiate(foodExplosion, collisionPoint.position, transform.rotation);
         }
-        else if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        else if (layer == LayerMask.NameToLayer("Enemy"))
         {
             explosionClone = Instantiate(enemyExplosion, collisionPoint.position, transform.rotation);
         }
-        else if (collision.gameObject.tag == "LightEmUp")
+        else if (tag == "LightEmUp")
         {
             float rdm = Random.Range(0.0f, 5.0f);
             if (rdm <= 1.0f)
