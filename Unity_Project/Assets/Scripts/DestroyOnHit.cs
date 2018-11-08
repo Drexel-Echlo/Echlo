@@ -26,7 +26,7 @@ public class DestroyOnHit : MonoBehaviour
         {
             explosion = foodExplosion;
         }
-        else if (layer == LayerMask.NameToLayer("Enemy"))
+        else if (layer == LayerMask.NameToLayer("Enemy") || layer == LayerMask.NameToLayer("Stalker"))
         {
             explosion = enemyExplosion;
         }
