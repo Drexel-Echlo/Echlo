@@ -706,7 +706,7 @@ MonoBehaviour:
 
     RMB: Vomit stored food
 
-    Q: Pause/trait management (demo only)'
+    P: Pause/trait management '
 --- !u!222 &404506935
 CanvasRenderer:
   m_ObjectHideFlags: 0
