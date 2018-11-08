@@ -57,14 +57,15 @@ public class BasicEnemyAI : MonoBehaviour {
         if (state == STATE.Wait && other.gameObject.layer.Equals(LayerMask.NameToLayer("Light"))) {
             state = STATE.Follow;
             target = other.gameObject.GetComponent<PositionHolder>().position;
-        }else if ((state == STATE.Follow || state == STATE.Trail) && other.gameObject.tag == "Home") {
+        } else if ((state == STATE.Follow || state == STATE.Trail) && other.gameObject.tag == "Home") {
             state = STATE.Wait;
         }
     }
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.layer != LayerMask.NameToLayer("Enemy") && other.gameObject.layer != LayerMask.NameToLayer("Stalker") && other.gameObject.layer != LayerMask.NameToLayer("SonarWave") && other.gameObject.layer != LayerMask.NameToLayer("EnemyWave"))
+        int layer = other.gameObject.layer;
+        if (layer != LayerMask.NameToLayer("Enemy") && layer != LayerMask.NameToLayer("Stalker") && layer != LayerMask.NameToLayer("SonarWave") && layer != LayerMask.NameToLayer("EnemyWave"))
         {
             target = transform.position;
             state = STATE.Wait;

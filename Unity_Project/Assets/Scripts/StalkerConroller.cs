@@ -52,7 +52,7 @@ public class StalkerConroller : MonoBehaviour {
             state = STATE.Follow;
             target = player.transform.position;
             shooter.shootWave(transform.position);
-        }else if (state == STATE.Follow && other.gameObject.tag == "Home")
+        } else if (state == STATE.Follow && other.gameObject.tag == "Home")
         {
             state = STATE.Wait;
         }
@@ -61,16 +61,18 @@ public class StalkerConroller : MonoBehaviour {
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.layer != LayerMask.NameToLayer("Enemy") && other.gameObject.layer != LayerMask.NameToLayer("Stalker") && other.gameObject.layer != LayerMask.NameToLayer("SonarWave") && other.gameObject.layer != LayerMask.NameToLayer("EnemyWave"))
+        int layer = other.gameObject.layer;
+        string name = other.gameObject.name;
+        if (layer != LayerMask.NameToLayer("Enemy") && layer != LayerMask.NameToLayer("Stalker") && layer != LayerMask.NameToLayer("SonarWave") && layer != LayerMask.NameToLayer("EnemyWave"))
         {
             target = transform.position;
             state = STATE.Wait;
         }
-        if (other.gameObject.layer == LayerMask.NameToLayer("Enemy") && other.gameObject.name.Equals("Snapper"))
+        if (layer == LayerMask.NameToLayer("Enemy") && name.Equals("Snapper"))
         {
             state = STATE.Wait;
             Destroy(this.gameObject);
-        } else if (other.gameObject.name.Equals("Needle"))
+        } else if (name.Equals("Needle"))
         {
             state = STATE.Wait;
             Destroy(other.gameObject);

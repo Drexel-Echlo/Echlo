@@ -14,6 +14,11 @@ public class TraitSystem : MonoBehaviour {
     public static bool hasFoodMagnet;
     public static bool hasCompass;
 
+    private void Start()
+    {
+        maxCarry = (hasDigestiveTrack ? 3 : 1);
+    }
+
     // Update is called once per frame
     void Update ()
     {
@@ -40,21 +45,13 @@ public class TraitSystem : MonoBehaviour {
             button[1].gameObject.SetActive(false);
             button[2].gameObject.SetActive(false);
         }
-
-        if (hasDigestiveTrack)
-        {
-            maxCarry = 3;
-        }
-        else
-        {
-            maxCarry = 1;
-        }
     }
 
     public void ToggleDigestiveTrack()
     {
         hasDigestiveTrack = !hasDigestiveTrack;
         buttonManager[0].SetTraitActive(hasDigestiveTrack);
+        maxCarry = (hasDigestiveTrack ? 3 : 1);
     }
 
     public void ToggleFoodMagnet()

@@ -35,18 +35,13 @@ public class NPCWandering : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer.Equals(LayerMask.NameToLayer("Walls")) || other.gameObject.tag.Equals(LayerMask.NameToLayer("Home")))
-        {
-            target = getNewTarget();
-        }
+        handleTrigger(other);
+
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.layer.Equals(LayerMask.NameToLayer("Walls")) || other.gameObject.tag.Equals(LayerMask.NameToLayer("Home")))
-        {
-            target = getNewTarget();
-        }
+        handleTrigger(other);
     }
 
     IEnumerator Wandering(float moveAmountX, float moveAmountZ)
@@ -67,6 +62,14 @@ public class NPCWandering : MonoBehaviour {
         else
         {
             transform.Translate(Vector3.forward * wanderSpeed * Time.deltaTime);
+        }
+    }
+
+    public void handleTrigger(Collider other)
+    {
+        if (other.gameObject.layer.Equals(LayerMask.NameToLayer("Walls")) || other.gameObject.tag.Equals(LayerMask.NameToLayer("Home")))
+        {
+            target = getNewTarget();
         }
     }
 

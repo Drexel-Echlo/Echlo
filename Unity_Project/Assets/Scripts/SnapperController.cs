@@ -40,11 +40,13 @@ public class SnapperController : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if (state == STATE.Wait && (other.gameObject.tag == "Player" || other.gameObject.layer == LayerMask.NameToLayer("Stalker") || other.gameObject.layer == LayerMask.NameToLayer("Enemy")))
+        string tag = other.gameObject.tag;
+        int layer = other.gameObject.layer;
+        if (state == STATE.Wait && (tag == "Player" || layer == LayerMask.NameToLayer("Stalker") || layer == LayerMask.NameToLayer("Enemy")))
         {
             state = STATE.Attack;
             target = other.transform.position;
-        }else if (state == STATE.Attack  && other.gameObject.tag == "Home")
+        } else if (state == STATE.Attack  && tag == "Home")
         {
             state = STATE.Wait;
         }
@@ -54,7 +56,8 @@ public class SnapperController : MonoBehaviour {
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.layer != LayerMask.NameToLayer("Enemy") && other.gameObject.layer != LayerMask.NameToLayer("Stalker") && other.gameObject.layer != LayerMask.NameToLayer("SonarWave") && other.gameObject.layer != LayerMask.NameToLayer("EnemyWave"))
+        int layer = other.gameObject.layer;
+        if (layer != LayerMask.NameToLayer("Enemy") && layer != LayerMask.NameToLayer("Stalker") && layer != LayerMask.NameToLayer("SonarWave") && layer != LayerMask.NameToLayer("EnemyWave"))
         {
             target = transform.position;
             state = STATE.Wait;

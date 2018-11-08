@@ -21,42 +21,44 @@ public class DestroyOnHit : MonoBehaviour
         int layer = collision.gameObject.layer;
         string tag = collision.gameObject.tag;
         GameObject explosionClone = null;
+        GameObject explosion = null;
         if (layer == LayerMask.NameToLayer("Food"))
         {
-            explosionClone = Instantiate(foodExplosion, collisionPoint.position, transform.rotation);
+            explosion = foodExplosion;
         }
         else if (layer == LayerMask.NameToLayer("Enemy"))
         {
-            explosionClone = Instantiate(enemyExplosion, collisionPoint.position, transform.rotation);
+            explosion = enemyExplosion;
         }
         else if (tag == "Player")
         {
-            explosionClone = Instantiate(wallExplosionBlue, collisionPoint.position, transform.rotation);
+            explosion = wallExplosionBlue;
         }
         else if (tag == "LightEmUp")
         {
             float rdm = Random.Range(0.0f, 5.0f);
             if (rdm <= 1.0f)
             {
-                explosionClone = Instantiate(wallExplosionBlue, collisionPoint.position, transform.rotation);
+                explosion = wallExplosionBlue;
             }
             else if (1.0f <= rdm && rdm <= 3.0f)
             {
-                explosionClone = Instantiate(wallExplosionYel, collisionPoint.position, transform.rotation);
+                explosion = wallExplosionYel;
             }
             else if (rdm > 3.0f)
             {
-                explosionClone = Instantiate(wallExplosionPink, collisionPoint.position, transform.rotation);
+                explosion = wallExplosionPink;
             }
-
-
         }
-        if (explosionClone != null)
+
+        if(explosion != null)
         {
+            explosionClone = Instantiate(explosion, collisionPoint.position, transform.rotation);
             GameObject.Destroy(explosionClone, explodeDecay);
             explosionClone.AddComponent(typeof(PositionHolder));
             explosionClone.GetComponent<PositionHolder>().position = GetComponent<PositionHolder>().position;
         }
+
         Destroy(this.gameObject);
     }
 }

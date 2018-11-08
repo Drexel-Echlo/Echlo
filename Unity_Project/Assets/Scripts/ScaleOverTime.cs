@@ -21,12 +21,10 @@ public class ScaleOverTime : MonoBehaviour {
             if (isShrinking)
             {
                 this.transform.localScale -= deltaScale;
-
             }
             else
             {
                 this.transform.localScale += deltaScale;
-
             }
         }
 	}
