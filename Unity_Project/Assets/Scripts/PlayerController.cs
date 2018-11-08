@@ -72,12 +72,6 @@ public class PlayerController : MonoBehaviour {
             shooter.shootWave(transform.position);
         }
 
-        if (Input.GetKeyDown(KeyCode.Mouse1) && carryCount != 0) // Spit Food
-        {
-            shooter.spitFood();
-            carryCount--;
-        }
-
         // Handle Food Display on character
         if ((carryCount == 3 && carryingFoodClone[2] == null) ||
             (carryCount == 2 && (carryingFoodClone[1] == null || (carryingFoodClone[1] != null && carryingFoodClone[2] != null))) ||
@@ -85,6 +79,15 @@ public class PlayerController : MonoBehaviour {
             (carryCount == 0))
         {
             displayFood(carryCount);
+        }
+    }
+
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Mouse1) && carryCount != 0) // Spit Food
+        {
+            shooter.spitFood();
+            carryCount--;
         }
     }
 
