@@ -3098,6 +3098,11 @@ Prefab:
       propertyPath: m_Name
       value: MainPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 114885829372355474, guid: 980aa09c2e159a8479ccf12c473e10d6,
+        type: 2}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1452372394}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 980aa09c2e159a8479ccf12c473e10d6, type: 2}
   m_IsPrefabAsset: 0
