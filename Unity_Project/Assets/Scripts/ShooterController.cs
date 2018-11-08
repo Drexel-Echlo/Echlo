@@ -17,13 +17,18 @@ public class ShooterController : MonoBehaviour {
 
     public float shotPower;
     public float fireRate;
-    public float fireDelay;
+    public float fireDelay = -1;
     public float destroyTime;
-
-
 
     private bool allowSpitFire = true;
 
+    public void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.Mouse0))
+        {
+            fireDelay = -1;
+        }
+    }
     public void shootWave(Vector3 position)
     {
         if (fireDelay >= fireRate)
