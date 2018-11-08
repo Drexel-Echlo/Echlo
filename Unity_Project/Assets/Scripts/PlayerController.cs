@@ -72,7 +72,7 @@ public class PlayerController : MonoBehaviour {
             shooter.shootWave(transform.position);
         }
 
-        if (Input.GetKeyDown(KeyCode.Mouse1) && carryCount != 0 && !isHome) // Spit Food
+        if (Input.GetKeyDown(KeyCode.Mouse1) && carryCount != 0) // Spit Food
         {
             shooter.spitFood();
             carryCount--;
@@ -122,7 +122,7 @@ public class PlayerController : MonoBehaviour {
 
     private void OnCollisionEnter(Collision other)
     {
-        if (carryCount < TraitSystem.maxCarry && other.gameObject.layer == LayerMask.NameToLayer("Food") && !isHome)
+        if (carryCount < TraitSystem.maxCarry && other.gameObject.layer == LayerMask.NameToLayer("Food"))
         {
             Destroy(other.gameObject);
             carryCount++;
@@ -132,29 +132,6 @@ public class PlayerController : MonoBehaviour {
         if (other.gameObject.layer == LayerMask.NameToLayer("Enemy") || other.gameObject.layer == LayerMask.NameToLayer("Stalker"))
         {
             gameScript.gameOver = true;
-        }
-    }
-
-    private void OnTriggerStay(Collider c)
-    {
-        if (Input.GetKeyDown(KeyCode.Mouse1) && carryCount != 0 && c.gameObject.tag == "Home")
-        {
-            carryCount--;
-            Instantiate(foodDrop, mouth.position, Quaternion.identity);
-            
-            // The Home Tag is good, because vomiting to baby fish while home will is 1/3 of completing a level.
-            //I was also thinking you could vommit when ever, but not add to level score etc.
-            /*if (Input.GetKeyDown(KeyCode.Mouse1) && isCarryingFood && c.gameObject.tag == "Home")
-                {
-                isCarryingFood = false;
-                Instantiate(vomitFood, mouth.position, Quaternion.identity);
-                LevelScore++;
-                }
-            else if (Input.GetKeyDown(KeyCode.Space) && isCarryingFood)
-                {
-                isCarryingFood = false;
-                Instantiate(vomitFood, mouth.position, Quaternion.identity);
-                }*/
         }
     }
 
