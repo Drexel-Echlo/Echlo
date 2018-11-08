@@ -26,6 +26,14 @@ public class ShooterController : MonoBehaviour {
 
     public void shootWave(Vector3 position)
     {
+        if (fireDelay >= fireRate)
+        {
+            fireDelay = 0;
+        }
+        else
+        {
+            fireDelay++;
+        }
         if (fireDelay == 0){
             sendOut.Play();
             Quaternion rotation = Quaternion.Euler(-90, -90, 0);
@@ -34,17 +42,7 @@ public class ShooterController : MonoBehaviour {
 
             waveClone.AddComponent(typeof(PositionHolder));
             waveClone.GetComponent<PositionHolder>().position = position;
-
-            fireDelay++;
         }
-        else if (fireDelay == fireRate){
-            fireDelay = 0;
-        }
-        else
-        {
-            fireDelay++;
-        }
-
     }
 
     public void spitFood()

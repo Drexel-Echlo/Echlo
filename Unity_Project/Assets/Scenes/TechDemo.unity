@@ -1453,7 +1453,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1452372394}
-  player: {fileID: 1849468970}
   pointer: {fileID: 1288811257}
 --- !u!1 &619590777
 GameObject:
@@ -2220,7 +2219,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d455370bd4aeb648932fa1b6cb3cd19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 949387371}
   pauseMenu: {fileID: 674114201}
   gameovertext: {fileID: 1784171135}
   gamewintext: {fileID: 2126764872}
@@ -2922,6 +2920,7 @@ MonoBehaviour:
   sendOut: {fileID: 949387375}
   shotPower: 200
   fireRate: 0
+  fireDelay: 0
   destroyTime: 3
 --- !u!114 &949387374
 MonoBehaviour:
