@@ -29,6 +29,7 @@ public class ShooterController : MonoBehaviour {
             fireDelay = -1;
         }
     }
+
     public void shootWave(Vector3 position)
     {
         if (fireDelay >= fireRate)
