@@ -29,6 +29,10 @@ public class DestroyOnHit : MonoBehaviour
         {
             explosionClone = Instantiate(enemyExplosion, collisionPoint.position, transform.rotation);
         }
+        else if (tag == "Player")
+        {
+            explosionClone = Instantiate(wallExplosionBlue, collisionPoint.position, transform.rotation);
+        }
         else if (tag == "LightEmUp")
         {
             float rdm = Random.Range(0.0f, 5.0f);
