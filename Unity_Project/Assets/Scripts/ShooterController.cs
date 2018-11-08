@@ -17,19 +17,34 @@ public class ShooterController : MonoBehaviour {
 
     public float shotPower;
     public float fireRate;
+    public float fireDelay;
     public float destroyTime;
+
+
 
     private bool allowSpitFire = true;
 
     public void shootWave(Vector3 position)
     {
-        sendOut.Play();
-        Quaternion rotation = Quaternion.Euler(-90, -90, 0);
-        waveClone = Instantiate(wave, shooter.position, shooter.rotation * rotation) as GameObject;
-        waveClone.GetComponent<Rigidbody>().AddForce(transform.forward * shotPower);
+        if (fireDelay == 0){
+            sendOut.Play();
+            Quaternion rotation = Quaternion.Euler(-90, -90, 0);
+            waveClone = Instantiate(wave, shooter.position, shooter.rotation * rotation) as GameObject;
+            waveClone.GetComponent<Rigidbody>().AddForce(transform.forward * shotPower);
 
-        waveClone.AddComponent(typeof(PositionHolder));
-        waveClone.GetComponent<PositionHolder>().position = position;
+            waveClone.AddComponent(typeof(PositionHolder));
+            waveClone.GetComponent<PositionHolder>().position = position;
+
+            fireDelay++;
+        }
+        else if (fireDelay == fireRate){
+            fireDelay = 0;
+        }
+        else
+        {
+            fireDelay++;
+        }
+
     }
 
     public void spitFood()
