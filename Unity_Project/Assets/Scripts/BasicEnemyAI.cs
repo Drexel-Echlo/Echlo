@@ -55,8 +55,15 @@ public class BasicEnemyAI : MonoBehaviour {
     private void OnTriggerEnter(Collider other)
     {
         if (state == STATE.Wait && other.gameObject.layer.Equals(LayerMask.NameToLayer("Light"))) {
-            state = STATE.Follow;
-            target = other.gameObject.GetComponent<PositionHolder>().position;
+            PositionHolder holder = other.gameObject.GetComponent<PositionHolder>();
+            if (holder != null)
+            {
+                state = STATE.Follow;
+                target = holder.position;
+            } else
+            {
+                print("no holder");
+            }
         } else if ((state == STATE.Follow || state == STATE.Trail) && other.gameObject.tag == "Home") {
             state = STATE.Wait;
         }
