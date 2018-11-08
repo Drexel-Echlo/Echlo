@@ -17,7 +17,7 @@ public class BasicEnemyAI : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        player = GameObject.FindWithTag("Player");
+        player = GameController.getMainPlayer();
         state = STATE.Wait;
     }
 

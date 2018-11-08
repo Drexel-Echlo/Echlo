@@ -14,16 +14,8 @@ public class MagnetObject : MonoBehaviour {
     private void Start()
     {
         home = GameObject.FindGameObjectWithTag("Home").transform;
-        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-        foreach (GameObject p in players)
-        {
-            playerController = p.GetComponent<PlayerController>();
-            if (playerController != null)
-            {
-                player = p;
-                break;
-            }
-        }
+        player = GameController.getMainPlayer();
+        playerController = player.GetComponent<PlayerController>();
     }
 
     // Update is called once per frame

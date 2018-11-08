@@ -6,9 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour {
 
-    public GameObject player;
-    //public PlayerController player;
-    //public GameObject enemy;
+    public static GameObject mainPlayer;
+    public static GameObject player;
     public GameObject pauseMenu;
 
     public Text gameovertext;
@@ -53,6 +52,7 @@ public class GameController : MonoBehaviour {
         restart = false;
         Time.timeScale = 1f;
         level = SceneManager.GetActiveScene().buildIndex;
+        getMainPlayer();
     }
 
     // Update is called once per frame
@@ -101,5 +101,26 @@ public class GameController : MonoBehaviour {
         isPauseActive = !isPauseActive;
         pauseMenu.gameObject.SetActive(!pauseMenu.gameObject.activeSelf);
         Time.timeScale = (Time.timeScale + 1) % 2;
+    }
+
+    public static GameObject getMainPlayer()
+    {
+        if (mainPlayer != null)
+        {
+            return mainPlayer;
+        }
+        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+        foreach (GameObject p in players)
+        {
+            PlayerController playerController = p.GetComponent<PlayerController>();
+            if (playerController != null)
+            {
+                mainPlayer = p;
+            } else
+            {
+                player = p;
+            }
+        }
+        return mainPlayer;
     }
 }

@@ -6,13 +6,12 @@ public class PointToHome : MonoBehaviour {
 
     public GameObject target;
     private Vector3 point;
-    public GameObject player;
     private PlayerController moveScript;
     public GameObject pointer;
     // Use this for initialization
     void Start () {
         point = target.transform.position;
-        moveScript = player.GetComponent<PlayerController>();
+        moveScript = GameController.getMainPlayer().GetComponent<PlayerController>();
 	}
 	
 	// Update is called once per frame

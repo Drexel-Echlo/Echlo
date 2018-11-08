@@ -17,6 +17,10 @@ public class TraitSystem : MonoBehaviour {
     private void Start()
     {
         maxCarry = (hasDigestiveTrack ? 3 : 1);
+        buttonManager[0].SetTraitActive(hasDigestiveTrack);
+        buttonManager[1].SetTraitActive(hasFoodMagnet);
+        buttonManager[2].SetTraitActive(hasCompass);
+
     }
 
     // Update is called once per frame
