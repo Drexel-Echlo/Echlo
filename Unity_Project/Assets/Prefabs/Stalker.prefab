@@ -281,7 +281,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 68b5e6468d9aac0479b684cb54cecb6e, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -397,11 +397,15 @@ MonoBehaviour:
   foodSpit: {fileID: 0}
   food: {fileID: 0}
   shooter: {fileID: 4731997340909590}
-  sendOut: {fileID: 82275219825542270}
+  sfxSource: {fileID: 0}
+  sfxClips:
+  - {fileID: 8300000, guid: e7c2de868df8d1f4984b6a7e40983973, type: 3}
   shotPower: 200
   fireRate: 0
   fireDelay: -1
   destroyTime: 0
+  minPitch: 0.6
+  maxPitch: 1
 --- !u!114 &114403488123422458
 MonoBehaviour:
   m_ObjectHideFlags: 1
