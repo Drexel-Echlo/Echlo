@@ -10,15 +10,15 @@ public class TraitSystem : MonoBehaviour {
     public ButtonManager[] buttonManager;
 
     public static int maxCarry;
-
-    public static bool hasDigestiveTrack;
+    
     public static bool hasFoodMagnet;
     public static bool hasCompass;
+    public static bool hasFatTissue;
 
     private void Start()
     {
         maxCarry = 3;
-        buttonManager[0].SetTraitActive(hasDigestiveTrack);
+        buttonManager[0].SetTraitActive(hasFatTissue);
         buttonManager[1].SetTraitActive(hasFoodMagnet);
         buttonManager[2].SetTraitActive(hasCompass);
     }
@@ -60,5 +60,10 @@ public class TraitSystem : MonoBehaviour {
     {
         hasCompass = !hasCompass;
         buttonManager[2].SetTraitActive(hasCompass);
+    }
+    public void ToggleFatTissue()
+    {
+        hasFatTissue = !hasFatTissue;
+        buttonManager[0].SetTraitActive(hasFatTissue);
     }
 }

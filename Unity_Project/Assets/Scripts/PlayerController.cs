@@ -134,7 +134,15 @@ public class PlayerController : MonoBehaviour {
         // Check if an enemy touches the player
         if (other.gameObject.layer == LayerMask.NameToLayer("Enemy") || other.gameObject.layer == LayerMask.NameToLayer("Stalker"))
         {
-            gameScript.gameOver = true;
+            if (TraitSystem.hasFatTissue && carryCount > 0)
+            {
+                shooter.spitFood();
+                carryCount--;
+            }
+            else
+            {
+                gameScript.gameOver = true;
+            }
         }
     }
 
