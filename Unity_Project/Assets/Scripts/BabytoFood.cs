@@ -15,9 +15,8 @@ public class BabytoFood : MonoBehaviour {
 	}
 
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision other)
     {
-        
         if (other.gameObject.name == "Food(Clone)")
         {
             Debug.Log("find it");
@@ -25,6 +24,7 @@ public class BabytoFood : MonoBehaviour {
             Moveout();
         }
     }
+    
 
         // Update is called once per frame
     void Update ()
@@ -50,7 +50,15 @@ public class BabytoFood : MonoBehaviour {
     {
         float step = speed * Time.deltaTime;
 
-        transform.LookAt(endpoint.transform);
-        transform.position = Vector3.MoveTowards(transform.position, endpoint.transform.position, step);
+        while (true)
+        {
+            if (transform.position == endpoint.transform.position)
+            {
+                break;
+            }
+            transform.LookAt(endpoint.transform);
+            transform.position = Vector3.MoveTowards(transform.position, endpoint.transform.position, step);
+        }
+        
     }
 }
