@@ -13,11 +13,6 @@ public class ButtonManager : MonoBehaviour {
     public string enabledText;
     public string disabledText;
 
-    private void Start()
-    {
-        button.GetComponentInChildren<Text>().text = trait + ": " + disabledText;
-    }
-
     // Update is called once per frame
     public void SetTraitActive(bool isTraitEnabled)
     {
