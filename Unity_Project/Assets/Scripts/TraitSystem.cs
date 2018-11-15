@@ -8,12 +8,17 @@ public class TraitSystem : MonoBehaviour {
     public Button[] button;
 
     public ButtonManager[] buttonManager;
+    public Text traitCountText;
+    public GameObject traitMenu;
+    public GameObject pauseMenu;
 
     public static int maxCarry;
     
     public static bool hasFoodMagnet;
     public static bool hasCompass;
     public static bool hasFatTissue;
+    public static int maxTraits = 1;
+    public static int traits = 0;
 
     private void Start()
     {
@@ -31,39 +36,64 @@ public class TraitSystem : MonoBehaviour {
             if (!GameController.Instance.pauseMenu.gameObject.activeSelf || button[0].gameObject.activeSelf == true)
             {
                 GameController.Instance.Pause();
-                button[0].gameObject.SetActive(!button[0].gameObject.activeSelf);
-                button[1].gameObject.SetActive(!button[1].gameObject.activeSelf);
-                button[2].gameObject.SetActive(!button[2].gameObject.activeSelf);
-            }
-            else if (GameController.Instance.pauseMenu.gameObject.activeSelf)
-            {
-                button[0].gameObject.SetActive(!button[0].gameObject.activeSelf);
-                button[1].gameObject.SetActive(!button[1].gameObject.activeSelf);
-                button[2].gameObject.SetActive(!button[2].gameObject.activeSelf);
+                traitMenu.SetActive(false);
             }
         }
 
-        if (!GameController.Instance.isPauseActive)
+        if (traitCountText != null)
         {
-            button[0].gameObject.SetActive(false);
-            button[1].gameObject.SetActive(false);
-            button[2].gameObject.SetActive(false);
+            traitCountText.text = "Trait Points: " + (maxTraits - traits);
         }
     }
 
     public void ToggleFoodMagnet()
     {
-        hasFoodMagnet = !hasFoodMagnet;
-        buttonManager[1].SetTraitActive(hasFoodMagnet);
+        if (maxTraits > traits && !hasFoodMagnet)
+        {
+            hasFoodMagnet = true;
+            buttonManager[1].SetTraitActive(hasFoodMagnet);
+            traits++;
+        }
+        else if (hasFoodMagnet)
+        {
+            hasFoodMagnet = false;
+            buttonManager[1].SetTraitActive(hasFoodMagnet);
+            traits--;
+        }
     }
     public void ToggleCompass()
     {
-        hasCompass = !hasCompass;
-        buttonManager[2].SetTraitActive(hasCompass);
+        if (maxTraits > traits && !hasCompass)
+        {
+            hasCompass = true;
+            buttonManager[2].SetTraitActive(hasCompass);
+            traits++;
+        } else if (hasCompass)
+        {
+            hasCompass = false;
+            buttonManager[2].SetTraitActive(hasCompass);
+            traits--;
+        }
     }
     public void ToggleFatTissue()
     {
-        hasFatTissue = !hasFatTissue;
-        buttonManager[0].SetTraitActive(hasFatTissue);
+        if (maxTraits > traits && !hasFatTissue)
+        {
+            hasFatTissue = true;
+            buttonManager[1].SetTraitActive(hasFatTissue);
+            traits++;
+        }
+        else if (hasFatTissue)
+        {
+            hasFatTissue = false;
+            buttonManager[1].SetTraitActive(hasFatTissue);
+            traits--;
+        }
+    }
+
+    public void TraitScreen()
+    {
+        traitMenu.SetActive(!traitMenu.activeSelf);
+        pauseMenu.SetActive(!pauseMenu.activeSelf);
     }
 }

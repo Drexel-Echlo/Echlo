@@ -9,6 +9,7 @@ public class GameController : MonoBehaviour {
     public static GameObject mainPlayer;
     public static GameObject player;
     public GameObject pauseMenu;
+    public GameObject traitMenu;
 
     public Text gameovertext;
     public Text gamewintext;
@@ -67,6 +68,7 @@ public class GameController : MonoBehaviour {
         }
         else if (gameWin)
         {
+            TraitSystem.maxTraits++;
             gamewintext.gameObject.SetActive(true);
             restart = true;
             Time.timeScale = 0;
@@ -83,10 +85,16 @@ public class GameController : MonoBehaviour {
             {
                 level++;
                 SceneManager.LoadScene(level, LoadSceneMode.Single);
+                Pause();
+                traitMenu.SetActive(!traitMenu.activeSelf);
+                pauseMenu.SetActive(!pauseMenu.activeSelf);
             }
             else
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                Pause();
+                traitMenu.SetActive(!traitMenu.activeSelf);
+                pauseMenu.SetActive(!pauseMenu.activeSelf);
             }
         }
 
