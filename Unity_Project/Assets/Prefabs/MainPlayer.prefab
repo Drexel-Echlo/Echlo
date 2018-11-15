@@ -848,8 +848,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: e7c2de868df8d1f4984b6a7e40983973, type: 3}
   shotPower: 200
   fireRate: 13
+  foodFireRate: 0
   fireDelay: -1
-  destroyTime: 3
+  destroyTime: 1
   minPitch: 0.75
   maxPitch: 1.1
 --- !u!114 &114885829372355474
