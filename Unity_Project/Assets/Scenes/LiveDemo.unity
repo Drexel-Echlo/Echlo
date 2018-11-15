@@ -284,8 +284,13 @@ Prefab:
     - target: {fileID: 82949200169947612, guid: 980aa09c2e159a8479ccf12c473e10d6,
         type: 2}
       propertyPath: m_Volume
-      value: 0.5
+      value: 0.25
       objectReference: {fileID: 0}
+    - target: {fileID: 114857702608031798, guid: 980aa09c2e159a8479ccf12c473e10d6,
+        type: 2}
+      propertyPath: sfxClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: afe65fd7c71dea24ebf815d2d4bdd622, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 980aa09c2e159a8479ccf12c473e10d6, type: 2}
   m_IsPrefabAsset: 0
@@ -3696,6 +3701,18 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114385700089377250, guid: f368561ea131b59469509930d30efc3e,
+        type: 2}
+      propertyPath: waveClone
+      value: 
+      objectReference: {fileID: 1146245550105354, guid: e4c6f76ce70828c4b98bfa17cad685bd,
+        type: 2}
+    - target: {fileID: 114385700089377250, guid: f368561ea131b59469509930d30efc3e,
+        type: 2}
+      propertyPath: wave
+      value: 
+      objectReference: {fileID: 1146245550105354, guid: e4c6f76ce70828c4b98bfa17cad685bd,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f368561ea131b59469509930d30efc3e, type: 2}
   m_IsPrefabAsset: 0

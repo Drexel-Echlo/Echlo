@@ -10,7 +10,7 @@ public class LightDecay : MonoBehaviour {
 
     public AudioSource sfxSource;
 
-    public AudioClip[] sfxClips;
+    public AudioClip sfxClip;
 
     // Use this for initialization
     void Start () {
@@ -20,6 +20,6 @@ public class LightDecay : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         lit.intensity -= decayRate;
-        sfxSource.PlayOneShot(sfxClips[0]);
+        sfxSource.PlayOneShot(sfxClip);
     }
 }

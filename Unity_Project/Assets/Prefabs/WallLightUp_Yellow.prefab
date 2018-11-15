@@ -72,7 +72,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -205,8 +205,7 @@ MonoBehaviour:
   lit: {fileID: 108261737791702592}
   decayRate: 0.025
   sfxSource: {fileID: 82636468632659326}
-  sfxClips:
-  - {fileID: 8300000, guid: aa9dcad54ecdb1844a14e50acbef094c, type: 3}
+  sfxClip: {fileID: 8300000, guid: 74a8055457ff58d43bd320a8bc2d8930, type: 3}
 --- !u!135 &135411084931044432
 SphereCollider:
   m_ObjectHideFlags: 1

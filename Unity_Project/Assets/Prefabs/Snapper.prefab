@@ -241,7 +241,7 @@ MonoBehaviour:
   moveSpeed: 60
   sfxSource: {fileID: 82803529433931238}
   sfxClips:
-  - {fileID: 8300000, guid: aa9dcad54ecdb1844a14e50acbef094c, type: 3}
+  - {fileID: 8300000, guid: 5f34112c2a6cfa04da16c0834c9ca757, type: 3}
 --- !u!135 &135493610426848450
 SphereCollider:
   m_ObjectHideFlags: 1
