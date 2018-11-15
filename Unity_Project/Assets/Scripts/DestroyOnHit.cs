@@ -12,10 +12,6 @@ public class DestroyOnHit : MonoBehaviour
     public GameObject wallExplosionYel;
     public GameObject wallExplosionPink;
 
-    public AudioSource sfxSource;
-
-    public AudioClip[] sfxClips;
-
     public Transform collisionPoint;
 
     public float explodeDecay;
@@ -26,30 +22,32 @@ public class DestroyOnHit : MonoBehaviour
         string tag = collision.gameObject.tag;
         GameObject explosionClone = null;
         GameObject explosion = null;
+
+
         if (layer == LayerMask.NameToLayer("Food"))
         {
-            sfxSource.PlayOneShot(sfxClips[2]);
+
             explosion = foodExplosion;
             
         }
         else if (layer == LayerMask.NameToLayer("Enemy") || layer == LayerMask.NameToLayer("Stalker"))
         {
-            sfxSource.PlayOneShot(sfxClips[1]);
+
             explosion = enemyExplosion;
             
         }
         else if (tag == "Player")
         {
-            sfxSource.PlayOneShot(sfxClips[0]);
+
             explosion = wallExplosionBlue;
            
         }
         else if (tag == "LightEmUp")
         {
-            sfxSource.PlayOneShot(sfxClips[0]);
+
             float rdm = Random.Range(0.0f, 5.0f);
 
-            Debug.Log(sfxClips[0].name);
+
 
             if (rdm <= 1.0f)
             {
