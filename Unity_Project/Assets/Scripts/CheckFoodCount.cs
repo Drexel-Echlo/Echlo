@@ -9,6 +9,8 @@ public class CheckFoodCount : MonoBehaviour {
     protected GameController gameScript;
 
     private GameObject[] list;
+    //public List<GameObject> foodlist;
+
 
     // Use this for initialization
     void Start()
@@ -28,6 +30,7 @@ public class CheckFoodCount : MonoBehaviour {
             if (item.gameObject.layer == LayerMask.NameToLayer("Food") && Vector3.Distance(item.transform.position, this.transform.position) <= 7)
             {
                 foodCount++;
+                //foodlist.Add(item);
             }
         }
         foodCount += babyFood;
