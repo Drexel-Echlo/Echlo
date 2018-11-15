@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour {
 
         if (Input.GetKey("w")) // Move Forward
         {
-			transform.position = Vector3.MoveTowards(transform.position, rotationScript.point, step);
+            transform.position += step * player.transform.forward;
             if (allowLight) // Light Trail
             {
                 StartCoroutine(LightTrail(lightFrequency));
@@ -64,8 +64,8 @@ public class PlayerController : MonoBehaviour {
         }
         else if (Input.GetKey("s")) // Move Back
         {
-			transform.position = Vector3.MoveTowards (transform.position, rotationScript.point, -step/4);
-		}
+			transform.position -= (step/4.0f) * player.transform.forward;
+        }
 
         if (Input.GetKey(KeyCode.Mouse0)) // Sonar
         {

@@ -82,7 +82,7 @@ public class ShooterController : MonoBehaviour {
         yield return delay;
 
         allowSpitFire = true;
-
+       
         WaitForSeconds spawnDelay = new WaitForSeconds(destroyTime);
         yield return spawnDelay;
 
