@@ -22,21 +22,33 @@ public class DestroyOnHit : MonoBehaviour
         string tag = collision.gameObject.tag;
         GameObject explosionClone = null;
         GameObject explosion = null;
+
+
         if (layer == LayerMask.NameToLayer("Food"))
         {
+
             explosion = foodExplosion;
+            
         }
         else if (layer == LayerMask.NameToLayer("Enemy") || layer == LayerMask.NameToLayer("Stalker"))
         {
+
             explosion = enemyExplosion;
+            
         }
         else if (tag == "Player")
         {
+
             explosion = wallExplosionBlue;
+           
         }
         else if (tag == "LightEmUp")
         {
+
             float rdm = Random.Range(0.0f, 5.0f);
+
+
+
             if (rdm <= 1.0f)
             {
                 explosion = wallExplosionBlue;

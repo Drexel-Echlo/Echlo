@@ -488,14 +488,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2baa82490536a74ba44cad597220ec6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wave: {fileID: 1039409802499550, guid: 88309774bdbed274d9497f59dc299551, type: 2}
+  wave: {fileID: 1039409802499550, guid: efccfaa2c8df4924896f5ab0114cbdd3, type: 2}
   waveClone: {fileID: 0}
   foodSpit: {fileID: 0}
   food: {fileID: 0}
   shooter: {fileID: 4243575406586512}
   sfxSource: {fileID: 82953007298638368}
   sfxClips:
-  - {fileID: 8300000, guid: e7c2de868df8d1f4984b6a7e40983973, type: 3}
+  - {fileID: 8300000, guid: 0a611d49ed053524aa8a8911c3242ff6, type: 3}
   shotPower: 200
   fireRate: 0
   fireDelay: -1

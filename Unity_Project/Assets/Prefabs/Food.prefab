@@ -143,7 +143,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1091561412272928}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 981eb2ee1ec42984d9976a76b943bebe, type: 3}
   m_Name: 
@@ -159,12 +159,13 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1091561412272928}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3ef43db32472bcc46893b8d671fdde98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   drawSpeed: 1
+  home: {fileID: 0}
 --- !u!135 &135437170862035308
 SphereCollider:
   m_ObjectHideFlags: 1

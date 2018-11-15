@@ -1,17 +1,21 @@
 fileFormatVersion: 2
-guid: be6a899a8bc3b0346bef38e87414ed7e
+guid: 828d1306a0b4ef541b2e1194f41594a7
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: angler
-    100002: //RootNode
-    400000: angler
-    400002: //RootNode
-    2100000: initialShadingGroup
-    2100002: anglerMat
-    2300000: angler
-    3300000: angler
-    4300000: angler
+    100000: body
+    100002: eyes
+    100004: //RootNode
+    400000: body
+    400002: eyes
+    400004: //RootNode
+    2100000: lambert1
+    2300000: body
+    2300002: eyes
+    3300000: body
+    3300002: eyes
+    4300000: body
+    4300002: eyes
   externalObjects: {}
   materials:
     importMaterials: 1

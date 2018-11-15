@@ -8,12 +8,17 @@ public class TraitSystem : MonoBehaviour {
     public Button[] button;
 
     public ButtonManager[] buttonManager;
+    public Text traitCountText;
+    public GameObject traitMenu;
+    public GameObject pauseMenu;
 
     public static int maxCarry;
     
     public static bool hasFoodMagnet;
     public static bool hasCompass;
     public static bool hasFatTissue;
+    public static int maxTraits = 1;
+    public static int traits = 0;
 
     private void Start()
     {
@@ -21,6 +26,16 @@ public class TraitSystem : MonoBehaviour {
         buttonManager[0].SetTraitActive(hasFatTissue);
         buttonManager[1].SetTraitActive(hasFoodMagnet);
         buttonManager[2].SetTraitActive(hasCompass);
+        maxTraits = Mathf.Max(0,GameController.level - 1);
+        if (maxTraits > 0)
+        {
+            Time.timeScale = 0;
+            traitMenu.SetActive(true);
+            pauseMenu.SetActive(false);
+        } else
+        {
+            Time.timeScale = 1;
+        }
     }
 
     // Update is called once per frame
@@ -28,42 +43,67 @@ public class TraitSystem : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            if (!GameController.Instance.pauseMenu.gameObject.activeSelf || button[0].gameObject.activeSelf == true)
+            if (!GameController.Instance.pauseMenu.gameObject.activeSelf && !traitMenu.activeSelf)
             {
+                print("Pause");
                 GameController.Instance.Pause();
-                button[0].gameObject.SetActive(!button[0].gameObject.activeSelf);
-                button[1].gameObject.SetActive(!button[1].gameObject.activeSelf);
-                button[2].gameObject.SetActive(!button[2].gameObject.activeSelf);
-            }
-            else if (GameController.Instance.pauseMenu.gameObject.activeSelf)
-            {
-                button[0].gameObject.SetActive(!button[0].gameObject.activeSelf);
-                button[1].gameObject.SetActive(!button[1].gameObject.activeSelf);
-                button[2].gameObject.SetActive(!button[2].gameObject.activeSelf);
             }
         }
 
-        if (!GameController.Instance.isPauseActive)
+        if (traitCountText != null)
         {
-            button[0].gameObject.SetActive(false);
-            button[1].gameObject.SetActive(false);
-            button[2].gameObject.SetActive(false);
+            traitCountText.text = "Trait Points: " + (maxTraits - traits);
         }
     }
 
     public void ToggleFoodMagnet()
     {
-        hasFoodMagnet = !hasFoodMagnet;
-        buttonManager[1].SetTraitActive(hasFoodMagnet);
+        if (maxTraits > traits && !hasFoodMagnet)
+        {
+            hasFoodMagnet = true;
+            buttonManager[1].SetTraitActive(hasFoodMagnet);
+            traits++;
+        }
+        else if (hasFoodMagnet)
+        {
+            hasFoodMagnet = false;
+            buttonManager[1].SetTraitActive(hasFoodMagnet);
+            traits--;
+        }
     }
     public void ToggleCompass()
     {
-        hasCompass = !hasCompass;
-        buttonManager[2].SetTraitActive(hasCompass);
+        if (maxTraits > traits && !hasCompass)
+        {
+            hasCompass = true;
+            buttonManager[2].SetTraitActive(hasCompass);
+            traits++;
+        } else if (hasCompass)
+        {
+            hasCompass = false;
+            buttonManager[2].SetTraitActive(hasCompass);
+            traits--;
+        }
     }
     public void ToggleFatTissue()
     {
-        hasFatTissue = !hasFatTissue;
-        buttonManager[0].SetTraitActive(hasFatTissue);
+        if (maxTraits > traits && !hasFatTissue)
+        {
+            hasFatTissue = true;
+            buttonManager[1].SetTraitActive(hasFatTissue);
+            traits++;
+        }
+        else if (hasFatTissue)
+        {
+            hasFatTissue = false;
+            buttonManager[1].SetTraitActive(hasFatTissue);
+            traits--;
+        }
+    }
+
+    public void TraitScreen()
+    {
+        Time.timeScale = 1;
+        traitMenu.SetActive(false);
     }
 }

@@ -7,6 +7,10 @@ public class SnapperController : MonoBehaviour {
 
     public float moveSpeed;
 
+    public AudioSource sfxSource;
+
+    public AudioClip[] sfxClips;
+
     protected GameObject player;
     protected STATE state = STATE.Wait;
     protected Vector3 target;
@@ -32,6 +36,8 @@ public class SnapperController : MonoBehaviour {
             }
             else
             {
+
+                sfxSource.PlayOneShot(sfxClips[0]);
                 transform.LookAt(new Vector3(target.x, transform.position.y, target.z));
                 transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
             }
