@@ -15,8 +15,12 @@ public class BasicEnemyAI : MonoBehaviour {
     protected Vector3 target;
     protected float trailSpeed;
 
-	// Use this for initialization
-	void Start () {
+    public AudioSource sfxSource;
+
+    public AudioClip sfxClip;
+
+    // Use this for initialization
+    void Start () {
         player = GameController.getMainPlayer();
         state = STATE.Wait;
     }
@@ -38,6 +42,7 @@ public class BasicEnemyAI : MonoBehaviour {
             {
                 transform.LookAt(new Vector3(target.x, transform.position.y, target.z));
                 transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
+                sfxSource.PlayOneShot(sfxClip);
             }
         } else if (state == STATE.Trail)
         {
