@@ -86,8 +86,10 @@ public class PlayerController : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.Mouse1) && carryCount != 0) // Spit Food
         {
-            shooter.spitFood();
-            carryCount--;
+            if (shooter.spitFood())
+            {
+                carryCount--;
+            }
         }
     }
 

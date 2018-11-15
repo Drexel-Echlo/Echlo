@@ -19,6 +19,7 @@ public class ShooterController : MonoBehaviour {
 
     public float shotPower;
     public float fireRate;
+    public float foodFireRate;
     public float fireDelay = -1;
     public float destroyTime;
 
@@ -60,12 +61,14 @@ public class ShooterController : MonoBehaviour {
         }
     }
 
-    public void spitFood()
+    public bool spitFood()
     {
-        if (allowSpitFire)
+        bool rv = allowSpitFire;
+        if (rv)
         {
             StartCoroutine(SpitFire(fireRate));
         }
+        return rv;
     }
 
     IEnumerator SpitFire(float fireRate)
@@ -75,7 +78,7 @@ public class ShooterController : MonoBehaviour {
         GameObject foodSpitClone = Instantiate(foodSpit, shooter.position, Quaternion.identity);
         foodSpitClone.GetComponent<Rigidbody>().AddForce(transform.forward * (shotPower));
 
-        WaitForSeconds delay = new WaitForSeconds(fireRate);
+        WaitForSeconds delay = new WaitForSeconds(foodFireRate);
         yield return delay;
 
         allowSpitFire = true;
