@@ -19,7 +19,7 @@ public class BabytoFood : MonoBehaviour {
     {
         if (other.gameObject.name == "Food(Clone)")
         {
-            Debug.Log("find it");
+            //Debug.Log("find it");
             Destroy(other.gameObject);
             Moveout();
         }
@@ -48,7 +48,7 @@ public class BabytoFood : MonoBehaviour {
 
     private void Moveout()
     {
-        float step = speed * Time.deltaTime;
+        float step = speed;
 
         while (true)
         {
@@ -57,7 +57,7 @@ public class BabytoFood : MonoBehaviour {
                 break;
             }
             transform.LookAt(endpoint.transform);
-            transform.position = Vector3.MoveTowards(transform.position, endpoint.transform.position, step);
+            transform.position = Vector3.MoveTowards(transform.position,endpoint.transform.position, step);
         }
         
     }
