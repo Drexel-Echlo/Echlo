@@ -8,6 +8,7 @@ ModelImporter:
     400000: angler
     400002: //RootNode
     2100000: initialShadingGroup
+    2100002: anglerMat
     2300000: angler
     3300000: angler
     4300000: angler

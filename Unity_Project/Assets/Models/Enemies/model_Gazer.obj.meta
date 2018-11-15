@@ -8,6 +8,7 @@ ModelImporter:
     400000: //RootNode
     400002: gazer
     2100000: initialShadingGroup
+    2100002: gazerMat
     2300000: gazer
     3300000: gazer
     4300000: gazer

@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 54659667785496914}
   - component: {fileID: 114391237217317368}
   - component: {fileID: 114969468269726476}
+  - component: {fileID: 82720005515067198}
   m_Layer: 9
   m_Name: SonarWave
   m_TagString: Untagged
@@ -100,6 +101,101 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.48223066, y: 2.0113492, z: 0.04}
   m_Center: {x: 0.008150339, y: 0.07177949, z: 1.3186969e-16}
+--- !u!82 &82720005515067198
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1039409802499550}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 30
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &114391237217317368
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -121,6 +217,11 @@ MonoBehaviour:
     type: 2}
   wallExplosionPink: {fileID: 1081231304692600, guid: 2732586b0fe5bd249a0b9042d28057cd,
     type: 2}
+  sfxSource: {fileID: 82720005515067198}
+  sfxClips:
+  - {fileID: 8300000, guid: a2d38b9949138a04b80d5daaac0b03c7, type: 3}
+  - {fileID: 8300000, guid: 89314d765069d924d8e3f8fb12863077, type: 3}
+  - {fileID: 8300000, guid: aa9dcad54ecdb1844a14e50acbef094c, type: 3}
   collisionPoint: {fileID: 4403372167999292}
   explodeDecay: 3
 --- !u!114 &114969468269726476
