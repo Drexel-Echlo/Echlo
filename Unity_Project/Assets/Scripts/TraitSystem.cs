@@ -26,6 +26,16 @@ public class TraitSystem : MonoBehaviour {
         buttonManager[0].SetTraitActive(hasFatTissue);
         buttonManager[1].SetTraitActive(hasFoodMagnet);
         buttonManager[2].SetTraitActive(hasCompass);
+        maxTraits = Mathf.Max(0,GameController.level - 1);
+        if (maxTraits > 0)
+        {
+            Time.timeScale = 0;
+            traitMenu.SetActive(true);
+            pauseMenu.SetActive(false);
+        } else
+        {
+            Time.timeScale = 1;
+        }
     }
 
     // Update is called once per frame
@@ -33,10 +43,10 @@ public class TraitSystem : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            if (!GameController.Instance.pauseMenu.gameObject.activeSelf || button[0].gameObject.activeSelf == true)
+            if (!GameController.Instance.pauseMenu.gameObject.activeSelf && !traitMenu.activeSelf)
             {
+                print("Pause");
                 GameController.Instance.Pause();
-                traitMenu.SetActive(false);
             }
         }
 
@@ -93,7 +103,7 @@ public class TraitSystem : MonoBehaviour {
 
     public void TraitScreen()
     {
-        traitMenu.SetActive(!traitMenu.activeSelf);
-        pauseMenu.SetActive(!pauseMenu.activeSelf);
+        Time.timeScale = 1;
+        traitMenu.SetActive(false);
     }
 }

@@ -16,7 +16,7 @@ public class GameController : MonoBehaviour {
     public bool gameOver;
     public bool gameWin;
     private bool restart;
-    public int level;
+    public static int level;
 
     public bool isPauseActive;
 
@@ -51,7 +51,6 @@ public class GameController : MonoBehaviour {
     {
         gameOver = false;
         restart = false;
-        Time.timeScale = 1f;
         level = SceneManager.GetActiveScene().buildIndex;
         getMainPlayer();
     }
@@ -96,11 +95,6 @@ public class GameController : MonoBehaviour {
                 traitMenu.SetActive(!traitMenu.activeSelf);
                 pauseMenu.SetActive(!pauseMenu.activeSelf);
             }
-        }
-
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            Pause();
         }
     }
 
