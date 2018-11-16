@@ -8,11 +8,15 @@ public class BabytoFood : MonoBehaviour {
     public GameObject endpoint;
     public float speed;
     private GameObject[] list;
+    //public int totalBabyFood;
+    protected CheckFoodCount gameScript;
 
     // Use this for initialization
     void Start () {
         stats = this.transform.position;
-	}
+        gameScript = GameObject.Find("Home").GetComponent<CheckFoodCount>();
+
+    }
 
 
     private void OnCollisionEnter(Collision other)
@@ -21,6 +25,9 @@ public class BabytoFood : MonoBehaviour {
         {
             //Debug.Log("find it");
             Destroy(other.gameObject);
+            gameScript.foodCount++;
+            Debug.Log(gameScript.foodCount);
+
             Moveout();
         }
     }

@@ -7,6 +7,7 @@ public class CheckFoodCount : MonoBehaviour {
     public int foodNeed = 3;
     public static int babyFood = 0;
     protected GameController gameScript;
+    public int foodCount = 0;
 
     private GameObject[] list;
     //public List<GameObject> foodlist;
@@ -22,21 +23,23 @@ public class CheckFoodCount : MonoBehaviour {
     void Update()
     {
 
-        int foodCount = 0;
-        list = GameObject.FindGameObjectsWithTag("LightEmUp");
 
-        foreach (GameObject item in list)
-        {
-            if (item.gameObject.layer == LayerMask.NameToLayer("Food") && Vector3.Distance(item.transform.position, this.transform.position) <= 7)
-            {
-                foodCount++;
-                //foodlist.Add(item);
-            }
-        }
-        foodCount += babyFood;
         if (foodCount >= foodNeed)
         {
             gameScript.gameWin = true;
         }
     }
 }
+/*       int foodCount = 0;
+list = GameObject.FindGameObjectsWithTag("LightEmUp");
+
+        foreach (GameObject item in list)
+        {
+            if (item.gameObject.layer == LayerMask.NameToLayer("Food") && Vector3.Distance(item.transform.position, this.transform.position) <= 7)
+            {
+    foodCount++;
+    //foodlist.Add(item);
+}
+}
+foodCount += babyFood;
+*/
