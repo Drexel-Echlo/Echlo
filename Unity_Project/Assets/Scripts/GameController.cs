@@ -53,6 +53,7 @@ public class GameController : MonoBehaviour {
         restart = false;
         level = SceneManager.GetActiveScene().buildIndex;
         getMainPlayer();
+        Debug.Log(level);
     }
 
     // Update is called once per frame
@@ -71,22 +72,28 @@ public class GameController : MonoBehaviour {
             gamewintext.gameObject.SetActive(true);
             restart = true;
             Time.timeScale = 0;
+
         }
 
         if (restart && Input.anyKeyDown)
         {
-            if (gameWin && level == SceneManager.sceneCountInBuildSettings)
+            if (gameWin)
             {
-                level = 0;
-                SceneManager.LoadScene("StartScreen", LoadSceneMode.Single);
-            }
-            else if (gameWin)
-            {
-                level++;
-                SceneManager.LoadScene(level, LoadSceneMode.Single);
-                Pause();
-                traitMenu.SetActive(!traitMenu.activeSelf);
-                pauseMenu.SetActive(!pauseMenu.activeSelf);
+                if (level >= SceneManager.sceneCountInBuildSettings)
+                {
+                    level = 0;
+                    SceneManager.LoadScene(level, LoadSceneMode.Single);
+                    Debug.Log("StartScreen");
+                }
+                else 
+                {
+                    level++;
+                    SceneManager.LoadScene(level, LoadSceneMode.Single);
+                    Pause();
+                    traitMenu.SetActive(!traitMenu.activeSelf);
+                    pauseMenu.SetActive(!pauseMenu.activeSelf);
+                    Debug.Log("else ");
+                }
             }
             else
             {
