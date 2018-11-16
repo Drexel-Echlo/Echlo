@@ -7,9 +7,7 @@ public class BasicEnemyAI : MonoBehaviour {
     protected enum STATE { Wait, Follow, Trail };
 
     public float moveSpeed;
-
-    public NPCWandering movement;
-
+    
     protected GameObject player;
     protected STATE state = STATE.Wait;
     protected Vector3 target;
@@ -29,7 +27,6 @@ public class BasicEnemyAI : MonoBehaviour {
     void Update () {
         if (state == STATE.Wait)
         {
-            movement.Wander();
         }
         else if (state == STATE.Follow)
         {
