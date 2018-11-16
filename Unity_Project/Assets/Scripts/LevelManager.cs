@@ -9,7 +9,6 @@ public class LevelManager : MonoBehaviour {
     public void LoadLevel(string sceneName)
     {
         SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
-        Debug.Log("ButtonClicked");
     }
 
     public void QuitGame()
