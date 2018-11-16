@@ -143,7 +143,7 @@ RectTransform:
   m_Children:
   - {fileID: 621425059}
   m_Father: {fileID: 1029737942}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -452,7 +452,7 @@ RectTransform:
   m_Children:
   - {fileID: 379950998}
   m_Father: {fileID: 496039383}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -706,7 +706,7 @@ MonoBehaviour:
 
     RMB: Vomit stored food
 
-    P: Pause/trait management '
+    Q: Pause'
 --- !u!222 &404506935
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -781,7 +781,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: How To Play
+  m_Text: Play
 --- !u!222 &411012123
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -814,16 +814,16 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 418161952}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -96}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 636207254}
-  m_Father: {fileID: 1029737942}
-  m_RootOrder: 2
+  m_Father: {fileID: 496039383}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -590, y: -144.00002}
+  m_AnchoredPosition: {x: 599, y: -260}
   m_SizeDelta: {x: 460, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &418161954
@@ -1000,6 +1000,8 @@ RectTransform:
   - {fileID: 700535799}
   - {fileID: 404506933}
   - {fileID: 1195106857}
+  - {fileID: 1786889350}
+  - {fileID: 418161953}
   - {fileID: 209831680}
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -1446,7 +1448,6 @@ RectTransform:
   m_Children:
   - {fileID: 93279397}
   - {fileID: 982591076}
-  - {fileID: 418161953}
   - {fileID: 1871462194}
   - {fileID: 41103075}
   m_Father: {fileID: 0}
@@ -1590,19 +1591,92 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Find Food (green items) by sending out sound waves.
+  m_Text: 'Pick up Food (green),  Avoid Enemies (red)
 
-    Run into Food to pick it up, then return to home
-
-    and feed it to babies.
-
-    Avoid enemies while returning 3 food to home to win.'
+    Feed babies 1 food each to complete level.'
 --- !u!222 &1195106859
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1195106856}
+  m_CullTransparentMesh: 0
+--- !u!1 &1786889349
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1786889350}
+  - component: {fileID: 1786889352}
+  - component: {fileID: 1786889351}
+  m_Layer: 4
+  m_Name: HowToPlayDialogue2 (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1786889350
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1786889349}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.99998355, y: 0.99998355, z: 0.99998355}
+  m_Children: []
+  m_Father: {fileID: 496039383}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -150.99997, y: -312}
+  m_SizeDelta: {x: 1500, y: 500}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1786889351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1786889349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 48
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 50
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'After Each Level, may evolve by unlocking 1 new trait card
+
+    May have up to 3 cards enabled.'
+--- !u!222 &1786889352
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1786889349}
   m_CullTransparentMesh: 0
 --- !u!1 &1871462193
 GameObject:
@@ -1616,7 +1690,7 @@ GameObject:
   - component: {fileID: 1871462196}
   - component: {fileID: 1871462195}
   m_Layer: 5
-  m_Name: How To Play
+  m_Name: Play
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1634,7 +1708,7 @@ RectTransform:
   m_Children:
   - {fileID: 411012121}
   m_Father: {fileID: 1029737942}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
