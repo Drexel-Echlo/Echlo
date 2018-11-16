@@ -7,8 +7,7 @@ public class StalkerConroller : MonoBehaviour {
     protected enum STATE { Wait, Follow };
 
     public float moveSpeed;
-
-    public NPCWandering movement;
+    
     protected ShooterController shooter;
 
     protected GameObject player;
@@ -29,7 +28,6 @@ public class StalkerConroller : MonoBehaviour {
     {
         if (state == STATE.Wait)
         {
-            movement.Wander();
         }
         else if (state == STATE.Follow)
         {
