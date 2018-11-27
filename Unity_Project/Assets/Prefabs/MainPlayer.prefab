@@ -354,7 +354,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1729899046761466}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.395874, y: -0.63136816, z: 0.24183083}
+  m_LocalPosition: {x: -44.350002, y: -0.63136816, z: 34.659996}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4835251356573628}
@@ -847,7 +847,7 @@ MonoBehaviour:
   sfxClips:
   - {fileID: 8300000, guid: e7c2de868df8d1f4984b6a7e40983973, type: 3}
   shotPower: 200
-  fireRate: 13
+  fireRate: 25
   foodFireRate: 0
   fireDelay: -1
   destroyTime: 1
