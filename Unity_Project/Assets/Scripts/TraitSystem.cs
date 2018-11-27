@@ -96,13 +96,13 @@ public class TraitSystem : MonoBehaviour {
         if (maxTraits > traits && !hasFatTissue)
         {
             hasFatTissue = true;
-            buttonManager[1].SetTraitActive(hasFatTissue);
+            buttonManager[0].SetTraitActive(hasFatTissue);
             traits++;
         }
         else if (hasFatTissue)
         {
             hasFatTissue = false;
-            buttonManager[1].SetTraitActive(hasFatTissue);
+            buttonManager[0].SetTraitActive(hasFatTissue);
             traits--;
         }
     }
