@@ -1646,6 +1646,21 @@ Prefab:
       propertyPath: endpoint
       value: 
       objectReference: {fileID: 1058994816}
+    - target: {fileID: 64832419556671838, guid: 964e2be5fb3b6dd41a1b90782952397a,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 64475165804751280, guid: 964e2be5fb3b6dd41a1b90782952397a,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 64665339654984294, guid: 964e2be5fb3b6dd41a1b90782952397a,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 964e2be5fb3b6dd41a1b90782952397a, type: 2}
   m_IsPrefabAsset: 0
