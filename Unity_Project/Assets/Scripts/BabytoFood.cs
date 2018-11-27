@@ -8,6 +8,8 @@ public class BabytoFood : MonoBehaviour {
     public GameObject endpoint;
     public float speed;
     private GameObject[] list;
+    private bool getfood;
+    private bool full;
     //public int totalBabyFood;
     protected CheckFoodCount gameScript;
 
@@ -15,11 +17,12 @@ public class BabytoFood : MonoBehaviour {
     void Start () {
         stats = this.transform.position;
         gameScript = GameObject.Find("Home").GetComponent<CheckFoodCount>();
-
+        getfood = false;
+        full = false;
     }
 
 
-    private void OnCollisionEnter(Collision other)
+    /*private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.name == "Food(Clone)")
         {
@@ -27,13 +30,26 @@ public class BabytoFood : MonoBehaviour {
             Destroy(other.gameObject);
             gameScript.foodCount++;
             Debug.Log(gameScript.foodCount);
+            getfood = true;
+            full = true;
+        }
+    }*/
 
-            Moveout();
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.name == "Food(Clone)")
+        {
+            //Debug.Log("find it");
+            gameScript.foodCount++;
+            Destroy(other.gameObject);
+            Debug.Log(gameScript.foodCount);
+            getfood = true;
+            full = true;
         }
     }
-    
 
-        // Update is called once per frame
+
+    // Update is called once per frame
     void Update ()
     {
         //int foodCount = 0;
@@ -42,30 +58,26 @@ public class BabytoFood : MonoBehaviour {
 
         foreach (GameObject item in list)
         {
-            if (item.gameObject.layer == LayerMask.NameToLayer("Food") && Vector3.Distance(item.transform.position, this.transform.position) <= 7)
+            if (item.gameObject.layer == LayerMask.NameToLayer("Food") 
+                && Vector3.Distance(item.transform.position, this.transform.position) <= 7
+                && !full)
             {
                 transform.LookAt(item.transform);
                 transform.position = Vector3.MoveTowards(transform.position, item.transform.position, step);
                 //foodlist.Add(item);
-
-
             }
         }
-    }
 
-    private void Moveout()
-    {
-        float step = speed;
-
-        while (true)
+        if (getfood)
         {
-            if (transform.position == endpoint.transform.position)
+            if (Vector3.Distance(endpoint.transform.position, this.transform.position) <= 3)
             {
-                break;
+                
+                getfood = false;
             }
             transform.LookAt(endpoint.transform);
-            transform.position = Vector3.MoveTowards(transform.position,endpoint.transform.position, step);
+            transform.position = Vector3.MoveTowards(transform.position, endpoint.transform.position, step);
         }
-        
     }
+
 }
