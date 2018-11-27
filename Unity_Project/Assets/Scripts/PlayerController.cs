@@ -86,6 +86,11 @@ public class PlayerController : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.Mouse1) && carryCount != 0) // Spit Food
         {
+            Rigidbody rb = gameObject.GetComponent<Rigidbody>();
+
+            if (TraitSystem.hasExpulsion)
+                rb.AddForce(-player.transform.forward * 400);
+
             if (shooter.spitFood())
             {
                 carryCount--;

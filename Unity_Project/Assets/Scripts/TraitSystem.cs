@@ -12,13 +12,14 @@ public class TraitSystem : MonoBehaviour {
     public GameObject traitMenu;
     public GameObject pauseMenu;
 
+    public static int maxTraits = 1;
+    public static int traits = 0;
     public static int maxCarry;
     
     public static bool hasFoodMagnet;
     public static bool hasCompass;
     public static bool hasFatTissue;
-    public static int maxTraits = 1;
-    public static int traits = 0;
+    public static bool hasExpulsion;
 
     private void Start()
     {
@@ -26,13 +27,17 @@ public class TraitSystem : MonoBehaviour {
         buttonManager[0].SetTraitActive(hasFatTissue);
         buttonManager[1].SetTraitActive(hasFoodMagnet);
         buttonManager[2].SetTraitActive(hasCompass);
-        maxTraits = Mathf.Max(0,GameController.level - 1);
+        buttonManager[3].SetTraitActive(hasExpulsion);
+
+        maxTraits = Mathf.Max(0, GameController.level - 1);
+
         if (maxTraits > 0)
         {
             Time.timeScale = 0;
             traitMenu.SetActive(true);
             pauseMenu.SetActive(false);
-        } else
+        }
+        else
         {
             Time.timeScale = 1;
         }
@@ -78,7 +83,8 @@ public class TraitSystem : MonoBehaviour {
             hasCompass = true;
             buttonManager[2].SetTraitActive(hasCompass);
             traits++;
-        } else if (hasCompass)
+        }
+        else if (hasCompass)
         {
             hasCompass = false;
             buttonManager[2].SetTraitActive(hasCompass);
@@ -97,6 +103,21 @@ public class TraitSystem : MonoBehaviour {
         {
             hasFatTissue = false;
             buttonManager[1].SetTraitActive(hasFatTissue);
+            traits--;
+        }
+    }
+    public void ToggleViolentExpulsion()
+    {
+        if (maxTraits > traits && !hasExpulsion)
+        {
+            hasExpulsion = true;
+            buttonManager[3].SetTraitActive(hasExpulsion);
+            traits++;
+        }
+        else if (hasExpulsion)
+        {
+            hasExpulsion = false;
+            buttonManager[3].SetTraitActive(hasExpulsion);
             traits--;
         }
     }
