@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
@@ -9,6 +10,7 @@ public class PlayerController : MonoBehaviour {
     private PlayerRotator rotationScript;
     private GameController gameScript;
     private ShooterController shooter;
+    private bool canPickUpFood = true;
 
     public Transform mouth;
     public Transform lightSpawn;
@@ -132,11 +134,26 @@ public class PlayerController : MonoBehaviour {
 
     private void OnCollisionEnter(Collision other)
     {
-        if (carryCount < TraitSystem.maxCarry && other.gameObject.layer == LayerMask.NameToLayer("Food"))
+        if (canPickUpFood)
         {
-            Destroy(other.gameObject);
-            carryCount++;
+            canPickUpFood = false;
+            if (carryCount < TraitSystem.maxCarry && other.gameObject.layer == LayerMask.NameToLayer("Food"))
+            {
+                GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
+                Destroy(other.gameObject);
+                carryCount++;
+                new Thread(() =>
+                {
+                    Thread.CurrentThread.IsBackground = true;
+                    Thread.Sleep(100);
+                    canPickUpFood = true;
+                }).Start();
+            } else
+            {
+                canPickUpFood = true;
+            }
         }
+
 
         // Check if an enemy touches the player
         if (other.gameObject.layer == LayerMask.NameToLayer("Enemy") || other.gameObject.layer == LayerMask.NameToLayer("Stalker"))
