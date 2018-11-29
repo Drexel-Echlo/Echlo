@@ -64,6 +64,13 @@ public class TraitSystem : MonoBehaviour {
         {
             traitCountText.text = "Trait Points: " + (maxTraits - traits);
         }
+        // For Debug
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            maxTraits = 4;
+            Time.timeScale = (Time.timeScale + 1) % 2;
+            traitMenu.SetActive(!traitMenu.activeSelf);
+        }
     }
 
     public void ToggleFoodMagnet()
