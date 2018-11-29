@@ -11,8 +11,7 @@ public class PlayerController : MonoBehaviour {
     private GameController gameScript;
     private ShooterController shooter;
     private bool canPickUpFood = true;
-
-    public Transform mouth;
+    
     public Transform lightSpawn;
     public Transform[] foodPoints;
 
@@ -28,7 +27,9 @@ public class PlayerController : MonoBehaviour {
     private bool allowLight = true;
     public GameObject movingLight;
     public GameObject movingLightClone;
-    
+
+    public Animator anim;
+
     public bool isFoodCreated;
     public bool isHome;
     protected ArrayList stalkers;
@@ -59,14 +60,25 @@ public class PlayerController : MonoBehaviour {
         if (Input.GetKey("w")) // Move Forward
         {
             transform.position += step * player.transform.forward;
+
+            anim.SetBool("isMoving", true);
+            anim.SetFloat("animationSpeed", 1);
+
             if (allowLight) // Light Trail
             {
                 StartCoroutine(LightTrail(lightFrequency));
             }
-        }
+        }        
         else if (Input.GetKey("s")) // Move Back
         {
-			transform.position -= (step/4.0f) * player.transform.forward;
+			transform.position -= (step / 4) * player.transform.forward;
+
+            anim.SetBool("isMoving", true);
+            anim.SetFloat("animationSpeed", .25f);
+        }
+        else
+        {
+            anim.SetBool("isMoving", false);
         }
 
         if (Input.GetKey(KeyCode.Mouse0)) // Sonar

@@ -1499,10 +1499,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1729899046761466, guid: 980aa09c2e159a8479ccf12c473e10d6, type: 2}
-      propertyPath: m_Name
-      value: MainPlayer
-      objectReference: {fileID: 0}
     - target: {fileID: 114885829372355474, guid: 980aa09c2e159a8479ccf12c473e10d6,
         type: 2}
       propertyPath: target
