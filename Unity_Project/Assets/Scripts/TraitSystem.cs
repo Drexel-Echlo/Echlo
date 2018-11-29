@@ -11,9 +11,6 @@ public class TraitSystem : MonoBehaviour {
     public Text traitCountText;
     public GameObject traitMenu;
     public GameObject pauseMenu;
-    public Text traitDescription;
-    public Text traitName;
-
 
     public static int maxTraits = 1;
     public static int traits = 0;
@@ -80,8 +77,6 @@ public class TraitSystem : MonoBehaviour {
             hasFoodMagnet = true;
             buttonManager[1].SetTraitActive(hasFoodMagnet);
             traits++;
-            traitDescription.text = ("Causes nearby food to drift towards you");
-            traitName.text = ("Filter Feeder:");
         }
         else if (hasFoodMagnet)
         {
@@ -97,8 +92,6 @@ public class TraitSystem : MonoBehaviour {
             hasCompass = true;
             buttonManager[2].SetTraitActive(hasCompass);
             traits++;
-            traitDescription.text = ("Displays an arrow that points in the direction of your young");
-            traitName.text = ("Inner Compass:");
         }
         else if (hasCompass)
         {
@@ -114,8 +107,6 @@ public class TraitSystem : MonoBehaviour {
             hasFatTissue = true;
             buttonManager[0].SetTraitActive(hasFatTissue);
             traits++;
-            traitDescription.text = ("Adds 1 health for each food presently held");
-            traitName.text = ("Fat Tissue:");
         }
         else if (hasFatTissue)
         {
@@ -131,8 +122,6 @@ public class TraitSystem : MonoBehaviour {
             hasExpulsion = true;
             buttonManager[3].SetTraitActive(hasExpulsion);
             traits++;
-            traitDescription.text = ("Reguigitating food causes kickback away from direction vomited");
-            traitName.text = ("Violent Expulsion:");
         }
         else if (hasExpulsion)
         {

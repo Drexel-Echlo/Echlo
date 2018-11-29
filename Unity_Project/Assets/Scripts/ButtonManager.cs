@@ -9,20 +9,38 @@ public class ButtonManager : MonoBehaviour {
 
     public TraitSystem traitSystem;
 
-    public string trait;
-    public string enabledText;
-    public string disabledText;
+    public Text traitTooltipSpace;
+    public Text traitNameSpace;
+
+    public string traitName;
+    public string traitTooltip;
 
     // Update is called once per frame
     public void SetTraitActive(bool isTraitEnabled)
     {
+        ColorBlock colorBlock = button.colors;
+
         if (isTraitEnabled)
-        {        
-            button.GetComponentInChildren<Text>().text = trait + ": " + enabledText;
+        {
+            colorBlock.colorMultiplier = 5;
+            button.colors = colorBlock;
         }
         else
         {
-            button.GetComponentInChildren<Text>().text = trait + ": " + disabledText;
+            colorBlock.colorMultiplier = 1;
+            button.colors = colorBlock;
         }
+    }
+
+    public void HoverOverTooltip()
+    {
+        traitNameSpace.text = traitName;
+        traitTooltipSpace.text = traitTooltip;
+    }
+
+    public void HoverOverExit()
+    {
+        traitNameSpace.text = "";
+        traitTooltipSpace.text = "Hover over a trait to learn its effect.";
     }
 }
