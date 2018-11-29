@@ -48,11 +48,10 @@ public class TraitSystem : MonoBehaviour {
     // Update is called once per frame
     void Update ()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Return))
         {
-            if (!GameController.Instance.pauseMenu.gameObject.activeSelf && !traitMenu.activeSelf)
+            if (!traitMenu.activeSelf)
             {
-                print("Pause");
                 GameController.Instance.Pause();
             }
         }
