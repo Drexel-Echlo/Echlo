@@ -8,6 +8,7 @@ TagManager:
   - Home
   - FoodPickupRadius
   - FoodMagnet
+  - VocalCordWave
   layers:
   - Default
   - TransparentFX

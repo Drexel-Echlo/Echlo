@@ -5,7 +5,10 @@ using UnityEngine;
 public class ShooterController : MonoBehaviour { 
 
     public GameObject wave;
-    public GameObject waveClone;
+    private GameObject waveClone;
+
+    public GameObject vocalCordWave;
+    private GameObject vocalCordWaveClone;
 
     public GameObject foodSpit;
 
@@ -46,7 +49,8 @@ public class ShooterController : MonoBehaviour {
         {
             fireDelay++;
         }
-        if (fireDelay == 0){
+        if (fireDelay == 0)
+        {
 
             sfxSource.pitch = Random.Range(minPitch, maxPitch);
 
@@ -59,6 +63,20 @@ public class ShooterController : MonoBehaviour {
             waveClone.AddComponent(typeof(PositionHolder));
             waveClone.GetComponent<PositionHolder>().position = position;
         }
+    }
+
+    public void shootPowerWave(Vector3 position)
+    {
+        sfxSource.pitch = Random.Range(minPitch, maxPitch);
+
+        sfxSource.PlayOneShot(sfxClips[0]);
+
+        Quaternion rotation = Quaternion.Euler(90, 0, 0);
+        vocalCordWaveClone = Instantiate(vocalCordWave, shooter.position, shooter.rotation * rotation) as GameObject;
+        vocalCordWaveClone.GetComponent<Rigidbody>().AddForce(transform.forward * shotPower * 1.5f);
+
+        vocalCordWaveClone.AddComponent(typeof(PositionHolder));
+        vocalCordWaveClone.GetComponent<PositionHolder>().position = position;
     }
 
     public bool spitFood()

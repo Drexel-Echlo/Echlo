@@ -20,6 +20,7 @@ public class TraitSystem : MonoBehaviour {
     public static bool hasCompass;
     public static bool hasFatTissue;
     public static bool hasExpulsion;
+    public static bool hasVocalCords;
 
     private void Start()
     {
@@ -60,10 +61,11 @@ public class TraitSystem : MonoBehaviour {
         {
             traitCountText.text = "Trait Points: " + (maxTraits - traits);
         }
+       
         // For Debug
         if (Input.GetKeyDown(KeyCode.T))
         {
-            maxTraits = 4;
+            maxTraits = 5;
             Time.timeScale = (Time.timeScale + 1) % 2;
             traitMenu.SetActive(!traitMenu.activeSelf);
         }
@@ -128,6 +130,12 @@ public class TraitSystem : MonoBehaviour {
             buttonManager[3].SetTraitActive(hasExpulsion);
             traits--;
         }
+    }
+    public void ToggleVocalCords()
+    {
+        hasVocalCords = true;
+        buttonManager[4].SetTraitActive(hasVocalCords);
+        traits++;
     }
 
     public void TraitScreen()

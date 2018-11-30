@@ -509,7 +509,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1891419215961046}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 5, z: -0}
+  m_LocalPosition: {x: -0.75, y: 5, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4627320368942606}
@@ -633,8 +633,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1729899046761466}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.395874, y: -0.63136816, z: 0.24183083}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.395874, y: -0.16, z: 0.24183083}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4835251356573628}
@@ -1179,7 +1179,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wave: {fileID: 1039409802499550, guid: efccfaa2c8df4924896f5ab0114cbdd3, type: 2}
-  waveClone: {fileID: 0}
+  vocalCordWave: {fileID: 1039409802499550, guid: d78b557ef9330844897440d1424466fe,
+    type: 2}
   foodSpit: {fileID: 1039277364745240, guid: 3b25a291c4bcded4b920dd72b7d7b8eb, type: 2}
   food: {fileID: 1091561412272928, guid: ffd03e6bd76f6ab43901db73b4c6aea9, type: 2}
   shooter: {fileID: 4779318294791348}

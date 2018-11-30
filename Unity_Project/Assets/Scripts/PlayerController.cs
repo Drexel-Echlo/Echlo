@@ -4,8 +4,7 @@ using System.Threading;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
-
-
+    
     public GameObject player;
     private PlayerRotator rotationScript;
     private GameController gameScript;
@@ -33,6 +32,8 @@ public class PlayerController : MonoBehaviour {
     public bool isFoodCreated;
     public bool isHome;
     protected ArrayList stalkers;
+
+    private float chargeTime;
 
     // Use this for initialization
     void Start()
@@ -83,11 +84,25 @@ public class PlayerController : MonoBehaviour {
 
         if (Input.GetKey(KeyCode.Mouse0)) // Sonar
         {
+            if (TraitSystem.hasVocalCords)
+            {
+                chargeTime += Time.deltaTime;
+            }
+
             shooter.shootWave(transform.position);
         }
 
-        // Handle Food Display on character
-        if ((carryCount == 3 && carryingFoodClone[2] == null) ||
+        if (Input.GetKeyUp(KeyCode.Mouse0))
+        {
+            if (chargeTime >= 2 && TraitSystem.hasVocalCords)
+            {
+                chargeTime = 0;
+                shooter.shootPowerWave(transform.position);
+            }
+        }
+
+            // Handle Food Display on character
+            if ((carryCount == 3 && carryingFoodClone[2] == null) ||
             (carryCount == 2 && (carryingFoodClone[1] == null || (carryingFoodClone[1] != null && carryingFoodClone[2] != null))) ||
             (carryCount == 1 && (carryingFoodClone[0] == null || (carryingFoodClone[0] != null && carryingFoodClone[1] != null))) ||
             (carryCount == 0))
