@@ -58,9 +58,15 @@ public class PlayerController : MonoBehaviour {
 		
 		float step = speed * Time.deltaTime;
 
-        if (Input.GetKey("w")) // Move Forward
+        if (Input.GetKey(KeyCode.W)) // Move Forward
         {
-            transform.position += step * player.transform.forward;
+            var currentPos = this.transform.position;
+
+            this.transform.position += step * player.transform.forward;
+
+            var newPos = this.transform.position;
+            
+            transform.position = Vector3.Lerp(currentPos, newPos, step);
 
             anim.SetBool("isMoving", true);
             anim.SetFloat("animationSpeed", 1);
@@ -70,9 +76,15 @@ public class PlayerController : MonoBehaviour {
                 StartCoroutine(LightTrail(lightFrequency));
             }
         }        
-        else if (Input.GetKey("s")) // Move Back
+        else if (Input.GetKey(KeyCode.S)) // Move Back
         {
-			transform.position -= (step / 4) * player.transform.forward;
+            var currentPos = this.transform.position;
+
+            this.transform.position -= step * player.transform.forward;
+
+            var newPos = this.transform.position;
+
+            transform.position = Vector3.Lerp(currentPos, newPos, step / 4);
 
             anim.SetBool("isMoving", true);
             anim.SetFloat("animationSpeed", .25f);
@@ -97,6 +109,7 @@ public class PlayerController : MonoBehaviour {
             if (chargeTime >= 2 && TraitSystem.hasVocalCords)
             {
                 chargeTime = 0;
+
                 shooter.shootPowerWave(transform.position);
             }
         }
