@@ -4,8 +4,7 @@ using System.Threading;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
-
-
+    
     public GameObject player;
     private PlayerRotator rotationScript;
     private GameController gameScript;
@@ -34,6 +33,8 @@ public class PlayerController : MonoBehaviour {
     public bool isHome;
     protected ArrayList stalkers;
 
+    private float chargeTime;
+
     // Use this for initialization
     void Start()
     {
@@ -57,9 +58,15 @@ public class PlayerController : MonoBehaviour {
 		
 		float step = speed * Time.deltaTime;
 
-        if (Input.GetKey("w")) // Move Forward
+        if (Input.GetKey(KeyCode.W)) // Move Forward
         {
-            transform.position += step * player.transform.forward;
+            var currentPos = this.transform.position;
+
+            this.transform.position += step * player.transform.forward;
+
+            var newPos = this.transform.position;
+            
+            transform.position = Vector3.Lerp(currentPos, newPos, step);
 
             anim.SetBool("isMoving", true);
             anim.SetFloat("animationSpeed", 1);
@@ -69,9 +76,15 @@ public class PlayerController : MonoBehaviour {
                 StartCoroutine(LightTrail(lightFrequency));
             }
         }        
-        else if (Input.GetKey("s")) // Move Back
+        else if (Input.GetKey(KeyCode.S)) // Move Back
         {
-			transform.position -= (step / 4) * player.transform.forward;
+            var currentPos = this.transform.position;
+
+            this.transform.position -= step * player.transform.forward;
+
+            var newPos = this.transform.position;
+
+            transform.position = Vector3.Lerp(currentPos, newPos, step / 4);
 
             anim.SetBool("isMoving", true);
             anim.SetFloat("animationSpeed", .25f);
@@ -83,11 +96,26 @@ public class PlayerController : MonoBehaviour {
 
         if (Input.GetKey(KeyCode.Mouse0)) // Sonar
         {
+            if (TraitSystem.hasVocalCords)
+            {
+                chargeTime += Time.deltaTime;
+            }
+
             shooter.shootWave(transform.position);
         }
 
-        // Handle Food Display on character
-        if ((carryCount == 3 && carryingFoodClone[2] == null) ||
+        if (Input.GetKeyUp(KeyCode.Mouse0))
+        {
+            if (chargeTime >= 2 && TraitSystem.hasVocalCords)
+            {
+                chargeTime = 0;
+
+                shooter.shootPowerWave(transform.position);
+            }
+        }
+
+            // Handle Food Display on character
+            if ((carryCount == 3 && carryingFoodClone[2] == null) ||
             (carryCount == 2 && (carryingFoodClone[1] == null || (carryingFoodClone[1] != null && carryingFoodClone[2] != null))) ||
             (carryCount == 1 && (carryingFoodClone[0] == null || (carryingFoodClone[0] != null && carryingFoodClone[1] != null))) ||
             (carryCount == 0))

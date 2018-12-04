@@ -20,6 +20,7 @@ public class TraitSystem : MonoBehaviour {
     public static bool hasCompass;
     public static bool hasFatTissue;
     public static bool hasExpulsion;
+    public static bool hasVocalCords;
 
     private void Start()
     {
@@ -30,6 +31,8 @@ public class TraitSystem : MonoBehaviour {
         buttonManager[3].SetTraitActive(hasExpulsion);
 
         maxTraits = Mathf.Max(0, GameController.level - 1);
+
+        
 
         if (maxTraits > 0)
         {
@@ -46,11 +49,10 @@ public class TraitSystem : MonoBehaviour {
     // Update is called once per frame
     void Update ()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Return))
         {
-            if (!GameController.Instance.pauseMenu.gameObject.activeSelf && !traitMenu.activeSelf)
+            if (!traitMenu.activeSelf)
             {
-                print("Pause");
                 GameController.Instance.Pause();
             }
         }
@@ -58,6 +60,14 @@ public class TraitSystem : MonoBehaviour {
         if (traitCountText != null)
         {
             traitCountText.text = "Trait Points: " + (maxTraits - traits);
+        }
+       
+        // For Debug
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            maxTraits = 5;
+            Time.timeScale = (Time.timeScale + 1) % 2;
+            traitMenu.SetActive(!traitMenu.activeSelf);
         }
     }
 
@@ -118,6 +128,21 @@ public class TraitSystem : MonoBehaviour {
         {
             hasExpulsion = false;
             buttonManager[3].SetTraitActive(hasExpulsion);
+            traits--;
+        }
+    }
+    public void ToggleVocalCords()
+    {
+        if (maxTraits > traits && !hasVocalCords)
+        {
+            hasVocalCords = true;
+            buttonManager[4].SetTraitActive(hasVocalCords);
+            traits++;
+        }
+        else if (hasVocalCords)
+        {
+            hasVocalCords = false;
+            buttonManager[4].SetTraitActive(hasVocalCords);
             traits--;
         }
     }
