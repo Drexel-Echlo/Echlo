@@ -33,7 +33,9 @@ public class PlayerController : MonoBehaviour {
     public bool isHome;
     protected ArrayList stalkers;
 
-    private float chargeTime;
+    public float chargeTime;
+    public float maxCharge;
+    public GameObject chargeBar;
 
     // Use this for initialization
     void Start()
@@ -98,6 +100,9 @@ public class PlayerController : MonoBehaviour {
         {
             if (TraitSystem.hasVocalCords)
             {
+                if (chargeBar.activeSelf == false)
+                    chargeBar.SetActive(true);
+
                 chargeTime += Time.deltaTime;
             }
 
@@ -106,11 +111,16 @@ public class PlayerController : MonoBehaviour {
 
         if (Input.GetKeyUp(KeyCode.Mouse0))
         {
-            if (chargeTime >= 2 && TraitSystem.hasVocalCords)
+            if (TraitSystem.hasVocalCords)
             {
-                chargeTime = 0;
+                if (chargeTime >= maxCharge)
+                {
+                    shooter.shootPowerWave(transform.position);
+                }
 
-                shooter.shootPowerWave(transform.position);
+                chargeBar.SetActive(false);
+
+                chargeTime = 0;
             }
         }
 
