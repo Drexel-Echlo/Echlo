@@ -412,7 +412,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1749045187663006
 GameObject:
   m_ObjectHideFlags: 1
@@ -763,7 +763,7 @@ MonoBehaviour:
   traitTooltipSpace: {fileID: 114212596963138998}
   traitNameSpace: {fileID: 114264631098711818}
   traitName: Violent Expulsion
-  traitTooltip: Reguigitating food causes kickback away from direction vomited
+  traitTooltip: Regurgitating food pushes you backwards.
 --- !u!114 &114212596963138998
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1205,8 +1205,8 @@ MonoBehaviour:
   traitTooltipSpace: {fileID: 114212596963138998}
   traitNameSpace: {fileID: 114264631098711818}
   traitName: Vocal Cords
-  traitTooltip: Hold down the Left Mouse button to charge a powerful wave that briefly
-    stuns enemies.
+  traitTooltip: Hold down the Left Mouse button to charge a powerful wave (WORK IN
+    PROGRESS that briefly stuns enemies.)
 --- !u!114 &114465207539887730
 MonoBehaviour:
   m_ObjectHideFlags: 1

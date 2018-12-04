@@ -1170,7 +1170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 591060268}
-  cameraSmoothing: 3
+  cameraSmoothing: 2
 --- !u!1 &957288892
 GameObject:
   m_ObjectHideFlags: 0
@@ -1850,18 +1850,6 @@ Prefab:
       propertyPath: target
       value: 
       objectReference: {fileID: 1452372394}
-    - target: {fileID: 4995784115692406, guid: 980aa09c2e159a8479ccf12c473e10d6, type: 2}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4835251356573628, guid: 980aa09c2e159a8479ccf12c473e10d6, type: 2}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4228211213500618, guid: 980aa09c2e159a8479ccf12c473e10d6, type: 2}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 980aa09c2e159a8479ccf12c473e10d6, type: 2}
   m_IsPrefabAsset: 0
@@ -2040,15 +2028,6 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4604472283993236, guid: 5b8d349e078173348a8db667c44585cc, type: 2}
       propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1744112665897664, guid: 5b8d349e078173348a8db667c44585cc, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224672339221681928, guid: 5b8d349e078173348a8db667c44585cc,
-        type: 2}
-      propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -133,9 +133,18 @@ public class TraitSystem : MonoBehaviour {
     }
     public void ToggleVocalCords()
     {
-        hasVocalCords = true;
-        buttonManager[4].SetTraitActive(hasVocalCords);
-        traits++;
+        if (maxTraits > traits && !hasVocalCords)
+        {
+            hasVocalCords = true;
+            buttonManager[4].SetTraitActive(hasVocalCords);
+            traits++;
+        }
+        else if (hasVocalCords)
+        {
+            hasVocalCords = false;
+            buttonManager[4].SetTraitActive(hasVocalCords);
+            traits--;
+        }
     }
 
     public void TraitScreen()

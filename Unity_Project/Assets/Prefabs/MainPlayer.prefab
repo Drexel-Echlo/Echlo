@@ -73,7 +73,7 @@ GameObject:
   m_Layer: 10
   m_Name: Point02
   m_TagString: Untagged
-  m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -334,7 +334,7 @@ GameObject:
   m_Layer: 10
   m_Name: Point03
   m_TagString: Untagged
-  m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -412,7 +412,7 @@ GameObject:
   m_Layer: 10
   m_Name: Point01
   m_TagString: Untagged
-  m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -616,8 +616,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1729899046761466}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.395874, y: -0.16, z: 0.24183083}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.9, y: -0.6, z: 16.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4835251356573628}
@@ -905,13 +905,13 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 82
+  Priority: 141
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -1073,7 +1073,7 @@ MonoBehaviour:
   - {fileID: 4068710316561162}
   - {fileID: 4864915862405348}
   - {fileID: 4963982429511302}
-  speed: 11
+  speed: 12
   lightFrequency: 1.1
   carryCount: 0
   foodDrop: {fileID: 1091561412272928, guid: ffd03e6bd76f6ab43901db73b4c6aea9, type: 2}
@@ -1108,9 +1108,9 @@ MonoBehaviour:
   shooter: {fileID: 4779318294791348}
   sfxSource: {fileID: 82949200169947612}
   sfxClips:
-  - {fileID: 8300000, guid: e7c2de868df8d1f4984b6a7e40983973, type: 3}
+  - {fileID: 8300000, guid: afe65fd7c71dea24ebf815d2d4bdd622, type: 3}
   shotPower: 200
-  fireRate: 25
+  fireRate: 10
   foodFireRate: 0
   fireDelay: -1
   destroyTime: 1
