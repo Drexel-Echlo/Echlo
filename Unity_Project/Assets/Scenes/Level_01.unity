@@ -1816,14 +1816,39 @@ Prefab:
       propertyPath: target
       value: 
       objectReference: {fileID: 1452372394}
-    - target: {fileID: 223543850514824736, guid: 980aa09c2e159a8479ccf12c473e10d6,
-        type: 2}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 838575867}
+    - target: {fileID: 4228211213500618, guid: 980aa09c2e159a8479ccf12c473e10d6, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4835251356573628, guid: 980aa09c2e159a8479ccf12c473e10d6, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4995784115692406, guid: 980aa09c2e159a8479ccf12c473e10d6, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4823866432833940, guid: 980aa09c2e159a8479ccf12c473e10d6, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4039287437923884, guid: 980aa09c2e159a8479ccf12c473e10d6, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 980aa09c2e159a8479ccf12c473e10d6, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1501693793 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1224265131183350, guid: 980aa09c2e159a8479ccf12c473e10d6,
+    type: 2}
+  m_PrefabInternal: {fileID: 1501693792}
+--- !u!1 &1501693794 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1577870758662976, guid: 980aa09c2e159a8479ccf12c473e10d6,
+    type: 2}
+  m_PrefabInternal: {fileID: 1501693792}
 --- !u!1001 &1591181179
 Prefab:
   m_ObjectHideFlags: 0
@@ -2001,17 +2026,21 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114444754405403640, guid: 5b8d349e078173348a8db667c44585cc,
-        type: 2}
-      propertyPath: traitTooltip
-      value: Hold down the Left Mouse button to charge a powerful wave that briefly
-        stuns enemies. Let go to release the wave.
-      objectReference: {fileID: 0}
     - target: {fileID: 224672339221681928, guid: 5b8d349e078173348a8db667c44585cc,
         type: 2}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114684095785218426, guid: 5b8d349e078173348a8db667c44585cc,
+        type: 2}
+      propertyPath: deadLight
+      value: 
+      objectReference: {fileID: 1501693794}
+    - target: {fileID: 114684095785218426, guid: 5b8d349e078173348a8db667c44585cc,
+        type: 2}
+      propertyPath: winLight
+      value: 
+      objectReference: {fileID: 1501693793}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b8d349e078173348a8db667c44585cc, type: 2}
   m_IsPrefabAsset: 0

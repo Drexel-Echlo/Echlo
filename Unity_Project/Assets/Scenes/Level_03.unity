@@ -1741,6 +1741,16 @@ Prefab:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114684095785218426, guid: 5b8d349e078173348a8db667c44585cc,
+        type: 2}
+      propertyPath: deadLight
+      value: 
+      objectReference: {fileID: 1586104075}
+    - target: {fileID: 114684095785218426, guid: 5b8d349e078173348a8db667c44585cc,
+        type: 2}
+      propertyPath: winLight
+      value: 
+      objectReference: {fileID: 1586104074}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b8d349e078173348a8db667c44585cc, type: 2}
   m_IsPrefabAsset: 0
@@ -2115,6 +2125,16 @@ Transform:
 --- !u!1 &1586104073 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1729899046761466, guid: 980aa09c2e159a8479ccf12c473e10d6,
+    type: 2}
+  m_PrefabInternal: {fileID: 1586104071}
+--- !u!1 &1586104074 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1224265131183350, guid: 980aa09c2e159a8479ccf12c473e10d6,
+    type: 2}
+  m_PrefabInternal: {fileID: 1586104071}
+--- !u!1 &1586104075 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1577870758662976, guid: 980aa09c2e159a8479ccf12c473e10d6,
     type: 2}
   m_PrefabInternal: {fileID: 1586104071}
 --- !u!1001 &1657605685

@@ -6,7 +6,6 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
     
     public GameObject player;
-    private PlayerRotator rotationScript;
     private GameController gameScript;
     private ShooterController shooter;
     private bool canPickUpFood = true;
@@ -40,7 +39,6 @@ public class PlayerController : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        rotationScript = player.GetComponent<PlayerRotator>();
         gameScript = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         shooter = player.GetComponent<ShooterController>();
         stalkers = new ArrayList();
