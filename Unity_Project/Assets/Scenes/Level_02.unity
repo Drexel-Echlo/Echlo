@@ -1257,6 +1257,12 @@ Prefab:
       propertyPath: winLight
       value: 
       objectReference: {fileID: 531287516}
+    - target: {fileID: 114935988659934092, guid: 5b8d349e078173348a8db667c44585cc,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: dab9a3c69dc13e048bca463a43b6568f,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b8d349e078173348a8db667c44585cc, type: 2}
   m_IsPrefabAsset: 0
