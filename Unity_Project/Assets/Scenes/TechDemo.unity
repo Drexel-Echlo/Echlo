@@ -273,6 +273,16 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4503344817910590, guid: 980aa09c2e159a8479ccf12c473e10d6,
     type: 2}
   m_PrefabInternal: {fileID: 97950260}
+--- !u!1 &97950262 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1224265131183350, guid: 980aa09c2e159a8479ccf12c473e10d6,
+    type: 2}
+  m_PrefabInternal: {fileID: 97950260}
+--- !u!1 &97950263 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1577870758662976, guid: 980aa09c2e159a8479ccf12c473e10d6,
+    type: 2}
+  m_PrefabInternal: {fileID: 97950260}
 --- !u!1 &112842177
 GameObject:
   m_ObjectHideFlags: 0
@@ -2163,6 +2173,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 674114201}
   traitMenu: {fileID: 0}
+  deadLight: {fileID: 97950263}
+  winLight: {fileID: 97950262}
   gameovertext: {fileID: 1784171135}
   gamewintext: {fileID: 2126764872}
   gameOver: 0

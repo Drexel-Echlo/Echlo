@@ -10,6 +10,8 @@ public class GameController : MonoBehaviour {
     public static GameObject player;
     public GameObject pauseMenu;
     public GameObject traitMenu;
+    public GameObject deadLight;
+    public GameObject winLight;
 
     public Text gameovertext;
     public Text gamewintext;
@@ -53,6 +55,8 @@ public class GameController : MonoBehaviour {
         restart = false;
         level = SceneManager.GetActiveScene().buildIndex;
         getMainPlayer();
+        deadLight.SetActive(false);
+        winLight.SetActive(false);
         Debug.Log(level);
     }
 
@@ -62,14 +66,18 @@ public class GameController : MonoBehaviour {
         if (gameOver)
         {
             gameovertext.gameObject.SetActive(true);
+            deadLight.SetActive(true);
             restart = true;
             Time.timeScale = 0;
+            //Instantiate(deadLight, player.transform.position, Quaternion.identity);
             Destroy(player);
+
         }
         else if (gameWin)
         {
             TraitSystem.maxTraits++;
             gamewintext.gameObject.SetActive(true);
+            winLight.SetActive(true);
             restart = true;
             Time.timeScale = 0;
 
