@@ -22,9 +22,9 @@ GameObject:
   - component: {fileID: 64463887837242470}
   - component: {fileID: 54475396719185560}
   - component: {fileID: 114983083757191884}
-  m_Layer: 14
+  m_Layer: 0
   m_Name: Louse
-  m_TagString: Untagged
+  m_TagString: LightEmUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 4832637363613268}
   - component: {fileID: 33091207848848424}
   - component: {fileID: 23386533217265926}
-  m_Layer: 14
+  m_Layer: 0
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
