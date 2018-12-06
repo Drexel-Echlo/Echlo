@@ -82,7 +82,7 @@ public class GameController : MonoBehaviour {
             yearsAlive += Mathf.Round(Time.timeSinceLevelLoad * 10 ) / 10;
             for (int i = 0; i < 1000; i++)
             {
-                    gamewintext.gameObject.GetComponent<Text>().text = (Mathf.Round(Time.timeSinceLevelLoad * 10) / 10) + " Millions Years Passes";
+                    gamewintext.gameObject.GetComponent<Text>().text = (Mathf.Round(Time.timeSinceLevelLoad * 10) / 10) + " Million Years Pass";
             }
             //gamewintext.gameObject.GetComponent<Text>().text = yearsAlive + " Millions Years Later";
             //winLight.SetActive(true);
