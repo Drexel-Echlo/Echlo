@@ -623,7 +623,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cd9d0b44ec7ba04798c4095d6a338b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 1751578002}
   cameraSmoothing: 3
 --- !u!81 &214912362
 AudioListener:
@@ -3081,8 +3081,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 062632f901a85b94ea7f3029ace9aaf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {x: 0, y: 0, z: 0}
   endpoint: {fileID: 251761162}
+  food: {fileID: 0}
   speed: 3
 --- !u!64 &1402749056
 MeshCollider:
@@ -3328,6 +3328,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   foodNeed: 3
   foodCount: 0
+  babylist:
+  - {fileID: 1402749053}
+  - {fileID: 1692367635}
+  - {fileID: 1826367294}
+  full: 0
 --- !u!1 &1462781207
 GameObject:
   m_ObjectHideFlags: 0
@@ -3723,8 +3728,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 062632f901a85b94ea7f3029ace9aaf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {x: 0, y: 0, z: 0}
   endpoint: {fileID: 251761162}
+  food: {fileID: 0}
   speed: 2
 --- !u!64 &1692367638
 MeshCollider:
@@ -3759,6 +3764,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4498803549770896, guid: 2e83e53a5c44da44d99f7149f23b4160,
     type: 2}
   m_PrefabInternal: {fileID: 1046178507}
+--- !u!1 &1751578002 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1729899046761466, guid: 980aa09c2e159a8479ccf12c473e10d6,
+    type: 2}
+  m_PrefabInternal: {fileID: 97950260}
 --- !u!1 &1773618380
 GameObject:
   m_ObjectHideFlags: 0
@@ -4094,8 +4104,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 062632f901a85b94ea7f3029ace9aaf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {x: 0, y: 0, z: 0}
   endpoint: {fileID: 251761162}
+  food: {fileID: 0}
   speed: 1
 --- !u!64 &1826367297
 MeshCollider:

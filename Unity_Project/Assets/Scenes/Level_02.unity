@@ -561,6 +561,21 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4797776820962342, guid: 964e2be5fb3b6dd41a1b90782952397a,
     type: 2}
   m_PrefabInternal: {fileID: 546774895}
+--- !u!1 &546774897 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1667078478449182, guid: 964e2be5fb3b6dd41a1b90782952397a,
+    type: 2}
+  m_PrefabInternal: {fileID: 546774895}
+--- !u!1 &546774898 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1526602720309142, guid: 964e2be5fb3b6dd41a1b90782952397a,
+    type: 2}
+  m_PrefabInternal: {fileID: 546774895}
+--- !u!1 &546774899 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1507266336328390, guid: 964e2be5fb3b6dd41a1b90782952397a,
+    type: 2}
+  m_PrefabInternal: {fileID: 546774895}
 --- !u!1 &700193402
 GameObject:
   m_ObjectHideFlags: 0
@@ -1779,6 +1794,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   foodNeed: 3
   foodCount: 0
+  babylist:
+  - {fileID: 546774899}
+  - {fileID: 546774898}
+  - {fileID: 546774897}
+  full: 0
 --- !u!1 &1462781207
 GameObject:
   m_ObjectHideFlags: 0

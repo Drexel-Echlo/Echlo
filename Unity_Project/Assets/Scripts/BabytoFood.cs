@@ -4,36 +4,23 @@ using UnityEngine;
 
 public class BabytoFood : MonoBehaviour {
 
-    public Vector3 stats;
+    //public Vector3 stats;
     public GameObject endpoint;
+    public GameObject food;
     public float speed;
-    private GameObject[] list;
+    
     private bool getfood;
     private bool full;
-    //public int totalBabyFood;
+    
     protected CheckFoodCount gameScript;
 
     // Use this for initialization
     void Start () {
-        stats = this.transform.position;
+        //stats = this.transform.position;
         gameScript = GameObject.Find("Home").GetComponent<CheckFoodCount>();
         getfood = false;
-        full = false;
+        food = null;
     }
-
-
-    /*private void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.name == "Food(Clone)")
-        {
-            //Debug.Log("find it");
-            Destroy(other.gameObject);
-            gameScript.foodCount++;
-            Debug.Log(gameScript.foodCount);
-            getfood = true;
-            full = true;
-        }
-    }*/
 
     private void OnTriggerEnter(Collider other)
     {
@@ -42,9 +29,10 @@ public class BabytoFood : MonoBehaviour {
             //Debug.Log("find it");
             gameScript.foodCount++;
             Destroy(other.gameObject);
+            food = null;
             Debug.Log(gameScript.foodCount);
             getfood = true;
-            full = true;
+            gameScript.full = false;
         }
     }
 
@@ -52,20 +40,11 @@ public class BabytoFood : MonoBehaviour {
     // Update is called once per frame
     void Update ()
     {
-        //int foodCount = 0;
         float step = speed * Time.deltaTime;
-        list = GameObject.FindGameObjectsWithTag("LightEmUp");
-
-        foreach (GameObject item in list)
+        if (food != null)
         {
-            if (item.gameObject.layer == LayerMask.NameToLayer("Food") 
-                && Vector3.Distance(item.transform.position, this.transform.position) <= 7
-                && !full)
-            {
-                transform.LookAt(item.transform);
-                transform.position = Vector3.MoveTowards(transform.position, item.transform.position, step);
-                //foodlist.Add(item);
-            }
+            transform.LookAt(food.transform);
+            transform.position = Vector3.MoveTowards(transform.position, food.transform.position, step);
         }
 
         if (getfood)

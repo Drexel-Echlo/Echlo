@@ -510,6 +510,21 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4797776820962342, guid: 964e2be5fb3b6dd41a1b90782952397a,
     type: 2}
   m_PrefabInternal: {fileID: 347982042}
+--- !u!1 &347982044 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1667078478449182, guid: 964e2be5fb3b6dd41a1b90782952397a,
+    type: 2}
+  m_PrefabInternal: {fileID: 347982042}
+--- !u!1 &347982045 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1526602720309142, guid: 964e2be5fb3b6dd41a1b90782952397a,
+    type: 2}
+  m_PrefabInternal: {fileID: 347982042}
+--- !u!1 &347982046 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1507266336328390, guid: 964e2be5fb3b6dd41a1b90782952397a,
+    type: 2}
+  m_PrefabInternal: {fileID: 347982042}
 --- !u!4 &401064372 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4901986588636464, guid: ffd03e6bd76f6ab43901db73b4c6aea9,
@@ -1956,6 +1971,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   foodNeed: 3
   foodCount: 0
+  babylist:
+  - {fileID: 347982046}
+  - {fileID: 347982045}
+  - {fileID: 347982044}
+  full: 0
 --- !u!1 &1462781207
 GameObject:
   m_ObjectHideFlags: 0

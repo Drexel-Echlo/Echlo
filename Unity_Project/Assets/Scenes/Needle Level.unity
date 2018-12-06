@@ -2172,8 +2172,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 062632f901a85b94ea7f3029ace9aaf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {x: 0, y: 0, z: 0}
   endpoint: {fileID: 251761162}
+  food: {fileID: 0}
   speed: 3
 --- !u!64 &1402749056
 MeshCollider:
@@ -2296,6 +2296,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   foodNeed: 3
   foodCount: 0
+  babylist:
+  - {fileID: 1402749053}
+  - {fileID: 1692367635}
+  - {fileID: 1826367294}
+  full: 0
 --- !u!1 &1462781207
 GameObject:
   m_ObjectHideFlags: 0
@@ -2719,8 +2724,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 062632f901a85b94ea7f3029ace9aaf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {x: 0, y: 0, z: 0}
   endpoint: {fileID: 251761162}
+  food: {fileID: 0}
   speed: 2
 --- !u!64 &1692367638
 MeshCollider:
@@ -2973,8 +2978,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 062632f901a85b94ea7f3029ace9aaf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {x: 0, y: 0, z: 0}
   endpoint: {fileID: 251761162}
+  food: {fileID: 0}
   speed: 1
 --- !u!64 &1826367297
 MeshCollider:
