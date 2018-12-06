@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -87,7 +87,7 @@ public class GameController : MonoBehaviour {
         {
             if (gameWin)
             {
-                if (level >= SceneManager.sceneCountInBuildSettings)
+                if (level >= SceneManager.sceneCountInBuildSettings - 1)
                 {
                     level = 0;
                     SceneManager.LoadScene(level, LoadSceneMode.Single);
