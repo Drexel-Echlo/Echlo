@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StalkerConroller : MonoBehaviour {
+public class StalkerConroller : MonoBehaviour
+{
 
     protected enum STATE { Wait, Follow };
 
     public float moveSpeed;
-    
+
     protected ShooterController shooter;
 
     protected GameObject player;
@@ -61,7 +62,8 @@ public class StalkerConroller : MonoBehaviour {
             state = STATE.Follow;
             target = player.transform.position;
             shooter.shootWave(transform.position);
-        } else if (state == STATE.Follow && other.gameObject.tag == "Home")
+        }
+        else if (state == STATE.Follow && other.gameObject.tag == "Home")
         {
             state = STATE.Wait;
         }
@@ -72,6 +74,12 @@ public class StalkerConroller : MonoBehaviour {
     {
         int layer = other.gameObject.layer;
         string name = other.gameObject.name;
+
+        if (other.gameObject.tag == "VocalCordWave")
+        {
+            StartCoroutine(StunDuration());
+        }
+
         if (layer != LayerMask.NameToLayer("Enemy") && layer != LayerMask.NameToLayer("Stalker") && layer != LayerMask.NameToLayer("SonarWave") && layer != LayerMask.NameToLayer("EnemyWave"))
         {
             target = transform.position;
@@ -81,7 +89,8 @@ public class StalkerConroller : MonoBehaviour {
         {
             state = STATE.Wait;
             Destroy(this.gameObject);
-        } else if (name.Equals("Needle"))
+        }
+        else if (name.Equals("Needle"))
         {
             state = STATE.Wait;
             Destroy(other.gameObject);
@@ -96,7 +105,6 @@ public class StalkerConroller : MonoBehaviour {
             transform.LookAt(new Vector3(target.x, transform.position.y, target.z));
             shooter.shootWave(transform.position);
         }
-
     }
 
     IEnumerator LightTrail(float frequency)
@@ -115,5 +123,18 @@ public class StalkerConroller : MonoBehaviour {
 
             allowLight = true;
         }
+    }
+
+    IEnumerator StunDuration()
+    {
+        float currentSpeed = moveSpeed;
+
+        moveSpeed = 0;
+        GetComponent<Collider>().enabled = false;
+
+        yield return new WaitForSeconds(2);
+
+        moveSpeed = currentSpeed;
+        GetComponent<Collider>().enabled = true;
     }
 }

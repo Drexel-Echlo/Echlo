@@ -63,10 +63,28 @@ public class SnapperController : MonoBehaviour {
     {
         int layer = other.gameObject.layer;
 
+        if (other.gameObject.tag == "VocalCordWave")
+        {
+            StartCoroutine(StunDuration());
+        }
+
         if (layer != LayerMask.NameToLayer("Enemy") && layer != LayerMask.NameToLayer("Stalker") && layer != LayerMask.NameToLayer("SonarWave") && layer != LayerMask.NameToLayer("EnemyWave"))
         {
             target = transform.position;
             state = STATE.Wait;
         }
+    }
+
+    IEnumerator StunDuration()
+    {
+        float currentSpeed = moveSpeed;
+
+        moveSpeed = 0;
+        GetComponent<Collider>().enabled = false;
+
+        yield return new WaitForSeconds(4);
+
+        moveSpeed = currentSpeed;
+        GetComponent<Collider>().enabled = true;
     }
 }

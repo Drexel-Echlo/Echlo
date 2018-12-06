@@ -191,7 +191,8 @@ Prefab:
         type: 2}
       propertyPath: deadLight
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1368460643587940, guid: 14dfd854468ce9a4b9f568a1186b502f,
+        type: 2}
     - target: {fileID: 114684095785218426, guid: 5b8d349e078173348a8db667c44585cc,
         type: 2}
       propertyPath: winLight

@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasicEnemyAI : MonoBehaviour {
+public class BasicEnemyAI : MonoBehaviour
+{
 
     protected enum STATE { Wait, Follow, Trail, ReturnHome };
 
@@ -26,7 +27,8 @@ public class BasicEnemyAI : MonoBehaviour {
     public AudioClip sfxClip;
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         player = GameController.getMainPlayer();
         state = STATE.Wait;
         seenHolder = GetComponent<SeenHolder>();
@@ -34,7 +36,8 @@ public class BasicEnemyAI : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update () {
+    void Update()
+    {
         if (state == STATE.Wait)
         {
         }
@@ -55,12 +58,14 @@ public class BasicEnemyAI : MonoBehaviour {
                     StartCoroutine(LightTrail(lightFrequency));
                 }
             }
-        } else if (state == STATE.Trail)
+        }
+        else if (state == STATE.Trail)
         {
             if (trailSpeed < 1)
             {
                 state = STATE.ReturnHome;
-            } else
+            }
+            else
             {
                 transform.Translate(Vector3.forward * trailSpeed * Time.deltaTime);
                 trailSpeed -= (moveSpeed / 2.0f) * Time.deltaTime;
@@ -69,7 +74,8 @@ public class BasicEnemyAI : MonoBehaviour {
                     StartCoroutine(LightTrail(lightFrequency));
                 }
             }
-        } else if (state == STATE.ReturnHome)
+        }
+        else if (state == STATE.ReturnHome)
         {
             if (Vector3.Distance(home, transform.position) < 2.0f)
             {
@@ -91,17 +97,21 @@ public class BasicEnemyAI : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if (state == STATE.Wait && other.gameObject.layer.Equals(LayerMask.NameToLayer("Light"))) {
+        if (state == STATE.Wait && other.gameObject.layer.Equals(LayerMask.NameToLayer("Light")))
+        {
             PositionHolder holder = other.gameObject.GetComponent<PositionHolder>();
             if (holder != null)
             {
                 state = STATE.Follow;
                 target = holder.position;
-            } else
+            }
+            else
             {
                 print("no holder");
             }
-        } else if ((state == STATE.Follow || state == STATE.Trail) && other.gameObject.tag == "Home") {
+        }
+        else if ((state == STATE.Follow || state == STATE.Trail) && other.gameObject.tag == "Home")
+        {
             state = STATE.ReturnHome;
         }
     }
@@ -109,6 +119,12 @@ public class BasicEnemyAI : MonoBehaviour {
     private void OnCollisionEnter(Collision other)
     {
         int layer = other.gameObject.layer;
+
+        if (other.gameObject.tag == "VocalCordWave")
+        {
+            StartCoroutine(StunDuration());
+        }
+
         if (layer != LayerMask.NameToLayer("Enemy") && layer != LayerMask.NameToLayer("Stalker") && layer != LayerMask.NameToLayer("SonarWave") && layer != LayerMask.NameToLayer("EnemyWave"))
         {
             target = transform.position;
@@ -131,5 +147,18 @@ public class BasicEnemyAI : MonoBehaviour {
 
             allowLight = true;
         }
+    }
+
+    IEnumerator StunDuration()
+    {
+        float currentSpeed = moveSpeed;
+
+        moveSpeed = 0;
+        GetComponent<Collider>().enabled = false;
+
+        yield return new WaitForSeconds(2);
+
+        moveSpeed = currentSpeed;
+        GetComponent<Collider>().enabled = true;
     }
 }
