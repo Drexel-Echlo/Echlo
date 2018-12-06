@@ -191,13 +191,14 @@ Prefab:
         type: 2}
       propertyPath: deadLight
       value: 
-      objectReference: {fileID: 1368460643587940, guid: 14dfd854468ce9a4b9f568a1186b502f,
+      objectReference: {fileID: 1577870758662976, guid: 980aa09c2e159a8479ccf12c473e10d6,
         type: 2}
     - target: {fileID: 114684095785218426, guid: 5b8d349e078173348a8db667c44585cc,
         type: 2}
       propertyPath: winLight
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1224265131183350, guid: 980aa09c2e159a8479ccf12c473e10d6,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b8d349e078173348a8db667c44585cc, type: 2}
   m_IsPrefabAsset: 0

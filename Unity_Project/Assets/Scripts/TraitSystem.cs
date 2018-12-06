@@ -29,6 +29,7 @@ public class TraitSystem : MonoBehaviour {
         buttonManager[1].SetTraitActive(hasFoodMagnet);
         buttonManager[2].SetTraitActive(hasCompass);
         buttonManager[3].SetTraitActive(hasExpulsion);
+        buttonManager[4].SetTraitActive(hasVocalCords);
 
         maxTraits = Mathf.Max(0, GameController.level - 1);
 
