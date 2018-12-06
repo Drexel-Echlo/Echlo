@@ -19,7 +19,7 @@ public class GameController : MonoBehaviour {
     public bool gameWin;
     private bool restart;
     public static int level;
-    public int yearsAlive; // Themeatic more than anything
+    public float yearsAlive; // Themeatic more than anything
 
     public bool isPauseActive;
 
@@ -67,6 +67,7 @@ public class GameController : MonoBehaviour {
         if (gameOver)
         {
             gameovertext.gameObject.SetActive(true);
+            gameovertext.gameObject.GetComponent<Text>().text = " Your species is extinct" ;
             deadLight.SetActive(true);
             restart = true;
             Time.timeScale = 0;
@@ -78,7 +79,13 @@ public class GameController : MonoBehaviour {
         {
             TraitSystem.maxTraits++;
             gamewintext.gameObject.SetActive(true);
-            winLight.SetActive(true);
+            yearsAlive += Mathf.Round(Time.timeSinceLevelLoad * 10 ) / 10;
+            for (int i = 0; i < 1000; i++)
+            {
+                    gamewintext.gameObject.GetComponent<Text>().text = (Mathf.Round(Time.timeSinceLevelLoad * 10) / 10) + " Millions Years Passes";
+            }
+            //gamewintext.gameObject.GetComponent<Text>().text = yearsAlive + " Millions Years Later";
+            //winLight.SetActive(true);
             restart = true;
             Time.timeScale = 0;
 
