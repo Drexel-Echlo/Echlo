@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4295927233597792}
   - component: {fileID: 64463887837242470}
   - component: {fileID: 54475396719185560}
-  - component: {fileID: 114122781685526804}
+  - component: {fileID: 114983083757191884}
   m_Layer: 14
   m_Name: Louse
   m_TagString: Untagged
@@ -144,7 +144,7 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 9d79e9c0bf66f7d4dafa1dd305683432, type: 3}
---- !u!114 &114122781685526804
+--- !u!114 &114983083757191884
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -152,11 +152,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1422759671492694}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 981eb2ee1ec42984d9976a76b943bebe, type: 3}
+  m_Script: {fileID: 11500000, guid: 7cc81d83cff9b7f428f229b1c926f683, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wanderSpeed: 5
+  wanderSpeed: 0
   patrolPoint:
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
