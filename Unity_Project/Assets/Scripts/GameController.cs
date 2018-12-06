@@ -19,6 +19,7 @@ public class GameController : MonoBehaviour {
     public bool gameWin;
     private bool restart;
     public static int level;
+    public int yearsAlive; // Themeatic more than anything
 
     public bool isPauseActive;
 
