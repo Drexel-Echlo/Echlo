@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BasicEnemyAI : MonoBehaviour {
 
-    protected enum STATE { Wait, Follow, Trail };
+    protected enum STATE { Wait, Follow, Trail, ReturnHome };
 
     public float moveSpeed;
 
@@ -19,6 +19,8 @@ public class BasicEnemyAI : MonoBehaviour {
     public float lightFrequency = 1.1f;
     private SeenHolder seenHolder;
 
+    public Vector3 home;
+
     public AudioSource sfxSource;
 
     public AudioClip sfxClip;
@@ -28,6 +30,7 @@ public class BasicEnemyAI : MonoBehaviour {
         player = GameController.getMainPlayer();
         state = STATE.Wait;
         seenHolder = GetComponent<SeenHolder>();
+        home = transform.position;
     }
 
     // Update is called once per frame
@@ -56,11 +59,28 @@ public class BasicEnemyAI : MonoBehaviour {
         {
             if (trailSpeed < 1)
             {
-                state = STATE.Wait;
+                state = STATE.ReturnHome;
             } else
             {
                 transform.Translate(Vector3.forward * trailSpeed * Time.deltaTime);
                 trailSpeed -= (moveSpeed / 2.0f) * Time.deltaTime;
+                if (allowLight) // Light Trail
+                {
+                    StartCoroutine(LightTrail(lightFrequency));
+                }
+            }
+        } else if (state == STATE.ReturnHome)
+        {
+            if (Vector3.Distance(home, transform.position) < 2.0f)
+            {
+                transform.LookAt(target);
+                state = STATE.Wait;
+            }
+            else
+            {
+                transform.LookAt(new Vector3(home.x, transform.position.y, home.z));
+                transform.Translate(Vector3.forward * moveSpeed * .4f * Time.deltaTime);
+                sfxSource.PlayOneShot(sfxClip);
                 if (allowLight) // Light Trail
                 {
                     StartCoroutine(LightTrail(lightFrequency));
@@ -82,7 +102,7 @@ public class BasicEnemyAI : MonoBehaviour {
                 print("no holder");
             }
         } else if ((state == STATE.Follow || state == STATE.Trail) && other.gameObject.tag == "Home") {
-            state = STATE.Wait;
+            state = STATE.ReturnHome;
         }
     }
 
