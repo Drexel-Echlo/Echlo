@@ -2241,6 +2241,31 @@ Prefab:
       propertyPath: shotPower
       value: 275
       objectReference: {fileID: 0}
+    - target: {fileID: 108993855384319692, guid: 980aa09c2e159a8479ccf12c473e10d6,
+        type: 2}
+      propertyPath: m_Range
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 108993855384319692, guid: 980aa09c2e159a8479ccf12c473e10d6,
+        type: 2}
+      propertyPath: m_Intensity
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 108993855384319692, guid: 980aa09c2e159a8479ccf12c473e10d6,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 108993855384319692, guid: 980aa09c2e159a8479ccf12c473e10d6,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 108993855384319692, guid: 980aa09c2e159a8479ccf12c473e10d6,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 980aa09c2e159a8479ccf12c473e10d6, type: 2}
   m_IsPrefabAsset: 0
