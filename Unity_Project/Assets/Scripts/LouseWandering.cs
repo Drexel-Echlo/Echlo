@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NPCWandering : MonoBehaviour
+public class LouseWandering : MonoBehaviour
 {
 
     public float wanderSpeed;
