@@ -15,12 +15,19 @@ public class StalkerConroller : MonoBehaviour {
     protected Vector3 target;
     public float maxSight = 10;
 
+    private bool allowLight = true;
+    public GameObject movingLight;
+    public GameObject movingLightClone;
+    public float lightFrequency = 1.1f;
+    private SeenHolder seenHolder;
+
     // Use this for initialization
     void Start()
     {
         player = GameController.getMainPlayer();
         state = STATE.Wait;
         shooter = GetComponent<ShooterController>();
+        seenHolder = GetComponent<SeenHolder>();
     }
 
     // Update is called once per frame
@@ -39,6 +46,10 @@ public class StalkerConroller : MonoBehaviour {
             {
                 transform.LookAt(new Vector3(target.x, transform.position.y, target.z));
                 transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
+                if (allowLight) // Light Trail
+                {
+                    StartCoroutine(LightTrail(lightFrequency));
+                }
             }
         }
     }
@@ -86,5 +97,23 @@ public class StalkerConroller : MonoBehaviour {
             shooter.shootWave(transform.position);
         }
 
+    }
+
+    IEnumerator LightTrail(float frequency)
+    {
+        if (seenHolder.seen)
+        {
+            allowLight = false;
+
+            movingLightClone = Instantiate(movingLight, transform.position, transform.rotation);
+            movingLightClone.AddComponent(typeof(PositionHolder));
+            movingLightClone.GetComponent<PositionHolder>().position = transform.position;
+            GameObject.Destroy(movingLightClone, 2.5f);
+
+            WaitForSeconds delay = new WaitForSeconds(frequency);
+            yield return delay;
+
+            allowLight = true;
+        }
     }
 }

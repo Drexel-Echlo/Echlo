@@ -32,7 +32,12 @@ public class DestroyOnHit : MonoBehaviour
         }
         else if (layer == LayerMask.NameToLayer("Enemy") || layer == LayerMask.NameToLayer("Stalker"))
         {
-            explosion = enemyExplosion;           
+            explosion = enemyExplosion;
+            SeenHolder seenHolder = collision.gameObject.GetComponent<SeenHolder>();
+            if (seenHolder != null)
+            {
+                seenHolder.seen = true;
+            }
         }
         else if (tag == "Player")
         {

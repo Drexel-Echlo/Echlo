@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114634572456633434}
   - component: {fileID: 54437948270963452}
   - component: {fileID: 82184251987345054}
+  - component: {fileID: 114015502763152452}
   m_Layer: 14
   m_Name: Needle
   m_TagString: LightEmUp
@@ -241,6 +242,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &114015502763152452
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1119455035114498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae013c78d646c7047b61b07ef0bf92c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seen: 0
 --- !u!114 &114634572456633434
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -266,5 +279,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
+  movingLight: {fileID: 1684139783786102, guid: 1759becf6cb0bfc4e845468c4b521c47,
+    type: 2}
+  movingLightClone: {fileID: 0}
+  lightFrequency: 1
   sfxSource: {fileID: 82184251987345054}
   sfxClip: {fileID: 8300000, guid: 35115f3457e53614e970ee50d1d02bf5, type: 3}
