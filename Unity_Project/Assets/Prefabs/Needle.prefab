@@ -68,14 +68,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1119455035114498}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 4.7, y: -2, z: -16.5}
+  m_LocalRotation: {x: -0, y: 0.8711406, z: -0, w: 0.49103358}
+  m_LocalPosition: {x: 9.53, y: -1.08, z: 19.14}
   m_LocalScale: {x: 0.18597999, y: 0.18597999, z: 0.18597999}
   m_Children:
   - {fileID: 4306596589009294}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 92.63901, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 121.18301, z: 0}
 --- !u!23 &23481738733881196
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -144,8 +144,8 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Convex: 1
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
+  m_CookingOptions: -2
+  m_SkinWidth: 1.32
   m_Mesh: {fileID: 4300000, guid: 1c9523ec9dbbd894e8f85a3a1b380731, type: 3}
 --- !u!82 &82184251987345054
 AudioSource:

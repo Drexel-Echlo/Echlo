@@ -806,7 +806,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1729899046761466}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.395874, y: -0.16, z: 0.24183083}
+  m_LocalPosition: {x: 16.04, y: -0.16, z: 3.68}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4835251356573628}
@@ -1447,7 +1447,7 @@ MonoBehaviour:
   - {fileID: 4963982429511302}
   speed: 15
   lightFrequency: 1.1
-  carryCount: 0
+  carryCount: 2
   foodDrop: {fileID: 1091561412272928, guid: ffd03e6bd76f6ab43901db73b4c6aea9, type: 2}
   carryingFood: {fileID: 1091561412272928, guid: 1ff75b99519bd8545be85e95d796e031,
     type: 2}
