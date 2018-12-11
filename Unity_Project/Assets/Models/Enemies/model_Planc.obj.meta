@@ -1,46 +1,16 @@
 fileFormatVersion: 2
-guid: c54199c912f0f824287a2bc3de977f4d
+guid: 062d0b1e4e7c7984187c659b94f01f39
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: bot_fin
-    100002: face
-    100004: Fin
-    100006: flare1Handle
-    100008: joint2
-    100010: joint3
-    100012: left_fin
-    100014: left_tip
-    100016: pSphere1
-    100018: pSphere2
-    100020: right_fin
-    100022: right_tip
-    100024: Squish
-    100026: //RootNode
-    100028: top_fin
-    400000: bot_fin
-    400002: face
-    400004: Fin
-    400006: flare1Handle
-    400008: joint2
-    400010: joint3
-    400012: left_fin
-    400014: left_tip
-    400016: pSphere1
-    400018: pSphere2
-    400020: right_fin
-    400022: right_tip
-    400024: Squish
-    400026: //RootNode
-    400028: top_fin
-    2100000: phongE2
-    2100002: lambert1
-    4300000: pSphere1
-    4300002: pSphere2
-    7400000: Swim
-    9500000: //RootNode
-    13700000: pSphere1
-    13700002: pSphere2
+    100000: body
+    100002: //RootNode
+    400000: body
+    400002: //RootNode
+    2100000: bodyMat
+    2300000: body
+    3300000: body
+    4300000: body
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -68,35 +38,7 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: Swim
-      takeName: Take 001
-      firstFrame: 1
-      lastFrame: 20
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+    clipAnimations: []
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -119,16 +61,16 @@ ModelImporter:
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
-    useFileScale: 0
+    useFileScale: 1
     previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
   importAnimation: 1
-  copyAvatar: 1
+  copyAvatar: 0
   humanDescription:
     serializedVersion: 2
     human: []
@@ -140,13 +82,12 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    rootMotionBoneName: face
+    rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: eb475e20f99d8e94b8a80a864ab98338,
-    type: 3}
-  animationType: 2
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

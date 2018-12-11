@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: be6a899a8bc3b0346bef38e87414ed7e
+guid: 06692907465a2b34ea97a29d16b326e6
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -7,8 +7,7 @@ ModelImporter:
     100002: //RootNode
     400000: angler
     400002: //RootNode
-    2100000: initialShadingGroup
-    2100002: anglerMat
+    2100000: anglerMat
     2300000: angler
     3300000: angler
     4300000: angler

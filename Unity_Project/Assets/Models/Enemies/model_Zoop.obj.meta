@@ -1,22 +1,16 @@
 fileFormatVersion: 2
-guid: e6c3e88251942ed469b7efdf38f0eb83
+guid: 8d67eba7b085e114fbce98471353ee82
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: body_zoop
-    100002: //RootNode
-    100004: zoop_eyes
-    400000: body_zoop
-    400002: //RootNode
-    400004: zoop_eyes
-    2100000: body_zoopMat
-    2100002: zoop_eyesMat
-    2300000: body_zoop
-    2300002: zoop_eyes
-    3300000: body_zoop
-    3300002: zoop_eyes
-    4300000: body_zoop
-    4300002: zoop_eyes
+    100000: //RootNode
+    100002: zoop1
+    400000: //RootNode
+    400002: zoop1
+    2100000: zoop1Mat
+    2300000: zoop1
+    3300000: zoop1
+    4300000: zoop1
   externalObjects: {}
   materials:
     importMaterials: 1

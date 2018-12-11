@@ -188,6 +188,7 @@ public class PlayerController : MonoBehaviour {
             if (carryCount < TraitSystem.maxCarry && other.gameObject.layer == LayerMask.NameToLayer("Food"))
             {
                 GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
+                anim.SetTrigger("gotFood");
                 Destroy(other.gameObject);
                 carryCount++;
                 new Thread(() =>

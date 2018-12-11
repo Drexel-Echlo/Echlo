@@ -1,14 +1,13 @@
 fileFormatVersion: 2
-guid: abc7886b200b2644cb5aa26a3841c3db
+guid: 08a478cab1b8d2f4db739e802fc7976f
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: gazer
-    400000: //RootNode
-    400002: gazer
-    2100000: initialShadingGroup
-    2100002: gazerMat
+    100000: gazer
+    100002: //RootNode
+    400000: gazer
+    400002: //RootNode
+    2100000: gazerMat
     2300000: gazer
     3300000: gazer
     4300000: gazer
