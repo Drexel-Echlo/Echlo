@@ -38,6 +38,7 @@ public class CheckFoodCount : MonoBehaviour {
             {
                 
                 babylist[x].GetComponent<BabytoFood>().food = item;
+                babylist[x].GetComponent<BabytoFood>().caneat = true;
                 x++;
                 full = true;
             }

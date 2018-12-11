@@ -7,6 +7,7 @@ public class BabytoFood : MonoBehaviour {
     //public Vector3 stats;
     public GameObject endpoint;
     public GameObject food;
+    public bool caneat;
     public float speed;
     
     private bool getfood;
@@ -20,13 +21,15 @@ public class BabytoFood : MonoBehaviour {
         gameScript = GameObject.Find("Home").GetComponent<CheckFoodCount>();
         getfood = false;
         food = null;
+        caneat = false;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name == "Food(Clone)")
+        if (other.gameObject.name == "Food(Clone)" && caneat)
         {
             //Debug.Log("find it");
+            caneat = false;
             gameScript.foodCount++;
             Destroy(other.gameObject);
             food = null;
