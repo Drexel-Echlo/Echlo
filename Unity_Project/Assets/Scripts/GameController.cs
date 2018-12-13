@@ -75,8 +75,9 @@ public class GameController : MonoBehaviour {
             Destroy(player);
 
         }
-        else if (gameWin)
+        else if (gameWin || Input.GetKeyDown(KeyCode.L))
         {
+            gameWin = true;
             TraitSystem.maxTraits++;
             gamewintext.gameObject.SetActive(true);
             yearsAlive += Mathf.Round(Time.timeSinceLevelLoad * 10 ) / 10;
