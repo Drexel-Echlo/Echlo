@@ -49,6 +49,7 @@ public class StalkerConroller : MonoBehaviour
                 transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
                 if (allowLight) // Light Trail
                 {
+                    shooter.shootWave(transform.position);
                     StartCoroutine(LightTrail(lightFrequency));
                 }
             }

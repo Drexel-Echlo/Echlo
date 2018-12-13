@@ -191,8 +191,7 @@ Prefab:
         type: 2}
       propertyPath: deadLight
       value: 
-      objectReference: {fileID: 1577870758662976, guid: 980aa09c2e159a8479ccf12c473e10d6,
-        type: 2}
+      objectReference: {fileID: 1733613436}
     - target: {fileID: 114684095785218426, guid: 5b8d349e078173348a8db667c44585cc,
         type: 2}
       propertyPath: winLight
@@ -6912,6 +6911,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 2cc1453d6cc4ece4cba2097aea4bc487,
     type: 3}
   m_PrefabInternal: {fileID: 1066697179}
+--- !u!1 &1733613436 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1839129445920600, guid: 980aa09c2e159a8479ccf12c473e10d6,
+    type: 2}
+  m_PrefabInternal: {fileID: 97950260}
 --- !u!1 &1746406344
 GameObject:
   m_ObjectHideFlags: 0

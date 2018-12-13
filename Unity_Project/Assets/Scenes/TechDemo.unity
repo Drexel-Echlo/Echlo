@@ -768,7 +768,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1751578002}
-  cameraSmoothing: 3
+  cameraSmoothing: 0
 --- !u!81 &214912362
 AudioListener:
   m_ObjectHideFlags: 0
@@ -1381,8 +1381,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51d612020b15d6b48952db64baa78ffc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 469787250}
-  traitSystem: {fileID: 534345899}
+  button: {fileID: 0}
+  traitSystem: {fileID: 0}
   traitTooltipSpace: {fileID: 0}
   traitNameSpace: {fileID: 0}
   traitName: 
@@ -1518,9 +1518,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 062632f901a85b94ea7f3029ace9aaf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endpoint: {fileID: 251761162}
+  endpoint: {fileID: 0}
   food: {fileID: 0}
-  speed: 2
+  caneat: 0
+  speed: 0
 --- !u!54 &488840596
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1552,7 +1553,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!108 &493932530
 Light:
   m_ObjectHideFlags: 0
@@ -1603,6 +1604,11 @@ Transform:
   m_Father: {fileID: 255044169}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &503920434 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1839129445920600, guid: 980aa09c2e159a8479ccf12c473e10d6,
+    type: 2}
+  m_PrefabInternal: {fileID: 97950260}
 --- !u!1 &530484783
 GameObject:
   m_ObjectHideFlags: 0
@@ -1677,9 +1683,13 @@ MonoBehaviour:
   - {fileID: 680491682}
   - {fileID: 596285747}
   - {fileID: 469787250}
+  - {fileID: 469787250}
+  - {fileID: 469787250}
   buttonManager:
   - {fileID: 680491685}
   - {fileID: 596285743}
+  - {fileID: 469787249}
+  - {fileID: 469787249}
   - {fileID: 469787249}
   traitCountText: {fileID: 0}
   traitMenu: {fileID: 0}
@@ -1744,8 +1754,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51d612020b15d6b48952db64baa78ffc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 596285747}
-  traitSystem: {fileID: 534345899}
+  button: {fileID: 0}
+  traitSystem: {fileID: 0}
   traitTooltipSpace: {fileID: 0}
   traitNameSpace: {fileID: 0}
   traitName: 
@@ -2128,8 +2138,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51d612020b15d6b48952db64baa78ffc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 680491682}
-  traitSystem: {fileID: 534345899}
+  button: {fileID: 0}
+  traitSystem: {fileID: 0}
   traitTooltipSpace: {fileID: 0}
   traitNameSpace: {fileID: 0}
   traitName: 
@@ -2528,9 +2538,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d455370bd4aeb648932fa1b6cb3cd19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseMenu: {fileID: 674114201}
+  pauseMenu: {fileID: 0}
   traitMenu: {fileID: 0}
-  deadLight: {fileID: 0}
+  deadLight: {fileID: 503920434}
   winLight: {fileID: 97950262}
   gameovertext: {fileID: 1784171135}
   gamewintext: {fileID: 2126764872}
@@ -4285,9 +4295,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 062632f901a85b94ea7f3029ace9aaf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endpoint: {fileID: 251761162}
+  endpoint: {fileID: 0}
   food: {fileID: 0}
-  speed: 1
+  caneat: 0
+  speed: 0
 --- !u!54 &1234403425
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4899,10 +4910,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   foodNeed: 3
   foodCount: 0
-  babylist:
-  - {fileID: 488840593}
-  - {fileID: 1234403422}
-  - {fileID: 1733961335}
+  babylist: []
   full: 0
 --- !u!1 &1462781207
 GameObject:
@@ -5701,9 +5709,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 062632f901a85b94ea7f3029ace9aaf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endpoint: {fileID: 251761162}
+  endpoint: {fileID: 0}
   food: {fileID: 0}
-  speed: 3
+  caneat: 0
+  speed: 0
 --- !u!54 &1733961337
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5865,7 +5874,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4503030259575852, guid: f368561ea131b59469509930d30efc3e, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1.1024246
+      value: 15.4
       objectReference: {fileID: 0}
     - target: {fileID: 4503030259575852, guid: f368561ea131b59469509930d30efc3e, type: 2}
       propertyPath: m_LocalPosition.y
@@ -5873,7 +5882,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4503030259575852, guid: f368561ea131b59469509930d30efc3e, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -19.883907
+      value: 2.7
       objectReference: {fileID: 0}
     - target: {fileID: 4503030259575852, guid: f368561ea131b59469509930d30efc3e, type: 2}
       propertyPath: m_LocalRotation.x
@@ -5894,6 +5903,22 @@ Prefab:
     - target: {fileID: 4503030259575852, guid: f368561ea131b59469509930d30efc3e, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4243575406586512, guid: f368561ea131b59469509930d30efc3e, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 10.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4243575406586512, guid: f368561ea131b59469509930d30efc3e, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4243575406586512, guid: f368561ea131b59469509930d30efc3e, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4243575406586512, guid: f368561ea131b59469509930d30efc3e, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f368561ea131b59469509930d30efc3e, type: 2}
