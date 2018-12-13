@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114868312262271878}
   - component: {fileID: 135133635944064320}
   - component: {fileID: 54912179450437230}
-  - component: {fileID: 82807787944678058}
+  - component: {fileID: 82073971355109534}
   m_Layer: 13
   m_Name: WallLightUp_Pink
   m_TagString: Untagged
@@ -59,7 +59,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!82 &82807787944678058
+--- !u!82 &82073971355109534
 AudioSource:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -68,15 +68,15 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: afe65fd7c71dea24ebf815d2d4bdd622, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 1
+  m_Volume: 0.914
+  m_Pitch: 1.05
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 63
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -114,7 +114,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -204,8 +204,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lit: {fileID: 108825236998981896}
   decayRate: 0.025
-  sfxSource: {fileID: 82807787944678058}
-  sfxClip: {fileID: 8300000, guid: 74a8055457ff58d43bd320a8bc2d8930, type: 3}
 --- !u!135 &135133635944064320
 SphereCollider:
   m_ObjectHideFlags: 1
