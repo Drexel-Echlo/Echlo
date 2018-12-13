@@ -68,11 +68,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 3776b5e7e6ac1d5499d5e5c9ee3edeb5, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -204,8 +204,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lit: {fileID: 108682860372981886}
   decayRate: 0.025
-  sfxSource: {fileID: 82109931187319698}
-  sfxClip: {fileID: 8300000, guid: 74a8055457ff58d43bd320a8bc2d8930, type: 3}
 --- !u!135 &135253510356312838
 SphereCollider:
   m_ObjectHideFlags: 1

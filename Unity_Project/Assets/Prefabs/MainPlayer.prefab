@@ -805,8 +805,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1729899046761466}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.04, y: -0.16, z: 3.68}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.395874, y: -0.63136816, z: 0.24183083}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4835251356573628}
@@ -1447,7 +1447,7 @@ MonoBehaviour:
   - {fileID: 4963982429511302}
   speed: 15
   lightFrequency: 1.1
-  carryCount: 2
+  carryCount: 0
   foodDrop: {fileID: 1091561412272928, guid: ffd03e6bd76f6ab43901db73b4c6aea9, type: 2}
   carryingFood: {fileID: 1091561412272928, guid: 1ff75b99519bd8545be85e95d796e031,
     type: 2}
@@ -1481,16 +1481,11 @@ MonoBehaviour:
   foodSpit: {fileID: 1039277364745240, guid: 3b25a291c4bcded4b920dd72b7d7b8eb, type: 2}
   food: {fileID: 1091561412272928, guid: ffd03e6bd76f6ab43901db73b4c6aea9, type: 2}
   shooter: {fileID: 4779318294791348}
-  sfxSource: {fileID: 82949200169947612}
-  sfxClips:
-  - {fileID: 8300000, guid: afe65fd7c71dea24ebf815d2d4bdd622, type: 3}
   shotPower: 275
   fireRate: 25
   foodFireRate: 0
   fireDelay: -1
   destroyTime: 1
-  minPitch: 0.75
-  maxPitch: 1.1
 --- !u!114 &114885829372355474
 MonoBehaviour:
   m_ObjectHideFlags: 1

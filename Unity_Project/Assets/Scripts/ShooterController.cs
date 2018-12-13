@@ -16,18 +16,11 @@ public class ShooterController : MonoBehaviour {
 
     public Transform shooter;
 
-    public AudioSource sfxSource;
-
-    public AudioClip[] sfxClips;
-
     public float shotPower;
     public float fireRate;
     public float foodFireRate;
     public float fireDelay = -1;
     public float destroyTime;
-
-    public float minPitch;
-    public float maxPitch;
 
     private bool allowSpitFire = true;
 
@@ -51,11 +44,6 @@ public class ShooterController : MonoBehaviour {
         }
         if (fireDelay == 0)
         {
-
-            sfxSource.pitch = Random.Range(minPitch, maxPitch);
-
-            sfxSource.PlayOneShot(sfxClips[0]);
-
             Quaternion rotation = Quaternion.Euler(90, 0, 0);
             waveClone = Instantiate(wave, shooter.position, shooter.rotation * rotation) as GameObject;
             waveClone.GetComponent<Rigidbody>().AddForce(transform.forward * shotPower);
@@ -67,10 +55,6 @@ public class ShooterController : MonoBehaviour {
 
     public void shootPowerWave(Vector3 position)
     {
-        sfxSource.pitch = Random.Range(minPitch, maxPitch);
-
-        sfxSource.PlayOneShot(sfxClips[0]);
-
         Quaternion rotation = Quaternion.Euler(90, 0, 0);
         vocalCordWaveClone = Instantiate(vocalCordWave, shooter.position, shooter.rotation * rotation) as GameObject;
         vocalCordWaveClone.GetComponent<Rigidbody>().AddForce(transform.forward * shotPower * 1.5f);
